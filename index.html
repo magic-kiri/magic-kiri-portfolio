@@ -227,8 +227,7 @@
     <section id="about" class="relative py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-gray-800 overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full filter blur-2xl animate-pulse"></div>
-            <div class="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full filter blur-2xl animate-pulse animation-delay-2000"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxMmE2IDYgMCAxIDEtMTIgMCA2IDYgMCAwIDEgMTIgMHoiIGZpbGw9IiM0QjU1NjMiIG9wYWNpdHk9Ii4yIi8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
         </div>
         
         <div class="container mx-auto px-4 relative z-10">
@@ -238,35 +237,53 @@
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
                     <div class="relative group">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-900 to-pink-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                        <img src="https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-1/435498505_7447937611954933_883767276658975349_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHZZLGJfk80d_INLtUyx4Tqb5cROfwUKItvlxE5_BQoiyY-7Bzt48qKLxgAZs9VazIcbkrzVDmMse9d_rQLFhiM&_nc_ohc=5DfFpcw5ZSQQ7kNvwFDMuet&_nc_oc=Adnv7QDvFMZH_VHBc652IvrRzxDkMthnA6RN2KIbwJOO9EnJwNyny-kWsXdbUii-Gj0&_nc_zt=24&_nc_ht=scontent.fdac31-1.fna&_nc_gid=gghHvDp5iGsh16JUMOzFTA&oh=00_AfKq7t08JEP0PIgJSfvkHu49f6gGpX00do5urMcka6D9Rw&oe=683DE7A0" alt="About John Doe" class="relative rounded-xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                        <!-- Decorative elements -->
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                        <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse animation-delay-2000"></div>
+                        <!-- Main image container with glass effect -->
+                        <div class="relative bg-gray-900 rounded-xl p-1">
+                            <div class="relative rounded-lg overflow-hidden backdrop-blur-xl backdrop-filter">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10"></div>
+                                <img src="https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-1/435498505_7447937611954933_883767276658975349_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHZZLGJfk80d_INLtUyx4Tqb5cROfwUKItvlxE5_BQoiyY-7Bzt48qKLxgAZs9VazIcbkrzVDmMse9d_rQLFhiM&_nc_ohc=5DfFpcw5ZSQQ7kNvwFDMuet&_nc_oc=Adnv7QDvFMZH_VHBc652IvrRzxDkMthnA6RN2KIbwJOO9EnJwNyny-kWsXdbUii-Gj0&_nc_zt=24&_nc_ht=scontent.fdac31-1.fna&_nc_gid=gghHvDp5iGsh16JUMOzFTA&oh=00_AfKq7t08JEP0PIgJSfvkHu49f6gGpX00do5urMcka6D9Rw&oe=683DE7A0" 
+                                     alt="About John Doe" 
+                                     class="relative w-full rounded-lg shadow-2xl transform group-hover:scale-105 transition-all duration-500 z-10">
+                                <!-- Shine effect -->
+                                <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transform -translate-x-full group-hover:translate-x-full transition-all duration-1000"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="md:w-1/2 space-y-6">
-                    <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-purple-200 dark:border-purple-800 shadow-xl">
-                        <p class="text-lg mb-6 leading-relaxed">
+                    <div class="bg-white/5 dark:bg-gray-800/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 dark:border-gray-700/30 shadow-2xl">
+                        <p class="text-lg mb-6 leading-relaxed text-gray-200 dark:text-gray-300">
                             I'm a <span class="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">passionate software engineer</span> with over 5 years of experience building web applications. 
                             I specialize in JavaScript, React, Node.js, and modern web technologies.
                         </p>
-                        <p class="text-lg mb-6 leading-relaxed">
-                            My journey in software development began at <span class="font-semibold text-purple-600 dark:text-purple-400">University of Technology</span> where I earned my 
+                        <p class="text-lg mb-6 leading-relaxed text-gray-200 dark:text-gray-300">
+                            My journey in software development began at <span class="font-semibold text-purple-400 dark:text-purple-400">University of Technology</span> where I earned my 
                             Bachelor's degree in Computer Science. Since then, I've worked with startups and established 
                             companies to create efficient, scalable, and user-friendly applications.
                         </p>
-                        <p class="text-lg leading-relaxed">
-                            When I'm not coding, you can find me <span class="font-semibold text-pink-600 dark:text-pink-400">hiking</span>, reading tech blogs, or contributing to <span class="font-semibold text-blue-600 dark:text-blue-400">open-source projects</span>.
+                        <p class="text-lg leading-relaxed text-gray-200 dark:text-gray-300">
+                            When I'm not coding, you can find me <span class="font-semibold text-pink-400 dark:text-pink-400">hiking</span>, reading tech blogs, or contributing to <span class="font-semibold text-blue-400 dark:text-blue-400">open-source projects</span>.
                         </p>
                     </div>
                     
-                    <!-- Fun Facts -->
+                    <!-- Fun Facts with improved design -->
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-xl text-white text-center transform hover:scale-105 transition-transform duration-300">
-                            <div class="text-2xl font-bold">🚀</div>
-                            <div class="text-sm font-medium">Innovation Driven</div>
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
+                            <div class="relative bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-white text-center transform hover:scale-105 transition-all duration-300">
+                                <div class="text-2xl font-bold mb-1">🚀</div>
+                                <div class="text-sm font-medium text-gray-200">Innovation Driven</div>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-purple-500 to-pink-600 p-4 rounded-xl text-white text-center transform hover:scale-105 transition-transform duration-300">
-                            <div class="text-2xl font-bold">💡</div>
-                            <div class="text-sm font-medium">Problem Solver</div>
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
+                            <div class="relative bg-gray-900/50 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-white text-center transform hover:scale-105 transition-all duration-300">
+                                <div class="text-2xl font-bold mb-1">💡</div>
+                                <div class="text-sm font-medium text-gray-200">Problem Solver</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -644,7 +661,7 @@
                             <div class="flex space-x-4">
                                 <a href="#" class="p-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-xl hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-110">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.239 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                     </svg>
                                 </a>
                                 <a href="#" class="p-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-110">
