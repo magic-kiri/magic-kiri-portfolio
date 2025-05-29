@@ -19,6 +19,24 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes ping-slow {
+            0% { transform: scale(1); opacity: 1; }
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+        @keyframes draw-line {
+            0% { stroke-dashoffset: 1000; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes clock-tick {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+        }
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
         .animate-float { animation: float 6s ease-in-out infinite; }
@@ -26,6 +44,31 @@
         .animate-gradient { 
             background-size: 200% 200%;
             animation: gradient-shift 3s ease infinite;
+        }
+        .animate-rotate { animation: rotate 20s linear infinite; }
+        .animate-ping-slow { animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite; }
+        .animate-draw-line { 
+            stroke-dasharray: 1000;
+            animation: draw-line 3s ease-in-out infinite;
+        }
+        .animate-clock-tick { animation: clock-tick 8s ease-in-out infinite; }
+        
+        /* World map dots */
+        .world-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        /* Connection lines */
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+            animation: gradient-shift 3s ease infinite;
+            background-size: 200% 100%;
         }
     </style>
     <script>
@@ -62,6 +105,29 @@
                 localStorage.theme = 'dark'
             }
         }
+
+        // Update time for different zones
+        function updateTimes() {
+            const now = new Date();
+            
+            // Bangladesh time (GMT+6)
+            const dhaka = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Dhaka"}));
+            document.getElementById('dhaka-time').textContent = dhaka.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+            
+            // UK time (GMT+0)
+            const london = new Date(now.toLocaleString("en-US", {timeZone: "Europe/London"}));
+            document.getElementById('london-time').textContent = london.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+            
+            // USA time (GMT-5)
+            const newYork = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
+            document.getElementById('newyork-time').textContent = newYork.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit'});
+        }
+
+        // Update times every second
+        setInterval(updateTimes, 1000);
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', updateTimes);
     </script>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
@@ -305,63 +371,255 @@
         </div>
     </section>
 
-    <!-- Time Zone Flexibility Section -->
-    <section class="relative py-16 bg-black overflow-hidden">
-        <!-- Background Pattern -->
+    <!-- Enhanced Time Zone Flexibility Section -->
+    <section class="relative py-24 bg-black overflow-hidden">
+        <!-- Enhanced Background Pattern -->
         <div class="absolute inset-0">
-            <div class="absolute inset-0">
-                <div class="absolute bottom-0 left-0 right-0 h-[500px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
-                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgc3Ryb2tlPSIjMkE0MzY1IiBzdHJva2Utb3BhY2l0eT0iLjEiIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk5LjUiLz48L2c+PC9zdmc+')] opacity-20"></div>
-            </div>
+            <!-- Animated grid background -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Im0wIDQwaDQwdjQwaC00MHoiLz48cGF0aCBkPSJtMCAwaDQwdjQwaC00MHoiIHN0cm9rZT0iIzFmMjkzNyIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+            
+            <!-- Animated gradient orbs -->
+            <div class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute top-1/2 right-0 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+            <div class="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
+            
+            <!-- Floating world dots -->
+            <div class="world-dot bg-blue-400 top-1/4 left-1/6" style="animation-delay: 0s;"></div>
+            <div class="world-dot bg-cyan-400 top-1/3 left-1/2" style="animation-delay: 1s;"></div>
+            <div class="world-dot bg-purple-400 top-2/3 right-1/4" style="animation-delay: 2s;"></div>
+            <div class="world-dot bg-indigo-400 bottom-1/4 left-3/4" style="animation-delay: 3s;"></div>
+            
+            <!-- Connection lines -->
+            <div class="connection-line top-1/3 left-1/4 w-1/3 transform rotate-12" style="animation-delay: 1s;"></div>
+            <div class="connection-line top-1/2 left-1/2 w-1/4 transform -rotate-45" style="animation-delay: 2s;"></div>
+            <div class="connection-line bottom-1/3 left-1/3 w-1/3 transform rotate-45" style="animation-delay: 3s;"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                    I'm very flexible with time zone communications
-                </h2>
+            <div class="max-w-6xl mx-auto">
+                <!-- Enhanced Header -->
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-full border border-blue-500/30 mb-6">
+                        <div class="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"></div>
+                        <span class="text-blue-300 font-medium">Available 24/7 Globally</span>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                        Global Collaboration
+                    </h2>
+                    
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        I'm very flexible with time zone communications and have experience working with teams across 
+                        <span class="font-semibold text-cyan-400">multiple continents</span>. 
+                        Distance is never a barrier to great collaboration.
+                    </p>
+                </div>
 
-                <div class="relative mt-12 mb-16">
-
-                    <!-- Time Zone Cards -->
-                    <div class="flex flex-wrap justify-center gap-4 mb-12">
-                        <div class="group flex items-center gap-2 px-6 py-3 bg-neutral-900/80 backdrop-blur-sm rounded-xl border border-white/[0.14] hover:border-blue-500/50 transition-all duration-300">
-                            <img src="https://flagcdn.com/gb.svg" alt="UK" class="w-6 h-4 rounded">
-                            <span class="text-white/80 font-medium group-hover:text-blue-400 transition-colors">UK</span>
-                            <span class="text-gray-500 ml-2">GMT+0</span>
-                        </div>
-                        <div class="group flex items-center gap-2 px-6 py-3 bg-neutral-900/80 backdrop-blur-sm rounded-xl border border-white/[0.14] hover:border-purple-500/50 transition-all duration-300">
-                            <img src="https://flagcdn.com/bd.svg" alt="Bangladesh" class="w-6 h-4 rounded">
-                            <span class="text-white/80 font-medium group-hover:text-purple-400 transition-colors">Bangladesh</span>
-                            <span class="text-gray-500 ml-2">GMT+6</span>
-                        </div>
-                        <div class="group flex items-center gap-2 px-6 py-3 bg-neutral-900/80 backdrop-blur-sm rounded-xl border border-white/[0.14] hover:border-indigo-500/50 transition-all duration-300">
-                            <img src="https://flagcdn.com/us.svg" alt="USA" class="w-6 h-4 rounded">
-                            <span class="text-white/80 font-medium group-hover:text-indigo-400 transition-colors">USA</span>
-                            <span class="text-gray-500 ml-2">GMT-5</span>
+                <!-- Enhanced World Map Visualization -->
+                <div class="relative mb-16">
+                    <!-- Central globe/world representation -->
+                    <div class="flex justify-center mb-12">
+                        <div class="relative">
+                            <!-- Rotating outer ring -->
+                            <div class="w-64 h-64 border-2 border-blue-500/30 rounded-full animate-rotate">
+                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                    <div class="w-4 h-4 bg-blue-400 rounded-full animate-ping-slow"></div>
+                                </div>
+                                <div class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2">
+                                    <div class="w-4 h-4 bg-cyan-400 rounded-full animate-ping-slow" style="animation-delay: 1s;"></div>
+                                </div>
+                                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+                                    <div class="w-4 h-4 bg-purple-400 rounded-full animate-ping-slow" style="animation-delay: 2s;"></div>
+                                </div>
+                                <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                    <div class="w-4 h-4 bg-indigo-400 rounded-full animate-ping-slow" style="animation-delay: 3s;"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Central globe -->
+                            <div class="absolute inset-8 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-full backdrop-blur-sm border border-cyan-500/30 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="text-4xl mb-2">🌍</div>
+                                    <div class="text-cyan-300 font-semibold text-sm">Global Ready</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Location Info -->
-                    <div class="flex items-center justify-center gap-3 text-white/80">
-                        <div class="flex items-center gap-2 px-4 py-2 bg-neutral-900/50 rounded-full border border-white/[0.14]">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <span class="text-lg">Remote</span>
-                            <span class="text-gray-500">•</span>
-                            <span class="text-lg">Dhaka - 24:55</span>
+                    <!-- Enhanced Time Zone Cards with Live Clocks -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                        <!-- UK Time Zone -->
+                        <div class="group relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                            <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 transform hover:-translate-y-2">
+                                <!-- Clock Animation -->
+                                <div class="flex justify-center mb-4">
+                                    <div class="relative w-16 h-16 border-2 border-blue-400 rounded-full">
+                                        <div class="absolute inset-2 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-1 h-6 bg-blue-400 transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-0.5 h-4 bg-cyan-400 transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick" style="animation-delay: 2s;"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-center gap-3 mb-3">
+                                    <img src="https://flagcdn.com/gb.svg" alt="UK" class="w-8 h-6 rounded shadow-lg">
+                                    <span class="text-white font-bold text-lg group-hover:text-blue-400 transition-colors">United Kingdom</span>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="text-2xl font-mono font-bold text-blue-400 mb-1" id="london-time">--:--</div>
+                                    <div class="text-gray-400 text-sm">GMT+0 • London</div>
+                                    <div class="mt-3 px-3 py-1 bg-blue-500/20 rounded-full text-blue-300 text-xs font-medium">
+                                        Business Hours: 9AM-6PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bangladesh Time Zone -->
+                        <div class="group relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                            <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 transform hover:-translate-y-2">
+                                <!-- Clock Animation -->
+                                <div class="flex justify-center mb-4">
+                                    <div class="relative w-16 h-16 border-2 border-purple-400 rounded-full">
+                                        <div class="absolute inset-2 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-full"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-1 h-6 bg-purple-400 transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick" style="animation-delay: 1s;"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-0.5 h-4 bg-indigo-400 transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick" style="animation-delay: 3s;"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-purple-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-center gap-3 mb-3">
+                                    <img src="https://flagcdn.com/bd.svg" alt="Bangladesh" class="w-8 h-6 rounded shadow-lg">
+                                    <span class="text-white font-bold text-lg group-hover:text-purple-400 transition-colors">Bangladesh</span>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="text-2xl font-mono font-bold text-purple-400 mb-1" id="dhaka-time">--:--</div>
+                                    <div class="text-gray-400 text-sm">GMT+6 • Dhaka</div>
+                                    <div class="mt-3 px-3 py-1 bg-purple-500/20 rounded-full text-purple-300 text-xs font-medium">
+                                        🏠 Home Base
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- USA Time Zone -->
+                        <div class="group relative">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                            <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 transform hover:-translate-y-2">
+                                <!-- Clock Animation -->
+                                <div class="flex justify-center mb-4">
+                                    <div class="relative w-16 h-16 border-2 border-cyan-400 rounded-full">
+                                        <div class="absolute inset-2 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-1 h-6 bg-cyan-400 transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick" style="animation-delay: 2s;"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-0.5 h-4 bg-blue-400 transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick" style="animation-delay: 4s;"></div>
+                                        <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-cyan-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-center gap-3 mb-3">
+                                    <img src="https://flagcdn.com/us.svg" alt="USA" class="w-8 h-6 rounded shadow-lg">
+                                    <span class="text-white font-bold text-lg group-hover:text-cyan-400 transition-colors">United States</span>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="text-2xl font-mono font-bold text-cyan-400 mb-1" id="newyork-time">--:--</div>
+                                    <div class="text-gray-400 text-sm">GMT-5 • New York</div>
+                                    <div class="mt-3 px-3 py-1 bg-cyan-500/20 rounded-full text-cyan-300 text-xs font-medium">
+                                        Business Hours: 9AM-6PM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Communication Methods -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                        <div class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-blue-400/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white group-hover:text-blue-400 transition-colors">Slack/Teams</div>
+                                    <div class="text-xs text-gray-400">Real-time chat</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-purple-400/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white group-hover:text-purple-400 transition-colors">Video Calls</div>
+                                    <div class="text-xs text-gray-400">Zoom/Meet</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white group-hover:text-cyan-400 transition-colors">Email</div>
+                                    <div class="text-xs text-gray-400">Async updates</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-green-400/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-white group-hover:text-green-400 transition-colors">Project Tools</div>
+                                    <div class="text-xs text-gray-400">Jira/Trello</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Current Status -->
+                    <div class="text-center">
+                        <div class="inline-flex items-center gap-4 px-8 py-4 bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-white/10">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span class="text-lg font-semibold text-white">Currently in Dhaka, Bangladesh</span>
+                            </div>
+                            <div class="w-px h-8 bg-gray-600"></div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                <span class="text-green-400 font-medium">Available for collaboration</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Decorative Circles -->
-        <div class="absolute top-1/4 left-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-0 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl"></div>
-        
+        <!-- Enhanced Decorative Elements -->
+        <div class="absolute top-1/4 left-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-0 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
     </section>
 
     <!-- Skills Section -->
@@ -376,330 +634,238 @@
             <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
                 <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Skills & Technologies</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Core Languages -->
-                <div class="group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-blue-500/50 transform hover:-translate-y-2">
-                    <div class="flex justify-center mb-4">
-                        <div class="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Languages" class="h-8 w-8">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-center bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Core Languages</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-slate-700/50 text-blue-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-4 h-4" alt="JavaScript">
-                            JavaScript
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-indigo-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-4 h-4" alt="TypeScript">
-                            TypeScript
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-cyan-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-4 h-4" alt="Python">
-                            Python
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-teal-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg" class="w-4 h-4" alt="Golang">
-                            Golang
-                        </span>
-                    </div>
-                </div>
+            <section id="skills" class="relative mx-auto mt-10 flex h-full flex-col rounded-3xl py-0 md:px-10">
+                <ul class="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 text-lg text-gray-800 lg:gap-4">
+                   <li aria-label="ReactJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="ReactJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/react"><span>ReactJS</span></li>
+                   <li aria-label="NextJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="NextJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/nextdotjs/white"><span>NextJS</span></li>
+                   <li aria-label="TypeScript" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="TypeScript" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/typescript"><span>TypeScript</span></li>
+                   <li aria-label="Tailwind CSS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Tailwind CSS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/tailwindcss"><span>Tailwind CSS</span></li>
+                   <li aria-label="Motion" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Motion" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/framer"><span>Motion</span></li>
+                   <li aria-label="Sanity" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Sanity" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/sanity"><span>Sanity</span></li>
+                   <li aria-label="Contentful" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Contentful" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/contentful"><span>Contentful</span></li>
+                   <li aria-label="NodeJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="NodeJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/nodedotjs/darkgreen"><span>NodeJS</span></li>
+                   <li aria-label="ExpressJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="ExpressJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/express/white"><span>ExpressJS</span></li>
+                   <li aria-label="PostgreSQL" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="PostgreSQL" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/postgresql/sky"><span>PostgreSQL</span></li>
+                   <li aria-label="MongoDB" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="MongoDB" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/mongodb/darkgreen"><span>MongoDB</span></li>
+                   <li aria-label="Prisma" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Prisma" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/prisma/blue"><span>Prisma</span></li>
+                   <li aria-label="Zustand" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Zustand" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/redux/pink"><span>Zustand</span></li>
+                   <li aria-label="Zod" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Zod" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/zod"><span>Zod</span></li>
+                   <li aria-label="pnpm" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="pnpm" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/pnpm"><span>pnpm</span></li>
+                   <li aria-label="Bun" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Bun" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/bun/white"><span>Bun</span></li>
+                   <li aria-label="Git" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Git" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/git"><span>Git</span></li>
+                   <li aria-label="GitHub" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="GitHub" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/github/white"><span>GitHub</span></li>
+                   <li aria-label="Vercel" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Vercel" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/vercel/white"><span>Vercel</span></li>
+                   <li aria-label="AWS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="AWS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/amazonwebservices/gray"><span>AWS</span></li>
+                   <li aria-label="Docker" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Docker" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/docker"><span>Docker</span></li>
+                   <li aria-label="Expo" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Expo" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/expo/gray"><span>Expo</span></li>
+                   <li aria-label="Clerk" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Clerk" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/clerk"><span>Clerk</span></li>
+                   <li aria-label="Linux" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Linux" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/linux"><span>Linux</span></li>
+                </ul>
+             </section>
 
-                <!-- Frontend Technologies -->
-                <div class="group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-indigo-500/50 transform hover:-translate-y-2">
-                    <div class="flex justify-center mb-4">
-                        <div class="p-3 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Frontend" class="h-8 w-8">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-center bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Frontend Technologies</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-slate-700/50 text-orange-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-4 h-4" alt="HTML">
-                            HTML
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-blue-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-4 h-4" alt="CSS">
-                            CSS
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-cyan-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" class="w-4 h-4" alt="Tailwind">
-                            Tailwind
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-sky-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-4 h-4" alt="React">
-                            React
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://assets.vercel.com/image/upload/v1662130559/nextjs/icon.png" class="w-4 h-4" alt="Next.js">
-                            Next.js
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Backend Technologies -->
-                <div class="group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-purple-500/50 transform hover:-translate-y-2">
-                    <div class="flex justify-center mb-4">
-                        <div class="p-3 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Backend" class="h-8 w-8">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-center bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent">Backend Technologies</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-slate-700/50 text-green-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-4 h-4" alt="Node.js">
-                            Node.js
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-red-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://docs.nestjs.com/assets/logo-small.svg" class="w-4 h-4" alt="NestJS">
-                            NestJS
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-4 h-4" alt="Express.js">
-                            Express.js
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-blue-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://deno.land/logo.svg" class="w-4 h-4" alt="Deno">
-                            Deno
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-teal-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://fastapi.tiangolo.com/img/icon-white.svg" class="w-4 h-4" alt="FastAPI">
-                            FastAPI
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-fuchsia-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://graphql.org/img/logo.svg" class="w-4 h-4" alt="GraphQL">
-                            GraphQL
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Database & Cache -->
-                <div class="group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-violet-500/50 transform hover:-translate-y-2">
-                    <div class="flex justify-center mb-4">
-                        <div class="p-3 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Databases" class="h-8 w-8">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-center bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Database & Cache</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-slate-700/50 text-blue-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-4 h-4" alt="PostgreSQL">
-                            PostgreSQL
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-orange-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-4 h-4" alt="MySQL">
-                            MySQL
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-green-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-4 h-4" alt="MongoDB">
-                            MongoDB
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-red-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" class="w-4 h-4" alt="Redis">
-                            Redis
-                        </span>
-                    </div>
-                </div>
-
-                <!-- ORMs & Tools -->
-                <div class="group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-fuchsia-500/50 transform hover:-translate-y-2">
-                    <div class="flex justify-center mb-4">
-                        <div class="p-3 bg-gradient-to-br from-fuchsia-500 to-pink-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Tools" class="h-8 w-8">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-center bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent">ORMs & Tools</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-slate-700/50 text-blue-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://prismalens.vercel.app/header/logo-dark.svg" class="w-4 h-4" alt="Prisma">
-                            Prisma
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-red-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://raw.githubusercontent.com/typeorm/typeorm/master/resources/logo_big.png" class="w-4 h-4" alt="TypeORM">
-                            TypeORM
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-orange-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-4 h-4" alt="Git">
-                            Git
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Cloud & DevOps -->
-                <div class="group bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-pink-500/50 transform hover:-translate-y-2">
-                    <div class="flex justify-center mb-4">
-                        <div class="p-3 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="Cloud" class="h-8 w-8">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-center bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">Cloud & Message Queue</h3>
-                    <div class="flex flex-wrap justify-center gap-2">
-                        <span class="px-3 py-1 bg-slate-700/50 text-orange-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" class="w-4 h-4" alt="AWS">
-                            AWS
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-blue-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-4 h-4" alt="Docker">
-                            Docker
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-gray-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://kafka.apache.org/logos/kafka_logo--simple.png" class="w-4 h-4" alt="Kafka">
-                            Kafka
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-yellow-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" class="w-4 h-4" alt="Lambda">
-                            Lambda
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-red-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" class="w-4 h-4" alt="EC2">
-                            EC2
-                        </span>
-                        <span class="px-3 py-1 bg-slate-700/50 text-green-300 rounded-full text-sm font-medium flex items-center gap-1 hover:bg-slate-600/50 transition-colors">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" class="w-4 h-4" alt="S3">
-                            S3
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    
-    <section id="skills" class="relative mx-auto mt-10 flex h-full flex-col rounded-3xl py-0 md:px-10">
-        <ul class="mx-auto flex max-w-4xl flex-wrap justify-center gap-2 text-lg text-gray-800 lg:gap-4">
-           <li aria-label="ReactJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="ReactJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/react"><span>ReactJS</span></li>
-           <li aria-label="NextJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="NextJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/nextdotjs/white"><span>NextJS</span></li>
-           <li aria-label="TypeScript" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="TypeScript" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/typescript"><span>TypeScript</span></li>
-           <li aria-label="Tailwind CSS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Tailwind CSS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/tailwindcss"><span>Tailwind CSS</span></li>
-           <li aria-label="Motion" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Motion" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/framer"><span>Motion</span></li>
-           <li aria-label="Sanity" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Sanity" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/sanity"><span>Sanity</span></li>
-           <li aria-label="Contentful" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Contentful" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/contentful"><span>Contentful</span></li>
-           <li aria-label="NodeJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="NodeJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/nodedotjs/darkgreen"><span>NodeJS</span></li>
-           <li aria-label="ExpressJS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="ExpressJS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/express/white"><span>ExpressJS</span></li>
-           <li aria-label="PostgreSQL" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="PostgreSQL" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/postgresql/sky"><span>PostgreSQL</span></li>
-           <li aria-label="MongoDB" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="MongoDB" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/mongodb/darkgreen"><span>MongoDB</span></li>
-           <li aria-label="Prisma" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Prisma" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/prisma/blue"><span>Prisma</span></li>
-           <li aria-label="Zustand" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Zustand" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/redux/pink"><span>Zustand</span></li>
-           <li aria-label="Zod" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Zod" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/zod"><span>Zod</span></li>
-           <li aria-label="pnpm" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="pnpm" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/pnpm"><span>pnpm</span></li>
-           <li aria-label="Bun" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Bun" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/bun/white"><span>Bun</span></li>
-           <li aria-label="Git" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Git" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/git"><span>Git</span></li>
-           <li aria-label="GitHub" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="GitHub" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/github/white"><span>GitHub</span></li>
-           <li aria-label="Vercel" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Vercel" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/vercel/white"><span>Vercel</span></li>
-           <li aria-label="AWS" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="AWS" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/amazonwebservices/gray"><span>AWS</span></li>
-           <li aria-label="Docker" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Docker" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/docker"><span>Docker</span></li>
-           <li aria-label="Expo" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Expo" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/expo/gray"><span>Expo</span></li>
-           <li aria-label="Clerk" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Clerk" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/clerk"><span>Clerk</span></li>
-           <li aria-label="Linux" class="md:group relative flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"><img height="18" width="18" alt="Linux" class="w-4 duration-300 lg:w-5" src="https://cdn.simpleicons.org/linux"><span>Linux</span></li>
-        </ul>
-     </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="relative py-20 bg-gradient-to-b from-gray-900 via-slate-900 to-black dark:from-gray-900 dark:via-slate-900 dark:to-black overflow-hidden">
+       <!-- Experience Section -->
+       <section id="experience" class="relative py-20 bg-gradient-to-br from-gray-900 via-slate-900 to-black overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-full filter blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-500/30 to-rose-500/30 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-emerald-400 rounded-full animate-bounce opacity-40"></div>
+            <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-40" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-4 h-4 bg-cyan-400 rounded-full animate-bounce opacity-40" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 right-1/3 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-40" style="animation-delay: 3s;"></div>
         </div>
         
         <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
-                <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">Work Experience</span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
+                <span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Work Experience</span>
             </h2>
-            <div class="space-y-12">
-                <!-- Experience 1 -->
-                <div class="group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-purple-200 dark:border-purple-800 hover:border-purple-400 dark:hover:border-purple-600 transform hover:-translate-y-2">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/3">
-                            <div class="inline-block px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm font-semibold mb-3">2021 - Present</div>
-                            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Senior Frontend Developer</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">Tech Innovations Inc.</p>
+        
+            <!-- Timeline Container -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-cyan-400 to-purple-400 rounded-full"></div>
+            
+                <div class="space-y-16">
+                    <!-- Experience 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full border-4 border-gray-900 shadow-lg z-10"></div>
+                    
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 ml-16 md:ml-0 md:mr-8 group">
+                            <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-emerald-500/20">
+                                <!-- Glow Effect -->
+                                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
+                            
+                                <div class="relative">
+                                    <!-- Date Badge -->
+                                    <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        2021 - Present
+                                    </div>
+                                
+                                    <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Senior Frontend Developer</h3>
+                                    <p class="text-gray-300 font-semibold mb-4 text-lg">Tech Innovations Inc.</p>
+                                    <p class="text-gray-400 mb-6 leading-relaxed">Led the frontend development team in building a complex SaaS platform serving over 50,000 users.</p>
+                                
+                                    <!-- Achievement Pills -->
+                                    <div class="space-y-3">
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Implemented a component library that reduced development time by 40%</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Optimized application performance, improving load times by 60%</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Mentored junior developers and established coding standards</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Collaborated with UX designers to create intuitive user interfaces</span>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Tech Stack -->
+                                    <div class="flex flex-wrap gap-2 mt-6">
+                                        <span class="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-400/30 text-emerald-300 rounded-full text-sm font-medium">React</span>
+                                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-cyan-300 rounded-full text-sm font-medium">TypeScript</span>
+                                        <span class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-300 rounded-full text-sm font-medium">Next.js</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="md:w-2/3">
-                            <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">Led the frontend development team in building a complex SaaS platform serving over 50,000 users.</p>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Implemented a component library that reduced development time by 40%</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Optimized application performance, improving load times by 60%</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Mentored junior developers and established coding standards</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Collaborated with UX designers to create intuitive user interfaces</span>
-                                </li>
-                            </ul>
-                        </div>
+                    
+                        <!-- Spacer for desktop -->
+                        <div class="hidden md:block w-2/12"></div>
                     </div>
-                </div>
                 
-                <!-- Experience 2 -->
-                <div class="group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transform hover:-translate-y-2">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/3">
-                            <div class="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-semibold mb-3">2018 - 2021</div>
-                            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Full Stack Developer</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">WebSolutions Co.</p>
+                    <!-- Experience 2 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center">
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full border-4 border-gray-900 shadow-lg z-10"></div>
+                    
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 ml-16 md:ml-0 md:ml-8 group">
+                            <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-blue-500/20">
+                                <!-- Glow Effect -->
+                                <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
+                            
+                                <div class="relative">
+                                    <!-- Date Badge -->
+                                    <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        2018 - 2021
+                                    </div>
+                                
+                                    <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Full Stack Developer</h3>
+                                    <p class="text-gray-300 font-semibold mb-4 text-lg">WebSolutions Co.</p>
+                                    <p class="text-gray-400 mb-6 leading-relaxed">Worked on multiple client projects developing full-stack web applications.</p>
+                                
+                                    <!-- Achievement Pills -->
+                                    <div class="space-y-3">
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Built RESTful APIs using Node.js and Express</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Developed responsive frontends with React and Redux</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Implemented authentication systems and payment integrations</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Deployed and maintained applications on AWS</span>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Tech Stack -->
+                                    <div class="flex flex-wrap gap-2 mt-6">
+                                        <span class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-300 rounded-full text-sm font-medium">Node.js</span>
+                                        <span class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium">React</span>
+                                        <span class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-400/30 text-pink-300 rounded-full text-sm font-medium">AWS</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="md:w-2/3">
-                            <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">Worked on multiple client projects developing full-stack web applications.</p>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Built RESTful APIs using Node.js and Express</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Developed responsive frontends with React and Redux</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Implemented authentication systems and payment integrations</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Deployed and maintained applications on AWS</span>
-                                </li>
-                            </ul>
-                        </div>
+                    
+                        <!-- Spacer for desktop -->
+                        <div class="hidden md:block w-2/12"></div>
                     </div>
-                </div>
                 
-                <!-- Experience 3 -->
-                <div class="group bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-purple-200 dark:border-purple-800 hover:border-purple-400 dark:hover:border-purple-600 transform hover:-translate-y-2">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/3">
-                            <div class="inline-block px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm font-semibold mb-3">2016 - 2018</div>
-                            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Junior Developer</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">StartUp Labs</p>
+                    <!-- Experience 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-4 border-gray-900 shadow-lg z-10"></div>
+                    
+                        <!-- Content Card -->
+                        <div class="w-full md:w-5/12 ml-16 md:ml-0 md:mr-8 group">
+                            <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-purple-500/20 hover:border-purple-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-purple-500/20">
+                                <!-- Glow Effect -->
+                                <div class="absolute -inset-1 bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
+                            
+                                <div class="relative">
+                                    <!-- Date Badge -->
+                                    <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        2016 - 2018
+                                    </div>
+                                
+                                    <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Junior Developer</h3>
+                                    <p class="text-gray-300 font-semibold mb-4 text-lg">StartUp Labs</p>
+                                    <p class="text-gray-400 mb-6 leading-relaxed">Started my career working on frontend development for an early-stage startup.</p>
+                                
+                                    <!-- Achievement Pills -->
+                                    <div class="space-y-3">
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Developed UI components using JavaScript and jQuery</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Implemented responsive designs with CSS and Bootstrap</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Collaborated with backend developers to integrate APIs</span>
+                                        </div>
+                                        <div class="flex items-center group/item">
+                                            <div class="w-2 h-2 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                                            <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">Participated in code reviews and agile development processes</span>
+                                        </div>
+                                    </div>
+                                
+                                    <!-- Tech Stack -->
+                                    <div class="flex flex-wrap gap-2 mt-6">
+                                        <span class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium">JavaScript</span>
+                                        <span class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-400/30 text-pink-300 rounded-full text-sm font-medium">CSS</span>
+                                        <span class="px-3 py-1 bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-400/30 text-red-300 rounded-full text-sm font-medium">Bootstrap</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="md:w-2/3">
-                            <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">Started my career working on frontend development for an early-stage startup.</p>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Developed UI components using JavaScript and jQuery</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Implemented responsive designs with CSS and Bootstrap</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Collaborated with backend developers to integrate APIs</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="w-2 h-2 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    <span class="text-gray-600 dark:text-gray-300">Participated in code reviews and agile development processes</span>
-                                </li>
-                            </ul>
-                        </div>
+                    
+                        <!-- Spacer for desktop -->
+                        <div class="hidden md:block w-2/12"></div>
                     </div>
                 </div>
             </div>
@@ -720,19 +886,19 @@
             </h2>
             <div class="flex flex-col md:flex-row gap-10">
                 <div class="md:w-1/2">
-                    <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-pink-200 dark:border-pink-800">
+                    <div class="bg-white/5 dark:bg-gray-800/5 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/10 dark:border-gray-700/30">
                         <form class="space-y-6">
                             <div>
-                                <label for="name" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border-2 border-pink-200 dark:border-pink-800 rounded-xl bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:border-pink-500 dark:focus:border-pink-400 transition-colors duration-300">
+                                <label for="name" class="block mb-2 font-semibold text-gray-200 dark:text-gray-300">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border-2 border-pink-200/20 dark:border-pink-800/20 rounded-xl bg-white/10 dark:bg-gray-700/10 text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 dark:focus:border-pink-400 transition-colors duration-300">
                             </div>
                             <div>
-                                <label for="email" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border-2 border-rose-200 dark:border-rose-800 rounded-xl bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:border-rose-500 dark:focus:border-rose-400 transition-colors duration-300">
+                                <label for="email" class="block mb-2 font-semibold text-gray-200 dark:text-gray-300">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border-2 border-rose-200/20 dark:border-rose-800/20 rounded-xl bg-white/10 dark:bg-gray-700/10 text-white placeholder-gray-400 focus:outline-none focus:border-rose-500 dark:focus:border-rose-400 transition-colors duration-300">
                             </div>
                             <div>
-                                <label for="message" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Message</label>
-                                <textarea id="message" rows="5" class="w-full px-4 py-3 border-2 border-red-200 dark:border-red-800 rounded-xl bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:border-red-500 dark:focus:border-red-400 transition-colors duration-300"></textarea>
+                                <label for="message" class="block mb-2 font-semibold text-gray-200 dark:text-gray-300">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border-2 border-red-200/20 dark:border-red-800/20 rounded-xl bg-white/10 dark:bg-gray-700/10 text-white placeholder-gray-400 focus:outline-none focus:border-red-500 dark:focus:border-red-400 transition-colors duration-300"></textarea>
                             </div>
                             <button type="submit" class="w-full px-6 py-4 bg-gradient-to-r from-pink-600 to-red-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:from-red-600 hover:to-pink-600">
                                 Send Message
@@ -741,7 +907,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-rose-200 dark:border-rose-800">
+                    <div class="bg-white/5 dark:bg-gray-800/5 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-white/10 dark:border-gray-700/30">
                         <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">Contact Information</h3>
                         <div class="space-y-6">
                             <div class="flex items-start group">
@@ -751,8 +917,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Email</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">john.doe@example.com</p>
+                                    <h4 class="font-semibold text-lg text-gray-200 dark:text-gray-200">Email</h4>
+                                    <p class="text-gray-300 dark:text-gray-300">kiriti.mukherjee@example.com</p>
                                 </div>
                             </div>
                             <div class="flex items-start group">
@@ -762,8 +928,8 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Phone</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">(123) 456-7890</p>
+                                    <h4 class="font-semibold text-lg text-gray-200 dark:text-gray-200">Phone</h4>
+                                    <p class="text-gray-300 dark:text-gray-300">+880 123-456-7890</p>
                                 </div>
                             </div>
                             <div class="flex items-start group">
@@ -774,13 +940,13 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-lg text-gray-800 dark:text-gray-200">Location</h4>
-                                    <p class="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
+                                    <h4 class="font-semibold text-lg text-gray-200 dark:text-gray-200">Location</h4>
+                                    <p class="text-gray-300 dark:text-gray-300">Dhaka, Bangladesh</p>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-8">
-                            <h4 class="font-semibold mb-4 text-lg text-gray-800 dark:text-gray-200">Connect with me</h4>
+                            <h4 class="font-semibold mb-4 text-lg text-gray-200 dark:text-gray-200">Connect with me</h4>
                             <div class="flex space-x-4">
                                 <a href="#" class="p-3 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-xl hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-110">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -829,4 +995,3 @@
     </footer>
 </body>
 </html>
-
