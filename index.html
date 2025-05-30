@@ -3,19 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpeg" href="public/photo_64.png" sizes="32x32" />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="public/photo_64.png"
+      sizes="32x32"
+    />
     <title>Kiriti Mukherjee | Full Stack Engineer | Web Development</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Kiriti Mukherjee - Software Engineer specializing in full-stack development, cloud computing, and building scalable applications. View my portfolio, projects, and experience." />
-    <meta name="keywords" content="Software Engineer, Full Stack Developer, Web Development, Cloud Computing, Portfolio" />
+    <meta
+      name="description"
+      content="Kiriti Mukherjee - Software Engineer specializing in full-stack development, cloud computing, and building scalable applications. View my portfolio, projects, and experience."
+    />
+    <meta
+      name="keywords"
+      content="Software Engineer, Full Stack Developer, Web Development, Cloud Computing, Portfolio"
+    />
     <meta name="author" content="Kiriti Mukherjee" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://magickiri.com" />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kiriti Mukherjee| Software Engineer" />
-    <meta property="og:description" content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications." />
+    <meta
+      property="og:description"
+      content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications."
+    />
     <meta property="og:image" content="public/photo_64.png" />
     <meta property="og:url" content="https://magickiri.com" />
     <meta property="og:type" content="website" />
@@ -23,23 +37,41 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Kiriti Mukherjee| Software Engineer" />
-    <meta name="twitter:description" content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications." />
+    <meta
+      name="twitter:description"
+      content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications."
+    />
     <meta name="twitter:image" content="public/photo_64.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6WZFR6EZ23"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6WZFR6EZ23");
+    </script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person", 
-      "name": "Kiriti Mukherjee",
-      "jobTitle": "Software Engineer",
-      "url": "https://magickiri.com",
-      "image": "public/photo_64.png",
-      "sameAs": [
-        "https://github.com/magic-kiri",
-        "https://linkedin.com/in/magic-kiri"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kiriti Mukherjee",
+        "jobTitle": "Software Engineer",
+        "url": "https://magickiri.com",
+        "image": "public/photo_64.png",
+        "sameAs": [
+          "https://github.com/magic-kiri",
+          "https://linkedin.com/in/magic-kiri"
+        ]
+      }
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -221,11 +253,17 @@
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
       @keyframes ping {
-        75%, 100% {
+        75%,
+        100% {
           transform: scale(1.5);
           opacity: 0;
         }
@@ -351,10 +389,10 @@
               >Skills</a
             >
             <a
-            href="#experience"
-            class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300"
-            title="Check out my professional experience"
-            >Experience</a
+              href="#experience"
+              class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300"
+              title="Check out my professional experience"
+              >Experience</a
             >
             <a
               href="#education"
@@ -1699,10 +1737,10 @@
               <div
                 class="flex items-center justify-center gap-2 rounded-xl border border-white/[0.14] bg-neutral-900 px-4 py-1.5 text-sm text-white/80 lg:text-base"
               >
-                <img 
-                  src="public/s3.svg" 
-                  width="18" 
-                  height="18" 
+                <img
+                  src="public/s3.svg"
+                  width="18"
+                  height="18"
                   alt="S3 icon"
                   title="Amazon S3 - Scalable storage in the cloud"
                 />
@@ -2117,9 +2155,9 @@
                         >MongoDB</span
                       >
                       <span
-                      class="px-3 py-1 bg-gradient-to-r from-green-500/20 to-purple-500/20  border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
-                      >Playwright</span
-                    >
+                        class="px-3 py-1 bg-gradient-to-r from-green-500/20 to-purple-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
+                        >Playwright</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -3223,4 +3261,3 @@
     </footer>
   </body>
 </html>
-
