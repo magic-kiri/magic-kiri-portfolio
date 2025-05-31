@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="public/photo_64.png"
+      sizes="32x32"
+    />
+    <title>Kiriti Mukherjee | Full Stack Engineer | Web Development</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Kiriti Mukherjee - Software Engineer specializing in full-stack development, cloud computing, and building scalable applications. View my portfolio, projects, and experience."
+    />
+    <meta
+      name="keywords"
+      content="Software Engineer, Full Stack Developer, Web Development, Cloud Computing, Portfolio"
+    />
+    <meta name="author" content="Kiriti Mukherjee" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://magickiri.com" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kiriti Mukherjee| Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications."
+    />
+    <meta property="og:image" content="public/photo_64.png" />
+    <meta property="og:url" content="https://magickiri.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kiriti Mukherjee| Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications."
+    />
+    <meta name="twitter:image" content="public/photo_64.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6WZFR6EZ23"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6WZFR6EZ23");
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kiriti Mukherjee",
+        "jobTitle": "Software Engineer",
+        "url": "https://magickiri.com",
+        "image": "public/photo_64.png",
+        "sameAs": [
+          "https://github.com/magic-kiri",
+          "https://linkedin.com/in/magic-kiri"
+        ]
+      }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(147, 51, 234, 0.7);
+        }
+      }
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes ping-slow {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        75%,
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      @keyframes draw-line {
+        0% {
+          stroke-dashoffset: 1000;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes clock-tick {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(90deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        75% {
+          transform: rotate(270deg);
+        }
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+      }
+      .animate-rotate {
+        animation: rotate 20s linear infinite;
+      }
+      .animate-ping-slow {
+        animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      .animate-draw-line {
+        stroke-dasharray: 1000;
+        animation: draw-line 3s ease-in-out infinite;
+      }
+      .animate-clock-tick {
+        animation: clock-tick 8s ease-in-out infinite;
+      }
+
+      /* World map dots */
+      .world-dot {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+
+      /* Connection lines */
+      .connection-line {
+        position: absolute;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.6),
+          transparent
+        );
+        animation: gradient-shift 3s ease infinite;
+        background-size: 200% 100%;
+      }
+
+      /* Section separator */
+      .section-separator {
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(59, 130, 246, 0.3),
+          rgba(147, 51, 234, 0.3),
+          transparent
+        );
+        margin: 0 auto;
+        width: 80%;
+        max-width: 1200px;
+      }
+      .section-separator-full {
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          rgba(59, 130, 246, 0.3),
+          rgba(147, 51, 234, 0.3)
+        );
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      /* Enhanced section padding */
+      .section-padding {
+        padding-top: 6rem;
+        padding-bottom: 9rem;
+      }
+
+      /* Improved animations */
+      @keyframes subtle-float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .animate-subtle-float {
+        animation: subtle-float 4s ease-in-out infinite;
+      }
+
+      /* Make favicon circular */
+      link[rel="icon"] {
+        border-radius: 50%;
+        clip-path: circle(50%);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes ping {
+        75%,
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+        10% {
+          transform: scale(0.95);
+          opacity: 1;
+        }
+      }
+
+      /* Skills section specific styles */
+      .skill-category {
+        transition: all 0.3s ease;
+      }
+      
+      .skill-category:hover {
+        transform: translateY(-5px);
+      }
+      
+      .skill-badge {
+        transition: all 0.2s ease;
+      }
+      
+      .skill-badge:hover {
+        transform: scale(1.05);
+      }
+      
+      .category-icon {
+        transition: all 0.3s ease;
+      }
+      
+      .skill-category:hover .category-icon {
+        transform: rotate(5deg) scale(1.1);
+      }
+      
+      /* Custom scrollbar for skill containers */
+      .skill-scroll::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      
+      .skill-scroll::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+      }
+      
+      .skill-scroll::-webkit-scrollbar-thumb {
+        background: rgba(59, 130, 246, 0.5);
+        border-radius: 2px;
+      }
+      
+      .skill-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(59, 130, 246, 0.7);
+      }
+
+      /* Proficiency bar styles */
+      .proficiency-bar {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      
+      .proficiency-fill {
+        height: 100%;
+        border-radius: 2px;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#3B82F6", // blue-500
+                dark: "#60A5FA", // blue-400
+              },
+            },
+          },
+        },
+      };
+
+      // Check for dark mode preference
+      if (!("theme" in localStorage)) {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+      } else if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      function toggleDarkMode() {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        }
+      }
+
+      // Update time for different zones
+      function updateTimes() {
+        const now = new Date();
+
+        // Bangladesh time (GMT+6)
+        const dhaka = new Date(
+          now.toLocaleString("en-US", { timeZone: "Asia/Dhaka" })
+        );
+        document.getElementById("dhaka-time").textContent =
+          dhaka.toLocaleTimeString("en-US", {
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+        // UK time (GMT+0)
+        const london = new Date(
+          now.toLocaleString("en-US", { timeZone: "Europe/London" })
+        );
+        document.getElementById("london-time").textContent =
+          london.toLocaleTimeString("en-US", {
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+
+        // USA time (GMT-5)
+        const newYork = new Date(
+          now.toLocaleString("en-US", { timeZone: "America/New_York" })
+        );
+        document.getElementById("newyork-time").textContent =
+          newYork.toLocaleTimeString("en-US", {
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+      }
+
+      // Update times every second
+      setInterval(updateTimes, 1000);
+
+      // Skills data organized by categories
+      const skillsData = [
+          {
+              name: "Programming Languages",
+              icon: "💻",
+              iconBg: "bg-blue-500/20",
+              textColor: "text-blue-400",
+              borderColor: "border-blue-500/30",
+              hoverBorderColor: "hover:border-blue-400/50",
+              gradient: "from-blue-500 to-blue-600",
+              proficiency: 5,
+              skills: [
+                  {
+                      name: "TypeScript",
+                      icon: "https://img.icons8.com/color/36/000000/typescript.png",
+                      description: "TypeScript - Statically typed JavaScript that scales"
+                  },
+                  {
+                      name: "JavaScript",
+                      icon: "https://img.icons8.com/color/36/000000/javascript.png",
+                      description: "JavaScript - The language of the web"
+                  },
+                  {
+                      name: "Python",
+                      icon: "https://img.icons8.com/color/36/000000/python.png",
+                      description: "Python - Versatile programming language"
+                  },
+                  {
+                      name: "Go",
+                      icon: "https://img.icons8.com/color/36/000000/golang.png",
+                      description: "Go - Performance-oriented programming language"
+                  },
+                  {
+                      name: "Java",
+                      icon: "https://img.icons8.com/color/36/000000/java-coffee-cup-logo.png",
+                      description: "Java - Object-oriented programming language"
+                  },
+                  {
+                      name: "C++",
+                      icon: "https://img.icons8.com/color/36/000000/c-plus-plus-logo.png",
+                      description: "C++ - High-performance programming language"
+                  }
+              ]
+          },
+          {
+              name: "Frontend Technologies",
+              icon: "🎨",
+              iconBg: "bg-purple-500/20",
+              textColor: "text-purple-400",
+              borderColor: "border-purple-500/30",
+              hoverBorderColor: "hover:border-purple-400/50",
+              gradient: "from-purple-500 to-purple-600",
+              proficiency: 5,
+              skills: [
+                  {
+                      name: "React",
+                      icon: "https://cdn.simpleicons.org/react",
+                      description: "React - JavaScript library for building user interfaces"
+                  },
+                  {
+                      name: "Next.js",
+                      icon: "https://cdn.simpleicons.org/nextdotjs/white",
+                      description: "Next.js - React framework for production"
+                  },
+                  {
+                      name: "HTML5",
+                      icon: "https://img.icons8.com/color/36/000000/html-5.png",
+                      description: "HTML5 - Standard markup language for web pages"
+                  },
+                  {
+                      name: "CSS3",
+                      icon: "https://img.icons8.com/color/36/000000/css3.png",
+                      description: "CSS3 - Style sheet language for web design"
+                  },
+                  {
+                      name: "Tailwind CSS",
+                      icon: "https://cdn.simpleicons.org/tailwindcss",
+                      description: "Tailwind CSS - Utility-first CSS framework"
+                  },
+                  {
+                      name: "Material-UI",
+                      icon: "https://img.icons8.com/color/36/000000/material-ui.png",
+                      description: "Material-UI - React UI framework"
+                  },
+                  {
+                      name: "React Flow",
+                      icon: "https://img.icons8.com/color/36/000000/flow-chart.png",
+                      description: "React Flow - Library for rendering interactive node-based UIs"
+                  }
+              ]
+          },
+          {
+              name: "Backend Frameworks",
+              icon: "⚙️",
+              iconBg: "bg-green-500/20",
+              textColor: "text-green-400",
+              borderColor: "border-green-500/30",
+              hoverBorderColor: "hover:border-green-400/50",
+              gradient: "from-green-500 to-green-600",
+              proficiency: 5,
+              skills: [
+                  {
+                      name: "Node.js",
+                      icon: "https://cdn.simpleicons.org/nodedotjs",
+                      description: "Node.js - JavaScript runtime built on Chrome's V8 engine"
+                  },
+                  {
+                      name: "Express",
+                      icon: "https://cdn.simpleicons.org/express/white",
+                      description: "Express - Fast, unopinionated web framework for Node.js"
+                  },
+                  {
+                      name: "NestJS",
+                      icon: "https://img.icons8.com/color/36/000000/nestjs.png",
+                      description: "NestJS - Progressive Node.js framework"
+                  },
+                  {
+                      name: "FastAPI",
+                      icon: "https://cdn.simpleicons.org/fastapi",
+                      description: "FastAPI - Modern, fast web framework for Python"
+                  },
+                  {
+                      name: "Deno",
+                      icon: "https://img.icons8.com/color/36/000000/deno.png",
+                      description: "Deno - Secure runtime for JavaScript and TypeScript"
+                  }
+              ]
+          },
+          {
+              name: "Databases & Storage",
+              icon: "🗄️",
+              iconBg: "bg-cyan-500/20",
+              textColor: "text-cyan-400",
+              borderColor: "border-cyan-500/30",
+              hoverBorderColor: "hover:border-cyan-400/50",
+              gradient: "from-cyan-500 to-cyan-600",
+              proficiency: 4,
+              skills: [
+                  {
+                      name: "PostgreSQL",
+                      icon: "https://img.icons8.com/color/36/000000/postgreesql.png",
+                      description: "PostgreSQL - Advanced open source relational database"
+                  },
+                  {
+                      name: "MongoDB",
+                      icon: "https://cdn.simpleicons.org/mongodb/darkgreen",
+                      description: "MongoDB - NoSQL document database"
+                  },
+                  {
+                      name: "MySQL",
+                      icon: "https://cdn.simpleicons.org/mysql",
+                      description: "MySQL - Popular open source relational database"
+                  },
+                  {
+                      name: "Redis",
+                      icon: "https://img.icons8.com/color/36/000000/redis.png",
+                      description: "Redis - In-memory data structure store"
+                  },
+                  {
+                      name: "Prisma",
+                      icon: "https://img.icons8.com/color/36/000000/prisma-orm.png",
+                      description: "Prisma - Next-generation ORM for Node.js and TypeScript"
+                  },
+                  {
+                      name: "TypeORM",
+                      icon: "https://cdn.simpleicons.org/typeorm",
+                      description: "TypeORM - Object-relational mapping for TypeScript and JavaScript"
+                  }
+              ]
+          },
+          {
+              name: "Cloud & DevOps",
+              icon: "☁️",
+              iconBg: "bg-orange-500/20",
+              textColor: "text-orange-400",
+              borderColor: "border-orange-500/30",
+              hoverBorderColor: "hover:border-orange-400/50",
+              gradient: "from-orange-500 to-orange-600",
+              proficiency: 4,
+              skills: [
+                  {
+                      name: "AWS",
+                      icon: "https://cdn.simpleicons.org/amazonaws",
+                      description: "AWS - Leading cloud computing platform"
+                  },
+                  {
+                      name: "Lambda",
+                      icon: "https://cdn.simpleicons.org/awslambda",
+                      description: "AWS Lambda - Serverless compute service"
+                  },
+                  {
+                      name: "S3",
+                      icon: "https://cdn.simpleicons.org/amazons3",
+                      description: "Amazon S3 - Scalable storage in the cloud"
+                  },
+                  {
+                      name: "EC2",
+                      icon: "https://cdn.simpleicons.org/amazonec2",
+                      description: "Amazon EC2 - Virtual servers in the cloud"
+                  },
+                  {
+                      name: "Docker",
+                      icon: "https://cdn.simpleicons.org/docker",
+                      description: "Docker - Platform for developing, shipping, and running applications"
+                  }
+              ]
+          },
+          {
+              name: "Tools & Others",
+              icon: "🛠️",
+              iconBg: "bg-indigo-500/20",
+              textColor: "text-indigo-400",
+              borderColor: "border-indigo-500/30",
+              hoverBorderColor: "hover:border-indigo-400/50",
+              gradient: "from-indigo-500 to-indigo-600",
+              proficiency: 4,
+              skills: [
+                  {
+                      name: "Git",
+                      icon: "https://img.icons8.com/color/36/000000/git.png",
+                      description: "Git - Distributed version control system"
+                  },
+                  {
+                      name: "GitHub",
+                      icon: "https://img.icons8.com/ios-glyphs/36/FFFFFF/github.png",
+                      description: "GitHub - Web-based hosting service for version control"
+                  },
+                  {
+                      name: "GraphQL",
+                      icon: "https://img.icons8.com/color/36/000000/graphql.png",
+                      description: "GraphQL - A query language for your API"
+                  },
+                  {
+                      name: "Jest",
+                      icon: "https://cdn.simpleicons.org/jest",
+                      description: "Jest - Delightful JavaScript Testing Framework"
+                  },
+                  {
+                      name: "Playwright",
+                      icon: "https://cdn.simpleicons.org/playwright",
+                      description: "Playwright - Reliable end-to-end testing for modern web apps"
+                  },
+                  {
+                      name: "Kafka",
+                      icon: "https://cdn.simpleicons.org/apachekafka",
+                      description: "Apache Kafka - Distributed streaming platform"
+                  },
+                  {
+                      name: "BullMQ",
+                      icon: "https://img.icons8.com/color/36/000000/bull.png",
+                      description: "BullMQ - Premium Queue package for Node.js"
+                  }
+              ]
+          }
+      ];
+
+      // Initialize on page load
+      document.addEventListener("DOMContentLoaded", function() {
+        updateTimes();
+        renderSkills();
+      });
+
+      // Function to render skills
+      function renderSkills() {
+        const skillsContainer = document.getElementById('skills-container');
+        if (!skillsContainer) return;
+
+        // Calculate total skills
+        const totalSkills = skillsData.reduce((total, category) => total + category.skills.length, 0);
+        
+        // Render skills stats
+        const statsHTML = `
+          <div class="flex flex-wrap justify-center gap-6 mb-12">
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <div class="text-3xl font-bold text-white mb-1">${totalSkills}</div>
+              <div class="text-sm text-gray-400">Total Technologies</div>
+            </div>
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <div class="text-3xl font-bold text-white mb-1">${skillsData.length}</div>
+              <div class="text-sm text-gray-400">Skill Categories</div>
+            </div>
+            <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <div class="text-3xl font-bold text-white mb-1">8+</div>
+              <div class="text-sm text-gray-400">Years Experience</div>
+            </div>
+          </div>
+        `;
+        
+        // Render categories
+        let categoriesHTML = '';
+        
+        skillsData.forEach(category => {
+          const proficiencyWidth = (category.proficiency / 5) * 100;
+          
+          categoriesHTML += `
+            <div class="skill-category group">
+              <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r ${category.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+                <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${category.borderColor} ${category.hoverBorderColor} transition-all duration-300">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-12 ${category.iconBg} rounded-xl flex items-center justify-center category-icon">
+                        <span class="text-2xl">${category.icon}</span>
+                      </div>
+                      <div>
+                        <h3 class="text-xl font-bold text-white group-hover:${category.textColor} transition-colors">${category.name}</h3>
+                        <div class="text-sm text-gray-400">${category.skills.length} technologies</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <div class="flex justify-between text-xs mb-1">
+                      <span class="${category.textColor}">Proficiency</span>
+                      <span class="text-gray-400">${category.proficiency}/5</span>
+                    </div>
+                    <div class="proficiency-bar">
+                      <div class="proficiency-fill bg-gradient-to-r ${category.gradient}" style="width: ${proficiencyWidth}%"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-scroll flex flex-wrap gap-2 max-h-32 overflow-y-auto pr-2">
+                    ${category.skills.map(skill => `
+                      <div class="skill-badge flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-1.5 border border-gray-700/50" title="${skill.description}">
+                        <img src="${skill.icon}" alt="${skill.name}" class="w-4 h-4" />
+                        <span class="text-sm text-gray-300">${skill.name}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        
+        // Combine stats and categories
+        skillsContainer.innerHTML = `
+          ${statsHTML}
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${categoriesHTML}
+          </div>
+        `;
+      }
+    </script>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="md:fixed md:top-0 left-0 right-0 z-0 md:z-50 bg-gray-900/95 dark:bg-black/95 backdrop-blur-lg shadow-lg border-b border-purple-900"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent relative z-50 hover:scale-105 transition-transform duration-300"
+          title="Kiriti Mukherjee - Full Stack Engineer"
+          >Kiriti Mukherjee</a
+        >
+        <div class="flex items-center">
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#about"
+              class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300"
+              title="Learn more about me"
+              >About</a
+            >
+
+            <a
+              href="#skills"
+              class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 hover:after:w-full after:transition-all after:duration-300"
+              title="View my technical skills and expertise"
+              >Skills</a
+            >
+            <a
+              href="#experience"
+              class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300"
+              title="Check out my professional experience"
+              >Experience</a
+            >
+            <a
+              href="#education"
+              class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-purple-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300"
+              title="View my educational background"
+              >Education</a
+            >
+            <a
+              href="#contact"
+              class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-indigo-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300"
+              title="Get in touch with me"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Enhanced Time Zone Flexibility Section -->
+    <div class="section-separator"></div>
+    <section
+      class="relative section-bg-pattern section-padding overflow-hidden"
+    >
+      <!-- Enhanced Background Pattern -->
+      <div class="absolute inset-0">
+        <!-- Animated grid background -->
+        <div
+          class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Im0wIDQwaDQwdjQwaC00MHoiLz48cGF0aCBkPSJtMCAwaDQwdjQwaDQweiIgc3Ryb2tlPSIjMWYyOTM3IiBzdHJva2Utd2lkdGg9IjEiLz48L2c+PC9zdmc+')] opacity-20"
+        ></div>
+
+        <!-- Animated gradient orbs -->
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full filter blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute top-1/2 right-0 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-full filter blur-3xl animate-pulse animation-delay-2000"
+        ></div>
+        <div
+          class="absolute bottom-0 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full filter blur-3xl animate-pulse animation-delay-4000"
+        ></div>
+
+        <!-- Floating world dots -->
+        <div
+          class="world-dot bg-blue-400 top-1/4 left-1/6"
+          style="animation-delay: 0s"
+        ></div>
+        <div
+          class="world-dot bg-cyan-400 top-1/3 left-1/2"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="world-dot bg-purple-400 top-2/3 right-1/4"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="world-dot bg-indigo-400 bottom-1/4 left-3/4"
+          style="animation-delay: 3s"
+        ></div>
+
+        <!-- Connection lines -->
+        <div
+          class="connection-line top-1/3 left-1/4 w-1/3 transform rotate-12"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="connection-line top-1/2 left-1/2 w-1/4 transform -rotate-45"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="connection-line bottom-1/3 left-1/3 w-1/3 transform rotate-45"
+          style="animation-delay: 3s"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Enhanced Header -->
+          <div class="text-center mb-16">
+            <div
+              class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-full border border-blue-500/30 mb-6"
+            >
+              <div
+                class="w-3 h-3 bg-green-400 rounded-full mr-3 animate-pulse"
+              ></div>
+              <span class="text-blue-300 font-medium"
+                >Available 24/7 Globally</span
+              >
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
+              <span
+                class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-300 via-cyan-400 to-purple-600 bg-clip-text text-transparent"
+              >
+                Global Collaboration
+              </span>
+            </h2>
+
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              I'm very flexible with time zone communications and have
+              experience working with teams across
+              <span class="font-semibold text-cyan-400"
+                >multiple continents</span
+              >. Distance is never a barrier to great collaboration.
+            </p>
+          </div>
+
+          <!-- Enhanced World Map Visualization -->
+          <div class="relative mb-16">
+            <!-- Central globe/world representation -->
+            <div class="flex justify-center mb-12">
+              <div class="relative">
+                <!-- Rotating outer ring -->
+                <div
+                  class="w-64 h-64 border-2 border-blue-500/30 rounded-full animate-rotate"
+                >
+                  <div
+                    class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  >
+                    <div
+                      class="w-4 h-4 bg-blue-400 rounded-full animate-ping-slow"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2"
+                  >
+                    <div
+                      class="w-4 h-4 bg-cyan-400 rounded-full animate-ping-slow"
+                      style="animation-delay: 1s"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
+                  >
+                    <div
+                      class="w-4 h-4 bg-purple-400 rounded-full animate-ping-slow"
+                      style="animation-delay: 2s"
+                    ></div>
+                  </div>
+                  <div
+                    class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  >
+                    <div
+                      class="w-4 h-4 bg-indigo-400 rounded-full animate-ping-slow"
+                      style="animation-delay: 3s"
+                    ></div>
+                  </div>
+                </div>
+
+                <!-- Central globe -->
+                <div
+                  class="absolute inset-8 bg-gradient-to-br from-blue-900/50 to-purple-900/50 rounded-full backdrop-blur-sm border border-cyan-500/30 flex items-center justify-center"
+                >
+                  <div class="text-center">
+                    <div class="text-4xl mb-2">🌍</div>
+                    <div class="text-cyan-300 font-semibold text-sm">
+                      Global Ready
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enhanced Time Zone Cards with Live Clocks -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <!-- UK Time Zone -->
+              <div class="group relative">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"
+                ></div>
+                <div
+                  class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <!-- Clock Animation -->
+                  <div class="flex justify-center mb-4">
+                    <div
+                      class="relative w-16 h-16 border-2 border-blue-400 rounded-full"
+                    >
+                      <div
+                        class="absolute inset-2 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-1 h-6 bg-blue-400 transform -translate-x-1/2 -translate-y-full origin-top animate-clock-tick"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-0.5 h-4 bg-cyan-400 transform -translate-x-1/2 -translate-y-full origin-top animate-clock-tick"
+                        style="animation-delay: 2s"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-center gap-3 mb-3">
+                    <img
+                      src="https://flagcdn.com/gb.svg"
+                      alt="UK"
+                      class="w-8 h-6 rounded shadow-lg"
+                      title="United Kingdom"
+                    />
+                    <span
+                      class="text-white font-bold text-lg group-hover:text-blue-400 transition-colors"
+                      >United Kingdom</span
+                    >
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="text-2xl font-mono font-bold text-blue-400 mb-1"
+                      id="london-time"
+                    >
+                      --:--
+                    </div>
+                    <div class="text-gray-400 text-sm">GMT+0 • London</div>
+                    <div
+                      class="mt-3 px-3 py-1 bg-blue-500/20 rounded-full text-blue-300 text-xs font-medium"
+                    >
+                      Business Hours: 9AM-6PM
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bangladesh Time Zone -->
+              <div class="group relative">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"
+                ></div>
+                <div
+                  class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <!-- Clock Animation -->
+                  <div class="flex justify-center mb-4">
+                    <div
+                      class="relative w-16 h-16 border-2 border-purple-400 rounded-full"
+                    >
+                      <div
+                        class="absolute inset-2 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-full"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-1 h-6 bg-purple-400 transform -translate-x-1/2 -translate-y-full origin-top animate-clock-tick"
+                        style="animation-delay: 1s"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-0.5 h-4 bg-indigo-400 transform -translate-x-1/2 -translate-y-full origin-top animate-clock-tick"
+                        style="animation-delay: 3s"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-2 h-2 bg-purple-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-center gap-3 mb-3">
+                    <img
+                      src="https://flagcdn.com/bd.svg"
+                      alt="Bangladesh"
+                      class="w-8 h-6 rounded shadow-lg"
+                      title="Bangladesh - GMT+6 Time Zone"
+                    />
+                    <span
+                      class="text-white font-bold text-lg group-hover:text-purple-400 transition-colors"
+                      >Bangladesh</span
+                    >
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="text-2xl font-mono font-bold text-purple-400 mb-1"
+                      id="dhaka-time"
+                    >
+                      --:--
+                    </div>
+                    <div class="text-gray-400 text-sm">GMT+6 • Dhaka</div>
+                    <div
+                      class="mt-3 px-3 py-1 bg-purple-500/20 rounded-full text-purple-300 text-xs font-medium"
+                    >
+                      🏠 Home Base
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- USA Time Zone -->
+              <div class="group relative">
+                <div
+                  class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"
+                ></div>
+                <div
+                  class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <!-- Clock Animation -->
+                  <div class="flex justify-center mb-4">
+                    <div
+                      class="relative w-16 h-16 border-2 border-cyan-400 rounded-full"
+                    >
+                      <div
+                        class="absolute inset-2 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-1 h-6 bg-cyan-400 transform -translate-x-1/2 -translate-y-full origin-top animate-clock-tick"
+                        style="animation-delay: 2s"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-0.5 h-4 bg-blue-400 transform -translate-x-1/2 -translate-y-full origin-top animate-clock-tick"
+                        style="animation-delay: 4s"
+                      ></div>
+                      <div
+                        class="absolute top-1/2 left-1/2 w-2 h-2 bg-cyan-500 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-center gap-3 mb-3">
+                    <img
+                      src="https://flagcdn.com/us.svg"
+                      alt="USA"
+                      class="w-8 h-6 rounded shadow-lg"
+                      title="United States - GMT-5 Time Zone"
+                    />
+                    <span
+                      class="text-white font-bold text-lg group-hover:text-cyan-400 transition-colors"
+                      >United States</span
+                    >
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="text-2xl font-mono font-bold text-cyan-400 mb-1"
+                      id="newyork-time"
+                    >
+                      --:--
+                    </div>
+                    <div class="text-gray-400 text-sm">GMT-5 • New York</div>
+                    <div
+                      class="mt-3 px-3 py-1 bg-cyan-500/20 rounded-full text-cyan-300 text-xs font-medium"
+                    >
+                      Business Hours: 9AM-6PM
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enhanced Communication Methods -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
+            >
+              <div
+                class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-blue-400/50 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <img
+                      src="public/slack.svg"
+                      alt="Slack"
+                      class="w-8 h-8 text-white"
+                      title="Slack/Teams - Real-time communication platform"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="font-semibold text-white group-hover:text-blue-400 transition-colors"
+                    >
+                      Slack/Teams
+                    </div>
+                    <div class="text-xs text-gray-400">Real-time chat</div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-purple-400/50 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <img
+                      src="public/google-meet.svg"
+                      alt="Google Meet"
+                      class="w-8 h-8 text-white"
+                      title="Google Meet - Video conferencing platform"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="font-semibold text-white group-hover:text-purple-400 transition-colors"
+                    >
+                      Video Calls
+                    </div>
+                    <div class="text-xs text-gray-400">Zoom/Meet</div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <img
+                      src="public/gmail.svg"
+                      alt="Gmail"
+                      class="w-8 h-8 text-white"
+                      title="Gmail - Email communication"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="font-semibold text-white group-hover:text-cyan-400 transition-colors"
+                    >
+                      Email
+                    </div>
+                    <div class="text-xs text-gray-400">Async updates</div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-green-400/50 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <img
+                      src="public/jira.svg"
+                      alt="Jira"
+                      class="w-8 h-8 text-white"
+                      title="Jira - Project management and issue tracking"
+                    />
+                  </div>
+                  <div>
+                    <div
+                      class="font-semibold text-white group-hover:text-green-400 transition-colors"
+                    >
+                      Project Tools
+                    </div>
+                    <div class="text-xs text-gray-400">Jira/Trello</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enhanced Current Status -->
+            <div class="text-center">
+              <div
+                class="inline-flex items-center gap-4 px-8 py-4 bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-white/10"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-blue-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span class="text-lg font-semibold text-white"
+                    >Currently in Dhaka, Bangladesh</span
+                  >
+                </div>
+                <div class="w-px h-8 bg-gray-600"></div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-blue-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <span class="text-green-400 font-medium"
+                    >Available for collaboration</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enhanced Decorative Elements -->
+      <div
+        class="absolute top-1/4 left-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-1/4 right-0 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse animation-delay-2000"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl animate-pulse animation-delay-4000"
+      ></div>
+    </section>
+
+    <!-- Skills Section -->
+    <div class="section-separator"></div>
+    <section
+      id="skills"
+      class="relative section-bg-pattern section-padding overflow-hidden"
+    >
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/40 to-indigo-500/40 rounded-full filter blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-indigo-400/40 to-purple-500/40 rounded-full filter blur-3xl animate-pulse animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <span
+            class="bg-gradient-to-r from-blue-600 via-indigo-400 to-purple-600 bg-clip-text text-transparent"
+            >Skills & Technologies</span
+          >
+        </h2>
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <p class="text-xl text-gray-300 mb-6">
+            I've developed expertise in a wide range of technologies, allowing
+            me to build complete, scalable solutions from front-end to back-end.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <div
+              class="px-4 py-2 bg-blue-500/20 backdrop-blur-sm rounded-lg border border-blue-500/30"
+            >
+              <span class="text-blue-300 font-medium"
+                >Frontend Development</span
+              >
+            </div>
+            <div
+              class="px-4 py-2 bg-purple-500/20 backdrop-blur-sm rounded-lg border border-purple-500/30"
+            >
+              <span class="text-purple-300 font-medium"
+                >Backend Development</span
+              >
+            </div>
+            <div
+              class="px-4 py-2 bg-cyan-500/20 backdrop-blur-sm rounded-lg border border-cyan-500/30"
+            >
+              <span class="text-cyan-300 font-medium">DevOps & Cloud</span>
+            </div>
+          </div>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full mb-10"
+          ></div>
+        </div>
+
+        <!-- New Clustered Skills Section -->
+        <div id="skills-container" class="skills-container lg:px-8">
+          <!-- Skills will be rendered here by JavaScript -->
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <div class="section-separator-full"></div>
+    <footer class="relative section-bg-pattern py-12 overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full filter blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full filter blur-3xl animate-pulse animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0 text-center md:text-left">
+            <h3
+              class="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2"
+            >
+              KIRITI MUKHERJEE
+            </h3>
+            <p class="text-gray-300">Full Stack Engineer</p>
+            <p class="text-gray-400 text-sm mt-2">
+              Building the future, one line of code at a time
+            </p>
+          </div>
+          <div
