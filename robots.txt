@@ -1,18 +1,10 @@
-# https://magickiri.com/robots.txt
-# Allow all web crawlers to access all content
+# /robots.txt  – minimal & Google-friendly
 User-agent: *
 Allow: /
 
-# Specify the sitemap location
-Sitemap: https://magickiri.com/sitemap.xml
-
-# Common directories that typically don't need to be crawled
+# Optional: block areas that really must stay private
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
 
-# Crawl-delay for all bots (optional)
-Crawl-delay: 10 
+Sitemap: https://magickiri.com/sitemap.xml
