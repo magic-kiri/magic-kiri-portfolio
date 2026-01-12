@@ -387,7 +387,304 @@
       document.addEventListener("DOMContentLoaded", function () {
         updateTimes();
         renderSkills();
+        renderExperience();
       });
+
+      // Experience data organized by entries
+      const experienceData = [
+        {
+          id: 1,
+          dateRange: "August 2025 - Current",
+          title: "Software Engineering Lead",
+          company: "Techjays",
+          companyLink: "https://techjays.com/",
+          workType: "On-site",
+          employmentType: "Full-time",
+          description: "A leading AI and automation company based in Menlo Park, CA, specializing in custom software, data analytics, and cloud solutions for global businesses.",
+          achievements: [
+            "Engineered \"JaysBot,\" a real-time voice assistant utilizing Azure OpenAI's Live Voice API and custom-indexed knowledge base, enabling low-latency, context-aware vocal interactions through direct voice-to-voice processing",
+            "Implemented multiple clustering algorithms (K-Means, DBSCAN, HDBSCAN, BIRCH) in C++ for large-scale seismic data analysis, evaluating performance trade-offs across algorithmic approaches",
+            "Developed hybrid clustering algorithms combining K-Means with DBSCAN and HDBSCAN to leverage density-based detection of arbitrary-shaped clusters while maintaining computational efficiency",
+            "Achieved 4x runtime reduction through GPU parallelization (CUDA) and multi-threading optimization of the clustering pipeline on large seismic datasets",
+            "Implemented elbow method for automated determination of optimal cluster count, eliminating manual parameter tuning and improving result reproducibility",
+            "Developed AI agent using Gemini-2.5-flash to automate leave management system, deployed across the team"
+          ],
+          techStack: ["Python", "C++", "Azure Live Voice API", "Unsupervised Learning", "LangChain", "Gemini"],
+          colors: {
+            primary: "indigo",
+            secondary: "violet",
+            gradient: "from-indigo-400 via-violet-400 to-purple-400",
+            dotGradient: "from-indigo-400 to-violet-500",
+            badgeGradient: "from-indigo-500 to-violet-500",
+            borderColor: "border-indigo-500/20",
+            hoverBorderColor: "hover:border-indigo-400/40",
+            shadowColor: "hover:shadow-indigo-500/20",
+            workTypeBg: "bg-indigo-400/10",
+            workTypeText: "text-indigo-400",
+            workTypeBorder: "border-indigo-400/20",
+            employmentTypeBg: "bg-violet-400/10",
+            employmentTypeText: "text-violet-400",
+            employmentTypeBorder: "border-violet-400/20"
+          },
+          position: "left"
+        },
+        {
+          id: 2,
+          dateRange: "March 2024 - August 2025",
+          title: "Software Engineer II",
+          company: "Green Pants Studio",
+          companyLink: "https://www.greenpantsstudio.com/",
+          workType: "Remote",
+          employmentType: "Full-time",
+          description: "A technology consulting agency providing engineering talent to external clients.",
+          achievements: [
+            "Engineered and launched a scalable livestream platform handling 10K+ concurrent viewers, resulting in a 40% increase in seller engagement",
+            "Led as Product Manager and engineer integrating Freightquote API, automating U.S. truckload logistics; reduced manual effort by 70%, errors by 50%, and improved real-time shipment tracking",
+            "Implemented CI/CD pipelines to streamline deployments, reducing errors by 60% and accelerating release cycles.",
+            "Built a CSV-based bulk product upload system that streamlined catalog onboarding, saving sellers 90% of time compared to manual entry",
+            "Developed a custom CRM to enable sellers to easily invite buyers into groups, enhancing engagement by 30%.",
+            "Defined and implemented integration tests to ensure API integrity and maintain the reliability of the system."
+          ],
+          techStack: ["TypeScript", "Python", "Next.js", "NestJS", "AWS", "PostgreSQL", "Microservices"],
+          colors: {
+            primary: "emerald",
+            secondary: "cyan",
+            gradient: "from-emerald-400 via-cyan-400 to-blue-400",
+            dotGradient: "from-emerald-400 to-cyan-500",
+            badgeGradient: "from-emerald-500 to-cyan-500",
+            borderColor: "border-emerald-500/20",
+            hoverBorderColor: "hover:border-emerald-400/40",
+            shadowColor: "hover:shadow-emerald-500/20",
+            workTypeBg: "bg-emerald-400/10",
+            workTypeText: "text-emerald-400",
+            workTypeBorder: "border-emerald-400/20",
+            employmentTypeBg: "bg-cyan-400/10",
+            employmentTypeText: "text-cyan-400",
+            employmentTypeBorder: "border-cyan-400/20"
+          },
+          position: "right"
+        },
+        {
+          id: 3,
+          dateRange: "November 2022 - March 2024",
+          title: "Founding Software Engineer",
+          company: "Sendout",
+          companyLink: "https://sendout.ai/",
+          workType: "Remote",
+          employmentType: "Full-time",
+          description: "Led core engineering initiatives in automation and security, significantly improving system efficiency and resilience.",
+          achievements: [
+            "Reverse-engineered LinkedIn's private Voyager API for automation, cutting manual effort and costs by 80%.",
+            "Implemented a workflow sequence builder using React Flow to orchestrate outreach campaigns.",
+            "Built identity-spoofing mechanisms to raise account security from 20% to 80%.",
+            "Built LinkedIn data scrapers for automated collection from searches, groups, events and messages.",
+            "Developed customizable workflow sequence builder to automate outreach events."
+          ],
+          techStack: ["TypeScript", "Kafka", "FastAPI", "NestJS", "MongoDB", "Playwright"],
+          colors: {
+            primary: "blue",
+            secondary: "purple",
+            gradient: "from-blue-400 via-purple-400 to-pink-400",
+            dotGradient: "from-blue-400 to-purple-500",
+            badgeGradient: "from-blue-500 to-purple-500",
+            borderColor: "border-blue-500/20",
+            hoverBorderColor: "hover:border-blue-400/40",
+            shadowColor: "hover:shadow-blue-500/20",
+            workTypeBg: "bg-blue-400/10",
+            workTypeText: "text-blue-400",
+            workTypeBorder: "border-blue-400/20",
+            employmentTypeBg: "bg-purple-400/10",
+            employmentTypeText: "text-purple-400",
+            employmentTypeBorder: "border-purple-400/20"
+          },
+          position: "left"
+        },
+        {
+          id: 4,
+          dateRange: "July 2022 - October 2022",
+          title: "Back End Engineer",
+          company: "Azimuth",
+          companyLink: "https://azimuth.fm/",
+          workType: "Remote",
+          employmentType: "Contract",
+          description: "Enhanced system performance and optimized backend processes for radio song filtering and dashboard operations.",
+          achievements: [
+            "Migrated Python scripts to JavaScript, enhancing the overall development ecosystem",
+            "Developed edge functions with Deno to efficiently filter songs played on the radio",
+            "Reduced memory consumption in microcontrollers and optimized dashboard processing time from 140s to 5s"
+          ],
+          techStack: ["Deno", "JavaScript", "Python", "Serverless"],
+          colors: {
+            primary: "purple",
+            secondary: "pink",
+            gradient: "from-purple-400 via-pink-400 to-red-400",
+            dotGradient: "from-purple-400 to-pink-500",
+            badgeGradient: "from-purple-500 to-pink-500",
+            borderColor: "border-purple-500/20",
+            hoverBorderColor: "hover:border-purple-400/40",
+            shadowColor: "hover:shadow-purple-500/20",
+            workTypeBg: "bg-purple-400/10",
+            workTypeText: "text-purple-400",
+            workTypeBorder: "border-purple-400/20",
+            employmentTypeBg: "bg-pink-400/10",
+            employmentTypeText: "text-pink-400",
+            employmentTypeBorder: "border-pink-400/20"
+          },
+          position: "right"
+        },
+        {
+          id: 5,
+          dateRange: "November 2021 - May 2022",
+          title: "Software Engineer",
+          company: "Recruit",
+          companyLink: "https://recruit.so/",
+          workType: "On-site",
+          employmentType: "Full-time",
+          description: "Contributed to multiple YC startups including Osmind (YC S20) and Replo (YC S21), focusing on code quality and UI development.",
+          achievements: [
+            "At Osmind (YC S20): wrote unit and E2E tests to achieve 80%+ coverage, boosting reliability and confidence in deployments",
+            "Migrated core codebase from JavaScript to TypeScript, improving maintainability and reducing production issues by 40%",
+            "At Replo (YC S21): created and refactored reusable UI components shared across the team"
+          ],
+          techStack: ["React.js", "TypeScript", "Jest", "Node.js", "Prisma", "Docker", "Tailwind"],
+          colors: {
+            primary: "pink",
+            secondary: "red",
+            gradient: "from-pink-400 via-red-400 to-orange-400",
+            dotGradient: "from-pink-400 to-red-500",
+            badgeGradient: "from-pink-500 to-red-500",
+            borderColor: "border-pink-500/20",
+            hoverBorderColor: "hover:border-pink-400/40",
+            shadowColor: "hover:shadow-pink-500/20",
+            workTypeBg: "bg-pink-400/10",
+            workTypeText: "text-pink-400",
+            workTypeBorder: "border-pink-400/20",
+            employmentTypeBg: "bg-orange-400/10",
+            employmentTypeText: "text-orange-300",
+            employmentTypeBorder: "border-orange-400/20"
+          },
+          position: "left"
+        }
+      ];
+
+      // Tech stack color mappings for experience section
+      const techStackColors = {
+        "TypeScript": { from: "emerald-500", to: "cyan-500", border: "emerald-400", text: "emerald-300" },
+        "Python": { from: "yellow-500", to: "blue-500", border: "yellow-400", text: "yellow-300" },
+        "Next.js": { from: "blue-500", to: "purple-500", border: "blue-400", text: "blue-300" },
+        "NestJS": { from: "purple-500", to: "pink-500", border: "purple-400", text: "purple-300" },
+        "AWS": { from: "pink-500", to: "red-500", border: "pink-400", text: "pink-300" },
+        "PostgreSQL": { from: "red-500", to: "orange-500", border: "red-400", text: "red-300" },
+        "Microservices": { from: "orange-500", to: "yellow-500", border: "orange-400", text: "orange-300" },
+        "Kafka": { from: "purple-500", to: "pink-500", border: "purple-400", text: "purple-300" },
+        "FastAPI": { from: "pink-500", to: "red-500", border: "pink-400", text: "pink-300" },
+        "MongoDB": { from: "purple-500", to: "pink-500", border: "purple-400", text: "purple-300" },
+        "Playwright": { from: "green-500", to: "purple-500", border: "purple-400", text: "purple-300" },
+        "Deno": { from: "pink-500", to: "red-500", border: "pink-400", text: "pink-300" },
+        "JavaScript": { from: "purple-500", to: "pink-500", border: "purple-400", text: "purple-300" },
+        "Serverless": { from: "orange-500", to: "yellow-500", border: "orange-400", text: "orange-300" },
+        "React.js": { from: "pink-500", to: "red-500", border: "pink-400", text: "pink-300" },
+        "Jest": { from: "orange-500", to: "yellow-500", border: "orange-400", text: "orange-300" },
+        "Node.js": { from: "yellow-500", to: "green-500", border: "yellow-400", text: "yellow-300" },
+        "Prisma": { from: "green-500", to: "emerald-500", border: "green-400", text: "green-300" },
+        "Docker": { from: "emerald-500", to: "teal-500", border: "emerald-400", text: "emerald-300" },
+        "Tailwind": { from: "teal-500", to: "cyan-500", border: "teal-400", text: "teal-300" },
+        "C++": { from: "blue-500", to: "indigo-500", border: "blue-400", text: "blue-300" },
+        "CUDA": { from: "green-500", to: "lime-500", border: "green-400", text: "green-300" },
+        "LangChain": { from: "teal-500", to: "emerald-500", border: "teal-400", text: "teal-300" },
+        "Azure OpenAI": { from: "sky-500", to: "blue-500", border: "sky-400", text: "sky-300" },
+        "Azure Live Voice API": { from: "sky-500", to: "indigo-500", border: "sky-400", text: "sky-300" },
+        "K-Means": { from: "violet-500", to: "purple-500", border: "violet-400", text: "violet-300" },
+        "LLM": { from: "fuchsia-500", to: "pink-500", border: "fuchsia-400", text: "fuchsia-300" },
+        "Unsupervised Learning": { from: "violet-500", to: "fuchsia-500", border: "violet-400", text: "violet-300" }
+      };
+
+      // Gradient colors for achievement bullets
+      const achievementGradients = [
+        "from-emerald-400 to-cyan-400",
+        "from-cyan-400 to-blue-400",
+        "from-blue-400 to-purple-400",
+        "from-purple-400 to-pink-400",
+        "from-pink-400 to-red-400",
+        "from-red-400 to-orange-400"
+      ];
+
+      // Function to render experience
+      function renderExperience() {
+        const experienceContainer = document.getElementById("experience-container");
+        if (!experienceContainer) return;
+
+        let experienceHTML = "";
+
+        experienceData.forEach((exp, index) => {
+          const isLeft = exp.position === "left";
+          const flexDirection = isLeft ? "md:flex-row" : "md:flex-row-reverse";
+          const marginClass = isLeft ? "md:mr-8" : "md:ml-8";
+          const isLast = index === experienceData.length - 1;
+
+          experienceHTML += `
+            <div class="${isLast ? '' : 'mb-6'} ${isLast ? '' : 'relative'} flex flex-col ${flexDirection} items-center">
+              <!-- Timeline Dot -->
+              <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${exp.colors.dotGradient} rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"></div>
+              
+              <!-- Content Card -->
+              <div class="w-full md:w-5/12 ml-0 ${marginClass} group">
+                <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl ${exp.colors.borderColor} ${exp.colors.hoverBorderColor} transition-all duration-500 transform hover:-translate-y-2 ${exp.colors.shadowColor}">
+                  <!-- Glow Effect -->
+                  <div class="absolute -inset-1 bg-gradient-to-r ${exp.colors.gradient} rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
+                  
+                  <div class="relative">
+                    <!-- Date Badge -->
+                    <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r ${exp.colors.badgeGradient} text-white rounded-full text-sm font-bold mb-4 shadow-lg">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      ${exp.dateRange}
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-${exp.colors.primary}-400 to-${exp.colors.secondary}-400 bg-clip-text text-transparent">
+                      ${exp.title}
+                    </h3>
+                    
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                      <a href="${exp.companyLink}" target="_blank" rel="noopener noreferrer" class="text-gray-300 font-semibold text-lg hover:text-emerald-300 transition-colors duration-300" title="Visit ${exp.company}">
+                        ${exp.company}
+                      </a>
+                      <span class="whitespace-nowrap text-xs px-1.5 py-0.5 rounded-full ${exp.colors.workTypeBg} ${exp.colors.workTypeText} ${exp.colors.workTypeBorder} border">${exp.workType}</span>
+                      <span class="whitespace-nowrap text-xs px-1.5 py-0.5 rounded-full ${exp.colors.employmentTypeBg} ${exp.colors.employmentTypeText} ${exp.colors.employmentTypeBorder} border">${exp.employmentType}</span>
+                    </div>
+                    
+                    <p class="text-gray-400 mb-6 leading-relaxed">${exp.description}</p>
+                    
+                    <!-- Achievement Pills -->
+                    <div class="space-y-3">
+                      ${exp.achievements.map((achievement, i) => `
+                        <div class="flex items-baseline group/item">
+                          <div class="w-2 h-2 bg-gradient-to-r ${achievementGradients[i % achievementGradients.length]} rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                          <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base">${achievement}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                    
+                    <!-- Tech Stack -->
+                    <div class="flex flex-wrap gap-2 mt-6">
+                      ${exp.techStack.map(tech => {
+                        const colors = techStackColors[tech] || { from: "gray-500", to: "gray-600", border: "gray-400", text: "gray-300" };
+                        return `<span class="px-3 py-1 bg-gradient-to-r from-${colors.from}/20 to-${colors.to}/20 border border-${colors.border}/30 text-${colors.text} rounded-full text-sm font-medium">${tech}</span>`;
+                      }).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Spacer for desktop -->
+              <div class="hidden block w-2/12"></div>
+            </div>
+          `;
+        });
+
+        experienceContainer.innerHTML = experienceHTML;
+      }
 
       // Skills data organized by categories
       const skillsData = [
@@ -1058,6 +1355,17 @@
                     title="TypeScript - Statically typed JavaScript that scales"
                   />
                   TypeScript
+                </span>
+                <span
+                  class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full text-base font-medium flex items-center gap-2"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                    class="w-5 h-5"
+                    alt="Python"
+                    title="Python - Versatile language for AI, ML, and automation"
+                  />
+                  Python
                 </span>
                 <span
                   class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-base font-medium flex items-center gap-2"
@@ -1969,596 +2277,9 @@
           <div
             class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-cyan-400 to-purple-400 rounded-full hidden md:block"
           ></div>
-          <div class="space-y-16">
-            <!-- Experience 1 -->
-            <div class="mb-6 flex flex-col md:flex-row items-center">
-              <!-- Timeline Dot -->
-              <div
-                class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"
-              ></div>
-              <!-- Content Card -->
-              <div class="w-full md:w-5/12 ml-0 md:mr-8 group">
-                <div
-                  class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-emerald-500/20"
-                >
-                  <!-- Glow Effect -->
-                  <div
-                    class="absolute -inset-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"
-                  ></div>
-                  <div class="relative">
-                    <!-- Date Badge -->
-                    <div
-                      class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4 mr-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                      March 2024 - Current
+          <div id="experience-container" class="space-y-16">
+            <!-- Experience items will be rendered here by JavaScript -->
                     </div>
-                    <h3
-                      class="text-2xl font-bold mb-2 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"
-                    >
-                      Full Stack Engineer
-                    </h3>
-                    <p
-                      class="text-gray-300 font-semibold mb-4 text-lg flex items-center"
-                    >
-                      <a
-                        href="https://www.greenpantsstudio.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-emerald-300 transition-colors duration-300"
-                        title="Visit Green Pants Studio"
-                        >Green Pants Studio</a
-                      >
-                      <span
-                        class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/20 flex items-center"
-                        >Remote</span
-                      >
-                      <span
-                        class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 flex items-center"
-                        >Full-time</span
-                      >
-                    </p>
-                    <p class="text-gray-400 mb-6 leading-relaxed">
-                      A technology consulting agency providing engineering talent to external clients.
-                    </p>
-                    <!-- Achievement Pills -->
-                    <div class="space-y-3">
-                      <div class="flex items-baseline group/item">
-                        <div
-                          class="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                        ></div>
-                        <span
-                          class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                          >Engineered and launched a scalable livestream
-                          platform handling 10K+ concurrent viewers, resulting
-                          in a 40% increase in seller engagement</span
-                        >
-                      </div>
-                      <div class="flex items-baseline group/item">
-                        <div
-                          class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                        ></div>
-                        <span
-                          class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                          >Led as Product Manager and engineer integrating
-                          Freightquote API, automating U.S. truckload logistics;
-                          reduced manual effort by 70%, errors by 50%, and
-                          improved real-time shipment tracking</span
-                        >
-                      </div>
-                      <div class="flex items-baseline group/item">
-                        <div
-                          class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                        ></div>
-                        <span
-                          class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                          >Implemented CI/CD pipelines to streamline
-                          deployments, reducing errors by 60% and accelerating
-                          release cycles.</span
-                        >
-                      </div>
-                      <div class="flex items-baseline group/item">
-                        <div
-                          class="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                        ></div>
-                        <span
-                          class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                          >Built a CSV-based bulk product upload system that
-                          streamlined catalog onboarding, saving sellers 90% of
-                          time compared to manual entry</span
-                        >
-                      </div>
-                      <div class="flex items-baseline group/item">
-                        <div
-                          class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                        ></div>
-                        <span
-                          class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                          >Developed a custom CRM to enable sellers to easily
-                          invite buyers into groups, enhancing engagement by
-                          30%.</span
-                        >
-                      </div>
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                      >
-                        Defined and implemented integration tests to ensure API
-                        integrity and maintain the reliability of the system.
-                      </span>
-                    </div>
-                  </div>
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-2 mt-6">
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 border border-emerald-400/30 text-emerald-300 rounded-full text-sm font-medium"
-                      >TypeScript</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 text-cyan-300 rounded-full text-sm font-medium"
-                      >Python</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-300 rounded-full text-sm font-medium"
-                      >Next.js</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
-                      >NestJS</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-400/30 text-pink-300 rounded-full text-sm font-medium"
-                      >AWS</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-400/30 text-red-300 rounded-full text-sm font-medium"
-                      >PostgreSQL</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-400/30 text-orange-300 rounded-full text-sm font-medium"
-                      >Microservices</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Spacer for desktop -->
-            <div class="hidden block w-2/12"></div>
-          </div>
-          <!-- Experience 2 -->
-          <div
-            class="mb-6 relative flex flex-col md:flex-row-reverse items-center"
-          >
-            <!-- Timeline Dot -->
-            <div
-              class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"
-            ></div>
-            <!-- Content Card -->
-            <div class="w-full md:w-5/12 ml-0 md:ml-8 group">
-              <div
-                class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-blue-500/20"
-              >
-                <!-- Glow Effect -->
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"
-                ></div>
-                <div class="relative">
-                  <!-- Date Badge -->
-                  <div
-                    class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    November 2022 - March 2024
-                  </div>
-                  <h3
-                    class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-                  >
-                    Founding Software Engineer
-                    <!-- <span class="ml-2 text-sm px-2 py-1 rounded-full bg-purple-400/10 text-purple-400 border border-purple-400/20">Full-time</span> -->
-                  </h3>
-                  <p
-                    class="text-gray-300 font-semibold mb-4 text-lg flex items-center"
-                  >
-                    <a
-                      href="https://sendout.ai/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="hover:text-emerald-300 transition-colors duration-300"
-                      title="Visit Sendout - AI-Powered Email Marketing Platform"
-                      >Sendout</a
-                    >
-                    <span
-                      class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-blue-400/10 text-blue-400 border border-blue-400/20 flex items-center"
-                      >Remote</span
-                    >
-                    <span
-                      class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-purple-400/10 text-purple-400 border border-purple-400/20 flex items-center"
-                      >Full-time</span
-                    >
-                  </p>
-                  <p class="text-gray-400 mb-6 leading-relaxed">
-                    Led core engineering initiatives in automation and security,
-                    significantly improving system efficiency and resilience.
-                  </p>
-                  <!-- Achievement Pills -->
-                  <div class="space-y-3">
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Reverse-engineered LinkedIn's private Voyager API for
-                        automation, cutting manual effort and costs by
-                        80%.</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Implemented a workflow sequence builder using React
-                        Flow to orchestrate outreach campaigns.</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Built identity-spoofing mechanisms to raise account
-                        security from 20% to 80%.</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Built LinkedIn data scrapers for automated collection
-                        from searches, groups, events and messages.</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Developed customizable workflow sequence builder to
-                        automate outreach events.</span
-                      >
-                    </div>
-                  </div>
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-2 mt-6">
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-300 rounded-full text-sm font-medium"
-                      >TypeScript</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
-                      >Kafka</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-400/30 text-pink-300 rounded-full text-sm font-medium"
-                      >FastAPI</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 text-blue-300 rounded-full text-sm font-medium"
-                      >NestJS</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
-                      >MongoDB</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-green-500/20 to-purple-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
-                      >Playwright</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Spacer for desktop -->
-            <div class="hidden block w-2/12"></div>
-          </div>
-          <!-- Experience 3 -->
-          <div class="mb-6 relative flex flex-col md:flex-row items-center">
-            <!-- Timeline Dot -->
-            <div
-              class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"
-            ></div>
-            <!-- Content Card -->
-            <div class="w-full md:w-5/12 ml-0 md:mr-8 group">
-              <div
-                class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-purple-500/20 hover:border-purple-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-purple-500/20"
-              >
-                <!-- Glow Effect -->
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"
-                ></div>
-                <div class="relative">
-                  <!-- Date Badge -->
-                  <div
-                    class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    July 2022 - October 2022
-                  </div>
-                  <h3
-                    class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-                  >
-                    Back End Engineer
-                  </h3>
-                  <p
-                    class="text-gray-300 font-semibold mb-4 text-lg flex items-center"
-                  >
-                    <a
-                      href="https://azimuth.fm/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="hover:text-emerald-300 transition-colors duration-300"
-                      title="Visit Azimuth - Audio Content Platform"
-                      >Azimuth</a
-                    >
-                    <span
-                      class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-purple-400/10 text-purple-400 border border-purple-400/20 flex items-center"
-                      >Remote</span
-                    >
-                    <span
-                      class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-pink-400/10 text-pink-400 border border-pink-400/20 flex items-center"
-                      >Contract</span
-                    >
-                  </p>
-                  <p class="text-gray-400 mb-6 leading-relaxed">
-                    Enhanced system performance and optimized backend processes
-                    for radio song filtering and dashboard operations.
-                  </p>
-                  <!-- Achievement Pills -->
-                  <div class="space-y-3">
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Migrated Python scripts to JavaScript, enhancing the
-                        overall development ecosystem</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Developed edge functions with Deno to efficiently
-                        filter songs played on the radio</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Reduced memory consumption in microcontrollers and
-                        optimized dashboard processing time from 140s to
-                        5s</span
-                      >
-                    </div>
-                  </div>
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-2 mt-6">
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-400/30 text-pink-300 rounded-full text-sm font-medium"
-                      >Deno</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 text-purple-300 rounded-full text-sm font-medium"
-                      >JavaScript</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-400/30 text-red-300 rounded-full text-sm font-medium"
-                      >Python</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-400/30 text-orange-300 rounded-full text-sm font-medium"
-                      >Serverless</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Spacer for desktop -->
-            <div class="hidden block w-2/12"></div>
-          </div>
-          <!-- Experience 4 -->
-          <div class="relative flex flex-col md:flex-row-reverse items-center">
-            <!-- Timeline Dot -->
-            <div
-              class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-pink-400 to-red-500 rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"
-            ></div>
-            <!-- Content Card -->
-            <div class="w-full md:w-5/12 ml-0 md:ml-8 group">
-              <div
-                class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-pink-500/20 hover:border-pink-400/40 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-pink-500/20"
-              >
-                <!-- Glow Effect -->
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"
-                ></div>
-                <div class="relative">
-                  <!-- Date Badge -->
-                  <div
-                    class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full text-sm font-bold mb-4 shadow-lg"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    November 2021 - May 2022
-                  </div>
-                  <h3
-                    class="text-2xl font-bold mb-2 bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent"
-                  >
-                    Software Engineer
-                  </h3>
-                  <p
-                    class="text-gray-300 font-semibold mb-4 text-lg flex items-center"
-                  >
-                    <a
-                      href="https://recruit.so/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="hover:text-emerald-300 transition-colors duration-300"
-                      title="Visit Recruit - Recruitment Management Platform"
-                      >Recruit</a
-                    >
-                    <span
-                      class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-pink-400/10 text-pink-400 border border-pink-400/20 flex items-center"
-                      >On-site</span
-                    >
-                    <span
-                      class="ml-2 text-xs px-1.5 py-0.5 rounded-full bg-orange-400/10 text-orange-300 border border-orange-400/20 flex items-center"
-                      >Full-time</span
-                    >
-                  </p>
-                  <p class="text-gray-400 mb-6 leading-relaxed">
-                    Contributed to multiple YC startups including Osmind (YC
-                    S20) and Replo (YC S21), focusing on code quality and UI
-                    development.
-                  </p>
-                  <!-- Achievement Pills -->
-                  <div class="space-y-3">
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >At Osmind (YC S20): wrote unit and E2E tests to achieve
-                        80%+ coverage, boosting reliability and confidence in
-                        deployments</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-red-400 to-orange-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >Migrated core codebase from JavaScript to TypeScript,
-                        improving maintainability and reducing production issues
-                        by 40%</span
-                      >
-                    </div>
-                    <div class="flex items-baseline group/item">
-                      <div
-                        class="w-2 h-2 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"
-                      ></div>
-                      <span
-                        class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base"
-                        >At Replo (YC S21): created and refactored reusable UI
-                        components shared across the team</span
-                      >
-                    </div>
-                  </div>
-                  <!-- Tech Stack -->
-                  <div class="flex flex-wrap gap-2 mt-6">
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-400/30 text-pink-300 rounded-full text-sm font-medium"
-                      >React.js</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-400/30 text-red-300 rounded-full text-sm font-medium"
-                      >TypeScript</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-400/30 text-orange-300 rounded-full text-sm font-medium"
-                      >Jest</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-green-500/20 border border-yellow-400/30 text-yellow-300 rounded-full text-sm font-medium"
-                      >Node.js</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 text-green-300 rounded-full text-sm font-medium"
-                      >Prisma</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-400/30 text-emerald-300 rounded-full text-sm font-medium"
-                      >Docker</span
-                    >
-                    <span
-                      class="px-3 py-1 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-400/30 text-teal-300 rounded-full text-sm font-medium"
-                      >Tailwind</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Spacer for desktop -->
-            <div class="hidden block w-2/12"></div>
-          </div>
         </div>
       </div>
     </section>
