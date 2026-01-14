@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import "./animations.css";
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom theme extensions for Tailwind v4 */
+@theme {
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #60A5FA;
+}
+
+/* Proficiency bar styles */
+.proficiency-bar {
+  @apply h-1.5 bg-gray-700 rounded-full overflow-hidden;
+}
+
+.proficiency-fill {
+  @apply h-full rounded-full transition-all duration-500;
+}
+
+/* Skill scroll container */
+.skill-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.skill-scroll::-webkit-scrollbar-track {
+  @apply bg-gray-800 rounded;
+}
+
+.skill-scroll::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded;
+}
+
+.skill-scroll::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
