@@ -65,16 +65,16 @@
 @keyframes clock-tick {
   0%,
   100% {
-    transform: rotate(0deg);
+    rotate: 0deg;
   }
   25% {
-    transform: rotate(90deg);
+    rotate: 90deg;
   }
   50% {
-    transform: rotate(180deg);
+    rotate: 180deg;
   }
   75% {
-    transform: rotate(270deg);
+    rotate: 270deg;
   }
 }
 

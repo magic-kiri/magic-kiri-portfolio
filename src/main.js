@@ -19,6 +19,7 @@ function renderApp() {
     ${renderHero()}
     <div class="section-separator"></div>
     ${renderAbout()}
+    <div class="section-separator"></div>
     ${renderTimezone()}
     <div class="section-separator"></div>
     ${renderSkills()}
