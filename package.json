@@ -3,9 +3,8 @@
   "homepage": "https://magic-kiri.github.io/magic-kiri-portfolio/",
   "version": "1.0.0",
   "type": "module",
-  "packageManager": "yarn@4.9.1",
   "scripts": {
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",

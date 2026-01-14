@@ -36,7 +36,7 @@ Migration of a single 3,084-line `index.html` portfolio to a modular Vite-based 
 | CSS Framework | Tailwind CSS | Already in use, via npm now |
 | Components | Vanilla JS modules | No framework overhead, easy to understand |
 | Data Format | JSON files | LLM-friendly, easy to edit |
-| Package Manager | Yarn | User preference |
+| Package Manager | npm | Default Node.js package manager |
 
 ---
 
@@ -61,7 +61,7 @@ portfolio/
 ├── index.html (~30 lines)
 ├── vite.config.js
 ├── package.json
-├── yarn.lock
+├── package-lock.json
 ├── docs/
 │   └── MIGRATION.md (this file)
 ├── .github/workflows/deploy.yml
@@ -113,7 +113,7 @@ portfolio/
 - [x] Create git branch
 
 ### Phase 1: Setup Vite Project
-- [ ] Initialize yarn project
+- [ ] Initialize npm project
 - [ ] Install dependencies
 - [ ] Create config files
 - [ ] Create CLAUDE.md
@@ -163,7 +163,7 @@ After migration, verify:
 - [ ] All hover effects work
 - [ ] Smooth scroll navigation
 - [ ] Mobile/tablet/desktop responsive
-- [ ] `yarn build` succeeds
+- [ ] `npm run build` succeeds
 - [ ] GitHub Actions deploys
 
 ---

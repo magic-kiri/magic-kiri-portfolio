@@ -39,9 +39,9 @@ src/
 
 ## Commands
 ```bash
-yarn dev      # Start dev server (http://localhost:5173)
-yarn build    # Build for production
-yarn preview  # Preview production build
+npm run dev      # Start dev server (http://localhost:5173)
+npm run build    # Build for production
+npm run preview  # Preview production build
 ```
 
 ## Adding Content
