@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Boibitan",
+    "icon": "📚",
+    "description": "Modern e-commerce platform for books with secure payments, wishlist management, and seller dashboards.",
+    "features": [
+      "Secure payment integration",
+      "Seller dashboard & analytics",
+      "Wishlist & review system"
+    ],
+    "tags": ["E-commerce", "Web API", "Vercel"],
+    "github": "https://github.com/magic-kiri/Boibitaan-Web-API-Project",
+    "live": "https://boibitaan-web-api-project.vercel.app/",
+    "color": "pink"
+  },
+  {
+    "id": 2,
+    "name": "OEMS",
+    "icon": "📝",
+    "description": "Next.js-based online exam management system with auto-grading, real-time monitoring, and analytics.",
+    "features": [
+      "Secure authentication system",
+      "Real-time exam monitoring",
+      "Analytics dashboard"
+    ],
+    "tags": ["Next.js", "TypeScript", "Real-time"],
+    "github": "https://github.com/magic-kiri/OEMS",
+    "live": null,
+    "color": "purple"
+  },
+  {
+    "id": 3,
+    "name": "GeoCal",
+    "icon": "📐",
+    "description": "JavaFx web application for interactive 2D geometry with precise calculations and RESTful APIs.",
+    "features": [
+      "Interactive 2D shape manipulation",
+      "Precise geometric calculations",
+      "Export and sharing capabilities"
+    ],
+    "tags": ["JavaFx", "REST API", "Geometry"],
+    "github": "https://github.com/magic-kiri/MyGeoCal/",
+    "live": null,
+    "color": "blue"
+  }
+]

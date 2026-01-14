@@ -1,0 +1,41 @@
+{
+  "university": {
+    "name": "Shahjalal University of Science and Technology",
+    "location": "Sylhet, Bangladesh",
+    "degree": "B.Sc. in Computer Science & Engineering",
+    "years": "2018 - 2022",
+    "cgpa": "3.86/4.00",
+    "rank": "4th",
+    "achievements": [
+      "CGPA: 3.86/4.00",
+      "Ranked 4th in the graduating cohort, reflecting sustained academic excellence",
+      "Deep expertise in software development, algorithms, data structures, and system design, demonstrated through rigorous coursework and hands-on projects"
+    ]
+  },
+  "courses": [
+    {
+      "icon": "💻",
+      "name": "Advanced Algorithms",
+      "description": "Data structures & algorithmic complexity",
+      "color": "blue"
+    },
+    {
+      "icon": "🔐",
+      "name": "System Security",
+      "description": "Cryptography & network security",
+      "color": "purple"
+    },
+    {
+      "icon": "🤖",
+      "name": "AI & ML",
+      "description": "Machine learning fundamentals",
+      "color": "pink"
+    },
+    {
+      "icon": "🌐",
+      "name": "Web Systems",
+      "description": "Modern web architectures",
+      "color": "blue"
+    }
+  ]
+}
