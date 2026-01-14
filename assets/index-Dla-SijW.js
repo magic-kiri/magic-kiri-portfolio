@@ -38,7 +38,7 @@
         <a href="#contact" class="text-white hover:text-rose-500 transition-colors duration-300">Contact</a>
       </div>
     </div>
-  `}function x(){const t=document.getElementById("mobile-menu"),o=document.getElementById("mobile-menu-button"),r=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}o?.addEventListener("click",e),r?.addEventListener("click",e),i.forEach(a=>{a.addEventListener("click",e)}),document.addEventListener("click",a=>{!t.contains(a.target)&&!o.contains(a.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){const t="/magic-kiri-portfolio/";return`
+  `}function x(){const t=document.getElementById("mobile-menu"),o=document.getElementById("mobile-menu-button"),r=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}o?.addEventListener("click",e),r?.addEventListener("click",e),i.forEach(a=>{a.addEventListener("click",e)}),document.addEventListener("click",a=>{!t.contains(a.target)&&!o.contains(a.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){return`
     <!-- Hero Section -->
     <section id="home" class="relative section-bg-pattern section-padding bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-black/50 dark:from-black/50 dark:via-gray-900/50 dark:to-gray-800/50 overflow-hidden">
       <!-- Background Pattern -->
@@ -96,7 +96,7 @@
                   Next.Js
                 </span>
                 <span class="px-4 py-2 bg-neutral-900 dark:bg-gray-800/50 text-gray-800 dark:text-gray-300 rounded-full text-base font-medium flex items-center gap-2">
-                  <img src="${t}aws.svg" class="w-5 h-5" alt="AWS" title="Amazon Web Services - Cloud computing platform" />
+                  <img src="/aws.svg" class="w-5 h-5" alt="AWS" title="Amazon Web Services - Cloud computing platform" />
                   AWS
                 </span>
               </div>
@@ -155,7 +155,7 @@
               <!-- Main Image Container -->
               <div class="relative w-80 h-80 rounded-full overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-2">
                 <div class="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800">
-                  <img src="${t}Photo_me.jpg" alt="Kiriti Mukherjee" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" title="Kiriti Mukherjee - Full Stack Engineer" />
+                  <img src="/Photo_me.jpg" alt="Kiriti Mukherjee" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" title="Kiriti Mukherjee - Full Stack Engineer" />
                 </div>
               </div>
 
@@ -164,10 +164,10 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-8 h-8" title="React - A JavaScript library for building user interfaces" />
               </div>
               <div class="absolute top-1/2 -right-8 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 1s">
-                <img src="${t}aws.svg" alt="AWS" class="w-8 h-8" title="AWS Cloud - Leading cloud computing platform" />
+                <img src="/aws.svg" alt="AWS" class="w-8 h-8" title="AWS Cloud - Leading cloud computing platform" />
               </div>
               <div class="absolute bottom-8 -left-4 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 2s">
-                <img src="${t}typescript.svg" alt="TS" class="w-8 h-8" title="TypeScript - JavaScript that scales" />
+                <img src="/typescript.svg" alt="TS" class="w-8 h-8" title="TypeScript - JavaScript that scales" />
               </div>
             </div>
           </div>
