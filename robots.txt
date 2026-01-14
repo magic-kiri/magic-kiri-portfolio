@@ -1,0 +1,10 @@
+# /robots.txt  – minimal & Google-friendly
+User-agent: *
+Allow: /
+
+# Optional: block areas that really must stay private
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+Sitemap: https://magickiri.com/sitemap.xml
