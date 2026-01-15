@@ -375,7 +375,7 @@
       </div>
 
       <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto">
           <!-- Enhanced Header -->
           <div class="text-center mb-16">
             <div
@@ -788,7 +788,7 @@ ${a.map(i).join("")}
         </div>
 
         <!-- Main Education Card -->
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto">
           <div class="group relative">
             <!-- Glow Effect -->
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
