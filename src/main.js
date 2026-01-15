@@ -7,6 +7,7 @@ import { renderTimezone, initTimezoneClocks } from './components/Timezone.js';
 import { renderSkills } from './components/Skills.js';
 import { renderExperience } from './components/Experience.js';
 import { renderEducation } from './components/Education.js';
+import { renderCertifications } from './components/Certifications.js';
 import { renderContact, initContactForm } from './components/Contact.js';
 import { renderFooter } from './components/Footer.js';
 
@@ -27,6 +28,8 @@ function renderApp() {
     ${renderExperience()}
     <div class="section-separator"></div>
     ${renderEducation()}
+    <div class="section-separator"></div>
+    ${renderCertifications()}
     <div class="section-separator"></div>
     ${renderContact()}
     <div class="section-separator-full"></div>

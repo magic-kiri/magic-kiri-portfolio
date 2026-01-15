@@ -1,0 +1,24 @@
+{
+  "certifications": [
+    {
+      "id": 1,
+      "name": "Professional Cloud Architect",
+      "issuer": "Google Cloud",
+      "issueDate": "October 2025",
+      "description": "Professional Cloud Architects enable organizations to leverage Google Cloud technologies. With a thorough understanding of cloud architecture and Google Cloud, they design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives.",
+      "level": "Advanced",
+      "skills": [
+        "Cloud Architecture",
+        "Google Cloud Platform",
+        "Cloud Security",
+        "Networking",
+        "Scalability",
+        "Databases",
+        "GKE",
+        "IAM"
+      ],
+      "credentialUrl": "https://www.credly.com/badges/8ce7a003-86f6-4d38-b58d-6f5c6b31b159/public_url",
+      "badgeImage": "https://images.credly.com/size/680x680/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png"
+    }
+  ]
+}

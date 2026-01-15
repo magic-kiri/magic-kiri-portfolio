@@ -17,6 +17,7 @@ export function renderNavigation() {
             <a href="#skills" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-amber-500 hover:to-red-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-amber-500 after:to-red-500 hover:after:w-full after:transition-all after:duration-300" title="View my technical skills and expertise">Skills</a>
             <a href="#experience" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300" title="Check out my professional experience">Experience</a>
             <a href="#education" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-teal-500 hover:to-emerald-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-teal-500 after:to-emerald-500 hover:after:w-full after:transition-all after:duration-300" title="View my educational background">Education</a>
+            <a href="#certifications" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-cyan-500 hover:after:w-full after:transition-all after:duration-300" title="View my professional certifications">Certifications</a>
             <a href="#contact" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-rose-500 hover:to-yellow-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-rose-500 after:to-yellow-500 hover:after:w-full after:transition-all after:duration-300" title="Get in touch with me">Contact</a>
           </div>
         </div>
@@ -36,6 +37,7 @@ export function renderNavigation() {
         <a href="#skills" class="text-white hover:text-amber-500 transition-colors duration-300">Skills</a>
         <a href="#experience" class="text-white hover:text-green-500 transition-colors duration-300">Experience</a>
         <a href="#education" class="text-white hover:text-teal-500 transition-colors duration-300">Education</a>
+        <a href="#certifications" class="text-white hover:text-cyan-500 transition-colors duration-300">Certifications</a>
         <a href="#contact" class="text-white hover:text-rose-500 transition-colors duration-300">Contact</a>
       </div>
     </div>

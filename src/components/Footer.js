@@ -21,7 +21,6 @@ export function renderFooter() {
           </div>
           <div class="text-center md:text-right">
             <p class="text-gray-400 mb-2">&copy; ${currentYear} Kiriti Mukherjee. All rights reserved.</p>
-            <p class="text-gray-500 text-sm">Made with love and lots of coffee</p>
           </div>
         </div>
       </div>
