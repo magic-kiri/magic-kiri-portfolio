@@ -1,8 +1,8 @@
-(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const a of e)if(a.type==="childList")for(const n of a.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const a={};return e.integrity&&(a.integrity=e.integrity),e.referrerPolicy&&(a.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?a.credentials="include":e.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function i(e){if(e.ep)return;e.ep=!0;const a=o(e);fetch(e.href,a)}})();function x(){return`
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const a of e)if(a.type==="childList")for(const n of a.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const a={};return e.integrity&&(a.integrity=e.integrity),e.referrerPolicy&&(a.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?a.credentials="include":e.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function i(e){if(e.ep)return;e.ep=!0;const a=o(e);fetch(e.href,a)}})();function h(){return`
     <!-- Navigation -->
     <nav class="fixed lg:top-0 left-0 right-0 z-50 lg:z-50 bg-gray-900/95 dark:bg-black/95 backdrop-blur-lg shadow-lg border-b border-purple-900">
       <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 py-4 flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent relative z-50 hover:scale-105 transition-transform duration-300" title="KIRITI MUKHERJEE - Full Stack Engineer">KIRITI MUKHERJEE</a>
+        <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent relative z-50 hover:scale-105 transition-transform duration-300" title="KIRITI MUKHERJEE - Full Stack Engineer">KIRITI MUKHERJEE</a>
         <div class="flex items-center">
           <!-- Mobile menu button -->
           <button id="mobile-menu-button" class="lg:hidden text-white p-2" aria-label="Toggle menu">
@@ -11,7 +11,7 @@
             </svg>
           </button>
           <div class="hidden lg:flex items-center space-x-8">
-            <a href="#" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300" title="Home">Home</a>
+            <a href="#home" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300" title="Home">Home</a>
             <a href="#about" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-pink-500 after:to-orange-500 hover:after:w-full after:transition-all after:duration-300" title="Learn more about me">About</a>
             <a href="#skills" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-amber-500 hover:to-red-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-amber-500 after:to-red-500 hover:after:w-full after:transition-all after:duration-300" title="View my technical skills and expertise">Skills</a>
             <a href="#experience" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300" title="Check out my professional experience">Experience</a>
@@ -38,7 +38,7 @@
         <a href="#contact" class="text-white hover:text-rose-500 transition-colors duration-300">Contact</a>
       </div>
     </div>
-  `}function h(){const t=document.getElementById("mobile-menu"),r=document.getElementById("mobile-menu-button"),o=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}r?.addEventListener("click",e),o?.addEventListener("click",e),i.forEach(a=>{a.addEventListener("click",e)}),document.addEventListener("click",a=>{!t.contains(a.target)&&!r.contains(a.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){return`
+  `}function x(){const t=document.getElementById("mobile-menu"),r=document.getElementById("mobile-menu-button"),o=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}r?.addEventListener("click",e),o?.addEventListener("click",e),i.forEach(a=>{a.addEventListener("click",e)}),document.addEventListener("click",a=>{!t.contains(a.target)&&!r.contains(a.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){return`
     <!-- Hero Section -->
     <section id="home" class="relative section-bg-pattern section-padding bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-black/50 dark:from-black/50 dark:via-gray-900/50 dark:to-gray-800/50 overflow-hidden">
       <!-- Background Pattern -->
@@ -1020,7 +1020,7 @@ ${r.map(i).join("")}
       </div>
     </footer>
   `}function le(){const t=document.getElementById("app");t.innerHTML=`
-    ${x()}
+    ${h()}
     ${y()}
     <div class="section-separator"></div>
     ${k()}
@@ -1036,4 +1036,4 @@ ${r.map(i).join("")}
     ${ae()}
     <div class="section-separator-full"></div>
     ${ne()}
-  `}function se(){h(),w(),S(),ie()}document.addEventListener("DOMContentLoaded",()=>{le(),se()});
+  `}function se(){x(),w(),S(),ie()}document.addEventListener("DOMContentLoaded",()=>{le(),se()});
