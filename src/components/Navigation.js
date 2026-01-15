@@ -3,7 +3,7 @@ export function renderNavigation() {
     <!-- Navigation -->
     <nav class="fixed lg:top-0 left-0 right-0 z-50 lg:z-50 bg-gray-900/95 dark:bg-black/95 backdrop-blur-lg shadow-lg border-b border-purple-900">
       <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 py-4 flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent relative z-50 hover:scale-105 transition-transform duration-300" title="KIRITI MUKHERJEE - Full Stack Engineer">KIRITI MUKHERJEE</a>
+        <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-white to-white bg-clip-text text-transparent relative z-50 hover:scale-105 transition-transform duration-300" title="KIRITI MUKHERJEE - Full Stack Engineer">KIRITI MUKHERJEE</a>
         <div class="flex items-center">
           <!-- Mobile menu button -->
           <button id="mobile-menu-button" class="lg:hidden text-white p-2" aria-label="Toggle menu">
@@ -12,7 +12,7 @@ export function renderNavigation() {
             </svg>
           </button>
           <div class="hidden lg:flex items-center space-x-8">
-            <a href="#" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300" title="Home">Home</a>
+            <a href="#home" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-purple-500 hover:after:w-full after:transition-all after:duration-300" title="Home">Home</a>
             <a href="#about" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-pink-500 after:to-orange-500 hover:after:w-full after:transition-all after:duration-300" title="Learn more about me">About</a>
             <a href="#skills" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-amber-500 hover:to-red-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-amber-500 after:to-red-500 hover:after:w-full after:transition-all after:duration-300" title="View my technical skills and expertise">Skills</a>
             <a href="#experience" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300" title="Check out my professional experience">Experience</a>

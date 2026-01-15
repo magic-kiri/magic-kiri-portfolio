@@ -11,25 +11,35 @@
     <meta name="keywords" content="Software Engineer, Full Stack Developer, Web Development, Cloud Computing, Portfolio" />
     <meta name="author" content="Kiriti Mukherjee" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://magickiri.com" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#111827" />
+    <link rel="canonical" href="https://magickiri.com/" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kiriti Mukherjee | Software Engineer" />
     <meta property="og:description" content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications." />
-    <meta property="og:image" content="/photo_64.png" />
-    <meta property="og:url" content="https://magickiri.com" />
+    <meta property="og:site_name" content="Kiriti Mukherjee" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://magickiri.com/Photo_me.jpg" />
+    <meta property="og:image:alt" content="Kiriti Mukherjee - Full Stack Engineer" />
+    <meta property="og:url" content="https://magickiri.com/" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Kiriti Mukherjee | Software Engineer" />
     <meta name="twitter:description" content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications." />
-    <meta name="twitter:image" content="/photo_64.png" />
+    <meta name="twitter:image" content="https://magickiri.com/Photo_me.jpg" />
+    <meta name="twitter:image:alt" content="Kiriti Mukherjee - Full Stack Engineer" />
 
     <!-- LinkedIn Meta Tags -->
     <meta property="linkedin:title" content="Kiriti Mukherjee | Software Engineer" />
     <meta property="linkedin:description" content="Software Engineer specializing in full-stack development, cloud computing, and building scalable applications." />
-    <meta property="linkedin:image" content="/photo_64.png" />
+    <meta property="linkedin:image" content="https://magickiri.com/Photo_me.jpg" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6WZFR6EZ23"></script>
@@ -44,20 +54,97 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Kiriti Mukherjee",
-        "jobTitle": "Software Engineer",
-        "url": "https://magickiri.com",
-        "image": "/photo_64.png",
-        "sameAs": [
-          "https://github.com/magic-kiri",
-          "https://linkedin.com/in/magic-kiri"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://magickiri.com/#website",
+            "url": "https://magickiri.com/",
+            "name": "Kiriti Mukherjee",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://magickiri.com/#person",
+            "name": "Kiriti Mukherjee",
+            "jobTitle": "Software Engineer",
+            "description": "Full Stack Engineer specializing in full-stack development, cloud computing, and building scalable applications.",
+            "url": "https://magickiri.com/",
+            "image": "https://magickiri.com/Photo_me.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Dhaka",
+              "addressCountry": "BD"
+            },
+            "sameAs": [
+              "https://github.com/magic-kiri",
+              "https://linkedin.com/in/magic-kiri",
+              "https://www.upwork.com/freelancers/~01c7a18d6a5053d4b3"
+            ]
+          }
         ]
       }
     </script>
   </head>
   <body class="bg-gray-900 text-gray-200 transition-colors duration-300">
-    <div id="app"></div>
+    <!--
+      SEO/No-JS fallback content:
+      This gets replaced by `src/main.js` on load, but gives crawlers meaningful HTML to index.
+    -->
+    <div id="app">
+      <header>
+        <nav aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+      <main id="home">
+        <h1>Kiriti Mukherjee — Full Stack Engineer</h1>
+        <p>
+          Software Engineer specializing in full-stack development, cloud computing, and building scalable applications.
+        </p>
+        <p>
+          Links:
+          <a href="https://github.com/magic-kiri" rel="me">GitHub</a>,
+          <a href="https://linkedin.com/in/magic-kiri" rel="me">LinkedIn</a>.
+        </p>
+
+        <section id="about">
+          <h2>About</h2>
+          <p>
+            I build scalable web applications and distributed systems with TypeScript, Python, and cloud technologies.
+          </p>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <p>Full-stack development, cloud infrastructure (AWS), TypeScript, Python, Node.js, and modern web tooling.</p>
+        </section>
+
+        <section id="experience">
+          <h2>Experience</h2>
+          <p>See my work history and key achievements in the Experience section.</p>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <p>Education background and selected projects.</p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>
+            Email: <a href="mailto:kimuapon@gmail.com">kimuapon@gmail.com</a>
+          </p>
+        </section>
+      </main>
+      <noscript>
+        <p>This site works best with JavaScript enabled.</p>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

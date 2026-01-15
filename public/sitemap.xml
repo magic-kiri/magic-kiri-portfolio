@@ -3,40 +3,8 @@
   <!-- Homepage -->
   <url>
     <loc>https://magickiri.com/</loc>
-    <lastmod>2024-03-24</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- About Section (assuming it's a section or separate page) -->
-  <url>
-    <loc>https://magickiri.com/#about</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Projects Section -->
-  <url>
-    <loc>https://magickiri.com/#projects</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Experience Section -->
-  <url>
-    <loc>https://magickiri.com/#experience</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://magickiri.com/#contact</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset> 
+</urlset>
