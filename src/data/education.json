@@ -12,6 +12,32 @@
       "Deep expertise in software development, algorithms, data structures, and system design, demonstrated through rigorous coursework and hands-on projects"
     ]
   },
+  "thesis": {
+    "title": "BlockURS: A Blockchain-based Unified Reputation System",
+    "type": "Bachelor of Science Thesis",
+    "date": "February 2023",
+    "supervisor": {
+      "name": "Dr. Farida Chowdhury",
+      "title": "Professor, Dept. of CSE, BRAC University"
+    },
+    "collaborator": "Kiriti Mukherjee",
+    "description": "Designed and developed a novel blockchain-based reputation system that unifies reputation scores across multiple domains into a single, trustworthy metric. The system addresses critical limitations in traditional reputation systems including centralization, data tampering, and lack of cross-platform portability.",
+    "contributions": [
+      {
+        "title": "System Architecture",
+        "description": "Permissioned blockchain with smart contracts, middleware infrastructure, and provisioning scheme for secure data communication"
+      },
+      {
+        "title": "Reputation Algorithms",
+        "description": "Financial & E-commerce domain engines with unified score aggregation using logarithmic scaling and sigmoid functions"
+      },
+      {
+        "title": "Security & Privacy",
+        "description": "STRIDE threat modeling, cryptographic protocols, HTTPS communications, and user-controlled privacy settings"
+      }
+    ],
+    "technologies": ["Blockchain", "Smart Contracts", "Cryptography", "Distributed Systems", "Protocol Design"]
+  },
   "courses": [
     {
       "icon": "💻",
