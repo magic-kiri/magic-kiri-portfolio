@@ -145,7 +145,7 @@ export function renderEducation() {
         </div>
 
         <!-- Main Education Card -->
-        <div class="max-w-6xl mx-auto">
+        <div class="mx-auto">
           <div class="group relative">
             <!-- Glow Effect -->
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
