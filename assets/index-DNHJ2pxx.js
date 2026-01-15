@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const l of o.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function r(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(e){if(e.ep)return;e.ep=!0;const o=r(e);fetch(e.href,o)}})();function x(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const l of o.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function e(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(t){if(t.ep)return;t.ep=!0;const o=e(t);fetch(t.href,o)}})();function x(){return`
     <!-- Navigation -->
     <nav class="fixed lg:top-0 left-0 right-0 z-50 lg:z-50 bg-gray-900/95 dark:bg-black/95 backdrop-blur-lg shadow-lg border-b border-purple-900">
       <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 py-4 flex justify-between items-center">
@@ -16,6 +16,7 @@
             <a href="#skills" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-amber-500 hover:to-red-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-amber-500 after:to-red-500 hover:after:w-full after:transition-all after:duration-300" title="View my technical skills and expertise">Skills</a>
             <a href="#experience" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-green-500 after:to-blue-500 hover:after:w-full after:transition-all after:duration-300" title="Check out my professional experience">Experience</a>
             <a href="#education" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-teal-500 hover:to-emerald-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-teal-500 after:to-emerald-500 hover:after:w-full after:transition-all after:duration-300" title="View my educational background">Education</a>
+            <a href="#certifications" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-500 after:to-cyan-500 hover:after:w-full after:transition-all after:duration-300" title="View my professional certifications">Certifications</a>
             <a href="#contact" class="text-white hover:text-transparent hover:bg-gradient-to-r hover:from-rose-500 hover:to-yellow-500 hover:bg-clip-text transition-all duration-300 hover:-translate-y-0.5 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-rose-500 after:to-yellow-500 hover:after:w-full after:transition-all after:duration-300" title="Get in touch with me">Contact</a>
           </div>
         </div>
@@ -35,10 +36,11 @@
         <a href="#skills" class="text-white hover:text-amber-500 transition-colors duration-300">Skills</a>
         <a href="#experience" class="text-white hover:text-green-500 transition-colors duration-300">Experience</a>
         <a href="#education" class="text-white hover:text-teal-500 transition-colors duration-300">Education</a>
+        <a href="#certifications" class="text-white hover:text-cyan-500 transition-colors duration-300">Certifications</a>
         <a href="#contact" class="text-white hover:text-rose-500 transition-colors duration-300">Contact</a>
       </div>
     </div>
-  `}function h(){const t=document.getElementById("mobile-menu"),a=document.getElementById("mobile-menu-button"),r=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}a?.addEventListener("click",e),r?.addEventListener("click",e),i.forEach(o=>{o.addEventListener("click",e)}),document.addEventListener("click",o=>{!t.contains(o.target)&&!a.contains(o.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){return`
+  `}function h(){const r=document.getElementById("mobile-menu"),a=document.getElementById("mobile-menu-button"),e=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function t(){r.classList.toggle("translate-x-full")}a?.addEventListener("click",t),e?.addEventListener("click",t),i.forEach(o=>{o.addEventListener("click",t)}),document.addEventListener("click",o=>{!r.contains(o.target)&&!a.contains(o.target)&&!r.classList.contains("translate-x-full")&&t()})}function y(){return`
     <!-- Hero Section -->
     <section id="home" class="relative section-bg-pattern section-padding bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-black/50 dark:from-black/50 dark:via-gray-900/50 dark:to-gray-800/50 overflow-hidden">
       <!-- Background Pattern -->
@@ -181,7 +183,7 @@
         </div>
       </div>
     </section>
-  `}function w(){const t=["Full Stack Engineer","Software Engineer"];let a=0,r=0,i=!1;const e=100,o=50,l=2e3;let n=!0;const s="|";function p(){const d=document.getElementById("type-display");d&&(n=!n,n?d.textContent=d.textContent.replace(s,"")+s:d.textContent=d.textContent.replace(s,""))}function g(){const d=t[a],u=document.getElementById("type-display");if(!u)return;i?(u.textContent=d.substring(0,r-1),r--):(u.textContent=d.substring(0,r+1),r++),n&&(u.textContent+=s);let b=i?o:e;!i&&r===d.length?(b=l,i=!0):i&&r===0&&(i=!1,a=(a+1)%t.length),setTimeout(g,b)}setInterval(p,500),g()}function k(){return`
+  `}function w(){const r=["Full Stack Engineer","Software Engineer"];let a=0,e=0,i=!1;const t=100,o=50,l=2e3;let n=!0;const s="|";function p(){const d=document.getElementById("type-display");d&&(n=!n,n?d.textContent=d.textContent.replace(s,"")+s:d.textContent=d.textContent.replace(s,""))}function g(){const d=r[a],u=document.getElementById("type-display");if(!u)return;i?(u.textContent=d.substring(0,e-1),e--):(u.textContent=d.substring(0,e+1),e++),n&&(u.textContent+=s);let b=i?o:t;!i&&e===d.length?(b=l,i=!0):i&&e===0&&(i=!1,a=(a+1)%r.length),setTimeout(g,b)}setInterval(p,500),g()}function k(){return`
     <!-- About Section -->
     <section id="about" class="relative section-bg-pattern section-padding overflow-hidden">
       <!-- Background Elements -->
@@ -233,88 +235,88 @@
         </div>
       </div>
     </section>
-  `}function S(){const t=[{key:"uk",comment:"UK Time Zone",glowGradient:"from-blue-500 to-cyan-500",border:"border-blue-500/30 hover:border-blue-400/50",clockBorder:"border-blue-400",clockFaceGradient:"from-blue-500/20 to-cyan-500/20",hourHandTop:"top-1/2",hourHand:"bg-blue-400",minuteHand:"bg-cyan-400",minuteHandTop:"top-1/2",minuteHandDelay:"2s",centerDot:"bg-blue-500",flagSrc:"https://flagcdn.com/gb.svg",flagAlt:"UK",flagTitle:"United Kingdom",country:"United Kingdom",countryHover:"group-hover:text-blue-400",timeId:"london-time",timeText:"text-blue-400",locationLabel:"GMT+0 • London",badge:"bg-blue-500/20 text-blue-300",badgeText:"Business Hours: 9AM-6PM"},{key:"bd",comment:"Bangladesh Time Zone",glowGradient:"from-purple-500 to-indigo-500",border:"border-purple-500/30 hover:border-purple-400/50",clockBorder:"border-purple-400",clockFaceGradient:"from-purple-500/20 to-indigo-500/20",hourHandTop:"top-1/2",hourHand:"bg-purple-400",hourHandDelay:"1s",minuteHand:"bg-indigo-400",minuteHandTop:"top-1/2",minuteHandDelay:"3s",centerDot:"bg-purple-500",flagSrc:"https://flagcdn.com/bd.svg",flagAlt:"Bangladesh",flagTitle:"Bangladesh - GMT+6 Time Zone",country:"Bangladesh",countryHover:"group-hover:text-purple-400",timeId:"dhaka-time",timeText:"text-purple-400",locationLabel:"GMT+6 • Dhaka",badge:"bg-purple-500/20 text-purple-300",badgeText:"🏠 Home Base"},{key:"us",comment:"USA Time Zone",glowGradient:"from-cyan-500 to-blue-500",border:"border-cyan-500/30 hover:border-cyan-400/50",clockBorder:"border-cyan-400",clockFaceGradient:"from-cyan-500/20 to-blue-500/20",hourHandTop:"top-1/2",hourHand:"bg-cyan-400",hourHandDelay:"2s",minuteHand:"bg-blue-400",minuteHandTop:"top-1/2",minuteHandDelay:"4s",centerDot:"bg-cyan-500",flagSrc:"https://flagcdn.com/us.svg",flagAlt:"USA",flagTitle:"United States - GMT-5 Time Zone",country:"United States",countryHover:"group-hover:text-cyan-400",timeId:"newyork-time",timeText:"text-cyan-400",locationLabel:"GMT-5 • New York",badge:"bg-cyan-500/20 text-cyan-300",badgeText:"Business Hours: 9AM-6PM"}],a=[{key:"slack",wrapperHoverBorder:"hover:border-blue-400/50",iconSrc:"/slack.svg",iconAlt:"Slack",iconTitle:"Slack/Teams - Real-time communication platform",label:"Slack/Teams",labelHover:"group-hover:text-blue-400",subtitle:"Real-time chat"},{key:"video",wrapperHoverBorder:"hover:border-purple-400/50",iconSrc:"/google-meet.svg",iconAlt:"Google Meet",iconTitle:"Google Meet - Video conferencing platform",label:"Video Calls",labelHover:"group-hover:text-purple-400",subtitle:"Zoom/Meet"},{key:"email",wrapperHoverBorder:"hover:border-cyan-400/50",iconSrc:"/gmail.svg",iconAlt:"Gmail",iconTitle:"Gmail - Email communication",label:"Email",labelHover:"group-hover:text-cyan-400",subtitle:"Async updates"},{key:"tools",wrapperHoverBorder:"hover:border-green-400/50",iconSrc:"/jira.svg",iconAlt:"Jira",iconTitle:"Jira - Project management and issue tracking",label:"Project Tools",labelHover:"group-hover:text-green-400",subtitle:"Jira/Trello"}],r=e=>`
-              <!-- ${e.comment} -->
+  `}function S(){const r=[{key:"uk",comment:"UK Time Zone",glowGradient:"from-blue-500 to-cyan-500",border:"border-blue-500/30 hover:border-blue-400/50",clockBorder:"border-blue-400",clockFaceGradient:"from-blue-500/20 to-cyan-500/20",hourHandTop:"top-1/2",hourHand:"bg-blue-400",minuteHand:"bg-cyan-400",minuteHandTop:"top-1/2",minuteHandDelay:"2s",centerDot:"bg-blue-500",flagSrc:"https://flagcdn.com/gb.svg",flagAlt:"UK",flagTitle:"United Kingdom",country:"United Kingdom",countryHover:"group-hover:text-blue-400",timeId:"london-time",timeText:"text-blue-400",locationLabel:"GMT+0 • London",badge:"bg-blue-500/20 text-blue-300",badgeText:"Business Hours: 9AM-6PM"},{key:"bd",comment:"Bangladesh Time Zone",glowGradient:"from-purple-500 to-indigo-500",border:"border-purple-500/30 hover:border-purple-400/50",clockBorder:"border-purple-400",clockFaceGradient:"from-purple-500/20 to-indigo-500/20",hourHandTop:"top-1/2",hourHand:"bg-purple-400",hourHandDelay:"1s",minuteHand:"bg-indigo-400",minuteHandTop:"top-1/2",minuteHandDelay:"3s",centerDot:"bg-purple-500",flagSrc:"https://flagcdn.com/bd.svg",flagAlt:"Bangladesh",flagTitle:"Bangladesh - GMT+6 Time Zone",country:"Bangladesh",countryHover:"group-hover:text-purple-400",timeId:"dhaka-time",timeText:"text-purple-400",locationLabel:"GMT+6 • Dhaka",badge:"bg-purple-500/20 text-purple-300",badgeText:"🏠 Home Base"},{key:"us",comment:"USA Time Zone",glowGradient:"from-cyan-500 to-blue-500",border:"border-cyan-500/30 hover:border-cyan-400/50",clockBorder:"border-cyan-400",clockFaceGradient:"from-cyan-500/20 to-blue-500/20",hourHandTop:"top-1/2",hourHand:"bg-cyan-400",hourHandDelay:"2s",minuteHand:"bg-blue-400",minuteHandTop:"top-1/2",minuteHandDelay:"4s",centerDot:"bg-cyan-500",flagSrc:"https://flagcdn.com/us.svg",flagAlt:"USA",flagTitle:"United States - GMT-5 Time Zone",country:"United States",countryHover:"group-hover:text-cyan-400",timeId:"newyork-time",timeText:"text-cyan-400",locationLabel:"GMT-5 • New York",badge:"bg-cyan-500/20 text-cyan-300",badgeText:"Business Hours: 9AM-6PM"}],a=[{key:"slack",wrapperHoverBorder:"hover:border-blue-400/50",iconSrc:"/slack.svg",iconAlt:"Slack",iconTitle:"Slack/Teams - Real-time communication platform",label:"Slack/Teams",labelHover:"group-hover:text-blue-400",subtitle:"Real-time chat"},{key:"video",wrapperHoverBorder:"hover:border-purple-400/50",iconSrc:"/google-meet.svg",iconAlt:"Google Meet",iconTitle:"Google Meet - Video conferencing platform",label:"Video Calls",labelHover:"group-hover:text-purple-400",subtitle:"Zoom/Meet"},{key:"email",wrapperHoverBorder:"hover:border-cyan-400/50",iconSrc:"/gmail.svg",iconAlt:"Gmail",iconTitle:"Gmail - Email communication",label:"Email",labelHover:"group-hover:text-cyan-400",subtitle:"Async updates"},{key:"tools",wrapperHoverBorder:"hover:border-green-400/50",iconSrc:"/jira.svg",iconAlt:"Jira",iconTitle:"Jira - Project management and issue tracking",label:"Project Tools",labelHover:"group-hover:text-green-400",subtitle:"Jira/Trello"}],e=t=>`
+              <!-- ${t.comment} -->
               <div class="group relative">
                 <div
-                  class="absolute -inset-1 bg-gradient-to-r ${e.glowGradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"
+                  class="absolute -inset-1 bg-gradient-to-r ${t.glowGradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"
                 ></div>
                 <div
-                  class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${e.border} transition-all duration-300 transform hover:-translate-y-2"
+                  class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${t.border} transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <!-- Clock Animation -->
                   <div class="flex justify-center mb-4">
                     <div
-                      class="relative w-16 h-16 border-2 ${e.clockBorder} rounded-full"
+                      class="relative w-16 h-16 border-2 ${t.clockBorder} rounded-full"
                     >
                       <div
-                        class="absolute inset-2 bg-gradient-to-br ${e.clockFaceGradient} rounded-full"
+                        class="absolute inset-2 bg-gradient-to-br ${t.clockFaceGradient} rounded-full"
                       ></div>
                       <div
-                        class="absolute ${e.hourHandTop} left-1/2 w-1 h-6 ${e.hourHand} transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick"
-                        ${e.hourHandDelay?`style="animation-delay: ${e.hourHandDelay}"`:""}
+                        class="absolute ${t.hourHandTop} left-1/2 w-1 h-6 ${t.hourHand} transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick"
+                        ${t.hourHandDelay?`style="animation-delay: ${t.hourHandDelay}"`:""}
                       ></div>
                       <div
-                        class="absolute ${e.minuteHandTop} left-1/2 w-0.5 h-4 ${e.minuteHand} transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick"
-                        style="animation-delay: ${e.minuteHandDelay}"
+                        class="absolute ${t.minuteHandTop} left-1/2 w-0.5 h-4 ${t.minuteHand} transform -translate-x-1/2 -translate-y-full origin-bottom animate-clock-tick"
+                        style="animation-delay: ${t.minuteHandDelay}"
                       ></div>
                       <div
-                        class="absolute top-1/2 left-1/2 w-2 h-2 ${e.centerDot} rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                        class="absolute top-1/2 left-1/2 w-2 h-2 ${t.centerDot} rounded-full transform -translate-x-1/2 -translate-y-1/2"
                       ></div>
                     </div>
                   </div>
 
                   <div class="flex items-center justify-center gap-3 mb-3">
                     <img
-                      src="${e.flagSrc}"
-                      alt="${e.flagAlt}"
+                      src="${t.flagSrc}"
+                      alt="${t.flagAlt}"
                       class="w-8 h-6 rounded shadow-lg"
-                      title="${e.flagTitle}"
+                      title="${t.flagTitle}"
                     />
                     <span
-                      class="text-white font-bold text-lg ${e.countryHover} transition-colors"
-                      >${e.country}</span
+                      class="text-white font-bold text-lg ${t.countryHover} transition-colors"
+                      >${t.country}</span
                     >
                   </div>
 
                   <div class="text-center">
                     <div
-                      class="text-2xl font-mono font-bold ${e.timeText} mb-1"
-                      id="${e.timeId}"
+                      class="text-2xl font-mono font-bold ${t.timeText} mb-1"
+                      id="${t.timeId}"
                     >
                       --:--
                     </div>
-                    <div class="text-gray-400 text-sm">${e.locationLabel}</div>
+                    <div class="text-gray-400 text-sm">${t.locationLabel}</div>
                     <div
-                      class="mt-3 px-3 py-1 ${e.badge} rounded-full text-xs font-medium"
+                      class="mt-3 px-3 py-1 ${t.badge} rounded-full text-xs font-medium"
                     >
-                      ${e.badgeText}
+                      ${t.badgeText}
                     </div>
                   </div>
                 </div>
               </div>
-`,i=e=>`
+`,i=t=>`
               <div
-                class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 ${e.wrapperHoverBorder} transition-all duration-300 transform hover:-translate-y-1"
+                class="group bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10 ${t.wrapperHoverBorder} transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div class="flex items-center gap-3">
                   <div
                     class="w-10 h-10 bg-gradient-to-r rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                   >
                     <img
-                      src="${e.iconSrc}"
-                      alt="${e.iconAlt}"
+                      src="${t.iconSrc}"
+                      alt="${t.iconAlt}"
                       class="w-8 h-8 text-white"
-                      title="${e.iconTitle}"
+                      title="${t.iconTitle}"
                     />
                   </div>
                   <div>
                     <div
-                      class="font-semibold text-white ${e.labelHover} transition-colors"
+                      class="font-semibold text-white ${t.labelHover} transition-colors"
                     >
-                      ${e.label}
+                      ${t.label}
                     </div>
-                    <div class="text-xs text-gray-400">${e.subtitle}</div>
+                    <div class="text-xs text-gray-400">${t.subtitle}</div>
                   </div>
                 </div>
               </div>
@@ -463,7 +465,7 @@
 
             <!-- Enhanced Time Zone Cards with Live Clocks -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-${t.map(r).join("")}
+${r.map(e).join("")}
             </div>
 
             <!-- Enhanced Communication Methods -->
@@ -546,7 +548,7 @@ ${a.map(i).join("")}
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl animate-pulse animation-delay-4000"
       ></div>
     </section>
-  `}function T(){function t(){const a=new Date,r=new Date(a.toLocaleString("en-US",{timeZone:"Asia/Dhaka"})),i=document.getElementById("dhaka-time");i&&(i.textContent=r.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const e=new Date(a.toLocaleString("en-US",{timeZone:"Europe/London"})),o=document.getElementById("london-time");o&&(o.textContent=e.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const l=new Date(a.toLocaleString("en-US",{timeZone:"America/New_York"})),n=document.getElementById("newyork-time");n&&(n.textContent=l.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}))}t(),setInterval(t,1e3)}const m=[{name:"Programming Languages",icon:"💻",iconBg:"bg-blue-500/20",textColor:"text-blue-400",borderColor:"border-blue-500/30",hoverBorderColor:"hover:border-blue-400/50",gradient:"from-blue-500 to-blue-600",proficiency:5,skills:[{name:"TypeScript",icon:"https://img.icons8.com/color/36/000000/typescript.png",description:"TypeScript - Statically typed JavaScript that scales"},{name:"JavaScript",icon:"https://img.icons8.com/color/36/000000/javascript.png",description:"JavaScript - The language of the web"},{name:"Python",icon:"https://img.icons8.com/color/36/000000/python.png",description:"Python - Versatile programming language"},{name:"Go",icon:"https://img.icons8.com/color/36/000000/golang.png",description:"Go - Performance-oriented programming language"},{name:"C++",icon:"https://img.icons8.com/color/36/000000/c-plus-plus-logo.png",description:"C++ - High-performance programming language"}]},{name:"Frontend Technologies",icon:"🎨",iconBg:"bg-purple-500/20",textColor:"text-purple-400",borderColor:"border-purple-500/30",hoverBorderColor:"hover:border-purple-400/50",gradient:"from-purple-500 to-purple-600",proficiency:4,skills:[{name:"React",icon:"https://cdn.simpleicons.org/react",description:"React - JavaScript library for building user interfaces"},{name:"Next.js",icon:"https://cdn.simpleicons.org/nextdotjs/white",description:"Next.js - React framework for production"},{name:"HTML",icon:"https://img.icons8.com/color/36/000000/html-5.png",description:"HTML5 - Standard markup language for web pages"},{name:"CSS3",icon:"https://img.icons8.com/color/36/000000/css3.png",description:"CSS3 - Style sheet language for web design"},{name:"Tailwind CSS",icon:"https://cdn.simpleicons.org/tailwindcss",description:"Tailwind CSS - Utility-first CSS framework"}]},{name:"Backend Technologies",icon:"⚙️",iconBg:"bg-green-500/20",textColor:"text-green-400",borderColor:"border-green-500/30",hoverBorderColor:"hover:border-green-400/50",gradient:"from-green-500 to-green-600",proficiency:5,skills:[{name:"Node",icon:"https://cdn.simpleicons.org/nodedotjs",description:"Node.js - JavaScript runtime built on Chrome's V8 engine"},{name:"Express",icon:"https://cdn.simpleicons.org/express/white",description:"Express - Fast, unopinionated web framework for Node.js"},{name:"Deno",icon:"https://img.icons8.com/color/36/000000/deno.png",description:"Deno - Secure runtime for JavaScript and TypeScript"},{name:"NestJS",icon:"https://img.icons8.com/color/36/000000/nestjs.png",description:"NestJS - Progressive Node.js framework"},{name:"FastAPI",icon:"https://cdn.simpleicons.org/fastapi",description:"FastAPI - Modern, fast web framework for Python"},{name:"Kafka",icon:"https://cdn.simpleicons.org/apachekafka/white",description:"Apache Kafka - Distributed streaming platform"}]},{name:"Database & ORM",icon:"🗄️",iconBg:"bg-cyan-500/20",textColor:"text-cyan-400",borderColor:"border-cyan-500/30",hoverBorderColor:"hover:border-cyan-400/50",gradient:"from-cyan-500 to-cyan-600",proficiency:5,skills:[{name:"PostgreSQL",icon:"https://img.icons8.com/color/36/000000/postgreesql.png",description:"PostgreSQL - Advanced open source relational database"},{name:"MongoDB",icon:"https://cdn.simpleicons.org/mongodb/darkgreen",description:"MongoDB - NoSQL document database"},{name:"Redis",icon:"https://img.icons8.com/color/36/000000/redis.png",description:"Redis - In-memory data structure store"},{name:"Prisma",icon:"https://img.icons8.com/color/36/000000/prisma-orm.png",description:"Prisma - Next-generation ORM for Node.js and TypeScript"},{name:"TypeORM",icon:"https://cdn.simpleicons.org/typeorm",description:"TypeORM - Object-relational mapping for TypeScript and JavaScript"}]},{name:"Cloud & DevOps",icon:"☁️",iconBg:"bg-orange-500/20",textColor:"text-orange-400",borderColor:"border-orange-500/30",hoverBorderColor:"hover:border-orange-400/50",gradient:"from-orange-500 to-orange-600",proficiency:4,skills:[{name:"AWS",icon:"/aws.svg",description:"AWS - Leading cloud computing platform"},{name:"Docker",icon:"https://cdn.simpleicons.org/docker",description:"Docker - Platform for developing, shipping, and running applications"},{name:"Lambda",icon:"/aws-lambda.svg",description:"AWS Lambda - Serverless compute service"},{name:"S3",icon:"/s3.svg",description:"Amazon S3 - Scalable storage in the cloud"},{name:"ECS",icon:"/ec2.svg",description:"Amazon ECS - Orchestration service for containers"},{name:"Vercel",icon:"https://cdn.simpleicons.org/vercel/white",description:"Vercel - Platform for frontend and backend development"}]},{name:"Tools & Others",icon:"🛠️",iconBg:"bg-indigo-500/20",textColor:"text-indigo-400",borderColor:"border-indigo-500/30",hoverBorderColor:"hover:border-indigo-400/50",gradient:"from-indigo-500 to-indigo-600",proficiency:5,skills:[{name:"Git",icon:"https://img.icons8.com/color/36/000000/git.png",description:"Git - Distributed version control system"},{name:"GitHub",icon:"https://img.icons8.com/ios-glyphs/36/FFFFFF/github.png",description:"GitHub - Web-based hosting service for version control"},{name:"Playwright",icon:"/playwright.svg",description:"Playwright - Reliable end-to-end testing for modern web apps"},{name:"Jest",icon:"https://cdn.simpleicons.org/jest",description:"Jest - Delightful JavaScript Testing Framework"},{name:"GraphQL",icon:"https://cdn.simpleicons.org/graphql",description:"GraphQL - Query language for APIs"},{name:"BullMQ",icon:"https://img.icons8.com/color/36/000000/bull.png",description:"BullMQ - Premium Queue package for Node.js"}]}];function C(){m.reduce((r,i)=>r+i.skills.length,0);const t=`
+  `}function T(){function r(){const a=new Date,e=new Date(a.toLocaleString("en-US",{timeZone:"Asia/Dhaka"})),i=document.getElementById("dhaka-time");i&&(i.textContent=e.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const t=new Date(a.toLocaleString("en-US",{timeZone:"Europe/London"})),o=document.getElementById("london-time");o&&(o.textContent=t.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const l=new Date(a.toLocaleString("en-US",{timeZone:"America/New_York"})),n=document.getElementById("newyork-time");n&&(n.textContent=l.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}))}r(),setInterval(r,1e3)}const m=[{name:"Programming Languages",icon:"💻",iconBg:"bg-blue-500/20",textColor:"text-blue-400",borderColor:"border-blue-500/30",hoverBorderColor:"hover:border-blue-400/50",gradient:"from-blue-500 to-blue-600",proficiency:5,skills:[{name:"TypeScript",icon:"https://img.icons8.com/color/36/000000/typescript.png",description:"TypeScript - Statically typed JavaScript that scales"},{name:"JavaScript",icon:"https://img.icons8.com/color/36/000000/javascript.png",description:"JavaScript - The language of the web"},{name:"Python",icon:"https://img.icons8.com/color/36/000000/python.png",description:"Python - Versatile programming language"},{name:"Go",icon:"https://img.icons8.com/color/36/000000/golang.png",description:"Go - Performance-oriented programming language"},{name:"C++",icon:"https://img.icons8.com/color/36/000000/c-plus-plus-logo.png",description:"C++ - High-performance programming language"}]},{name:"Frontend Technologies",icon:"🎨",iconBg:"bg-purple-500/20",textColor:"text-purple-400",borderColor:"border-purple-500/30",hoverBorderColor:"hover:border-purple-400/50",gradient:"from-purple-500 to-purple-600",proficiency:4,skills:[{name:"React",icon:"https://cdn.simpleicons.org/react",description:"React - JavaScript library for building user interfaces"},{name:"Next.js",icon:"https://cdn.simpleicons.org/nextdotjs/white",description:"Next.js - React framework for production"},{name:"HTML",icon:"https://img.icons8.com/color/36/000000/html-5.png",description:"HTML5 - Standard markup language for web pages"},{name:"CSS3",icon:"https://img.icons8.com/color/36/000000/css3.png",description:"CSS3 - Style sheet language for web design"},{name:"Tailwind CSS",icon:"https://cdn.simpleicons.org/tailwindcss",description:"Tailwind CSS - Utility-first CSS framework"}]},{name:"Backend Technologies",icon:"⚙️",iconBg:"bg-green-500/20",textColor:"text-green-400",borderColor:"border-green-500/30",hoverBorderColor:"hover:border-green-400/50",gradient:"from-green-500 to-green-600",proficiency:5,skills:[{name:"Node",icon:"https://cdn.simpleicons.org/nodedotjs",description:"Node.js - JavaScript runtime built on Chrome's V8 engine"},{name:"Express",icon:"https://cdn.simpleicons.org/express/white",description:"Express - Fast, unopinionated web framework for Node.js"},{name:"Deno",icon:"https://img.icons8.com/color/36/000000/deno.png",description:"Deno - Secure runtime for JavaScript and TypeScript"},{name:"NestJS",icon:"https://img.icons8.com/color/36/000000/nestjs.png",description:"NestJS - Progressive Node.js framework"},{name:"FastAPI",icon:"https://cdn.simpleicons.org/fastapi",description:"FastAPI - Modern, fast web framework for Python"},{name:"Kafka",icon:"https://cdn.simpleicons.org/apachekafka/white",description:"Apache Kafka - Distributed streaming platform"}]},{name:"Database & ORM",icon:"🗄️",iconBg:"bg-cyan-500/20",textColor:"text-cyan-400",borderColor:"border-cyan-500/30",hoverBorderColor:"hover:border-cyan-400/50",gradient:"from-cyan-500 to-cyan-600",proficiency:5,skills:[{name:"PostgreSQL",icon:"https://img.icons8.com/color/36/000000/postgreesql.png",description:"PostgreSQL - Advanced open source relational database"},{name:"MongoDB",icon:"https://cdn.simpleicons.org/mongodb/darkgreen",description:"MongoDB - NoSQL document database"},{name:"Redis",icon:"https://img.icons8.com/color/36/000000/redis.png",description:"Redis - In-memory data structure store"},{name:"Prisma",icon:"https://img.icons8.com/color/36/000000/prisma-orm.png",description:"Prisma - Next-generation ORM for Node.js and TypeScript"},{name:"TypeORM",icon:"https://cdn.simpleicons.org/typeorm",description:"TypeORM - Object-relational mapping for TypeScript and JavaScript"}]},{name:"Cloud & DevOps",icon:"☁️",iconBg:"bg-orange-500/20",textColor:"text-orange-400",borderColor:"border-orange-500/30",hoverBorderColor:"hover:border-orange-400/50",gradient:"from-orange-500 to-orange-600",proficiency:4,skills:[{name:"AWS",icon:"/aws.svg",description:"AWS - Leading cloud computing platform"},{name:"Docker",icon:"https://cdn.simpleicons.org/docker",description:"Docker - Platform for developing, shipping, and running applications"},{name:"Lambda",icon:"/aws-lambda.svg",description:"AWS Lambda - Serverless compute service"},{name:"S3",icon:"/s3.svg",description:"Amazon S3 - Scalable storage in the cloud"},{name:"ECS",icon:"/ec2.svg",description:"Amazon ECS - Orchestration service for containers"},{name:"Vercel",icon:"https://cdn.simpleicons.org/vercel/white",description:"Vercel - Platform for frontend and backend development"}]},{name:"Tools & Others",icon:"🛠️",iconBg:"bg-indigo-500/20",textColor:"text-indigo-400",borderColor:"border-indigo-500/30",hoverBorderColor:"hover:border-indigo-400/50",gradient:"from-indigo-500 to-indigo-600",proficiency:5,skills:[{name:"Git",icon:"https://img.icons8.com/color/36/000000/git.png",description:"Git - Distributed version control system"},{name:"GitHub",icon:"https://img.icons8.com/ios-glyphs/36/FFFFFF/github.png",description:"GitHub - Web-based hosting service for version control"},{name:"Playwright",icon:"/playwright.svg",description:"Playwright - Reliable end-to-end testing for modern web apps"},{name:"Jest",icon:"https://cdn.simpleicons.org/jest",description:"Jest - Delightful JavaScript Testing Framework"},{name:"GraphQL",icon:"https://cdn.simpleicons.org/graphql",description:"GraphQL - Query language for APIs"},{name:"BullMQ",icon:"https://img.icons8.com/color/36/000000/bull.png",description:"BullMQ - Premium Queue package for Node.js"}]}];function C(){m.reduce((e,i)=>e+i.skills.length,0);const r=`
     <div class="flex flex-wrap justify-center gap-6 mb-12">
       <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10">
         <div class="text-3xl font-bold text-white mb-1 flex justify-center">30+</div>
@@ -561,38 +563,38 @@ ${a.map(i).join("")}
         <div class="text-sm text-gray-400">Years Experience</div>
       </div>
     </div>
-  `,a=m.map(r=>{const i=r.proficiency/5*100;return`
+  `,a=m.map(e=>{const i=e.proficiency/5*100;return`
       <div class="skill-category group">
         <div class="relative">
-          <div class="absolute -inset-1 bg-gradient-to-r ${r.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-          <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${r.borderColor} ${r.hoverBorderColor} transition-all duration-300">
+          <div class="absolute -inset-1 bg-gradient-to-r ${e.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+          <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${e.borderColor} ${e.hoverBorderColor} transition-all duration-300">
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 ${r.iconBg} rounded-xl flex items-center justify-center category-icon">
-                  <span class="text-2xl">${r.icon}</span>
+                <div class="w-12 h-12 ${e.iconBg} rounded-xl flex items-center justify-center category-icon">
+                  <span class="text-2xl">${e.icon}</span>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-white group-hover:${r.textColor} transition-colors">${r.name}</h3>
-                  <div class="text-sm text-gray-400">${r.skills.length} technologies</div>
+                  <h3 class="text-xl font-bold text-white group-hover:${e.textColor} transition-colors">${e.name}</h3>
+                  <div class="text-sm text-gray-400">${e.skills.length} technologies</div>
                 </div>
               </div>
             </div>
 
             <div class="mb-4">
               <div class="flex justify-between text-xs mb-1">
-                <span class="${r.textColor}">Proficiency</span>
-                <span class="text-gray-400">${r.proficiency}/5</span>
+                <span class="${e.textColor}">Proficiency</span>
+                <span class="text-gray-400">${e.proficiency}/5</span>
               </div>
               <div class="proficiency-bar">
-                <div class="proficiency-fill bg-gradient-to-r ${r.gradient}" style="width: ${i}%"></div>
+                <div class="proficiency-fill bg-gradient-to-r ${e.gradient}" style="width: ${i}%"></div>
               </div>
             </div>
 
             <div class="skill-scroll flex flex-wrap gap-2 max-h-32 overflow-y-auto pr-2">
-              ${r.skills.map(e=>`
-                <div class="skill-badge flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-1.5 border border-gray-700/50" title="${e.description}">
-                  <img src="${e.icon}" alt="${e.name}" class="w-4 h-4" />
-                  <span class="text-sm text-gray-300">${e.name}</span>
+              ${e.skills.map(t=>`
+                <div class="skill-badge flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-1.5 border border-gray-700/50" title="${t.description}">
+                  <img src="${t.icon}" alt="${t.name}" class="w-4 h-4" />
+                  <span class="text-sm text-gray-300">${t.name}</span>
                 </div>
               `).join("")}
             </div>
@@ -632,51 +634,51 @@ ${a.map(i).join("")}
 
         <!-- Skills Container -->
         <div id="skills-container" class="skills-container">
-          ${t}
+          ${r}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             ${a}
           </div>
         </div>
       </div>
     </section>
-  `}const f=[{id:1,dateRange:"August 2025 - Current",title:"Software Engineering Lead",company:"Techjays",companyLink:"https://techjays.com/",workType:"Remote",employmentType:"Full-time",description:"A leading AI and automation company based in Menlo Park, CA, specializing in custom software, data analytics, and cloud solutions for global businesses.",achievements:[`Engineered "JaysBot," a real-time voice assistant utilizing Azure OpenAI's Live Voice API and custom-indexed knowledge base, enabling low-latency, context-aware vocal interactions through direct voice-to-voice processing`,"Implemented multiple clustering algorithms (K-Means, DBSCAN, HDBSCAN, BIRCH) in C++ for large-scale seismic data analysis, evaluating performance trade-offs across algorithmic approaches","Developed hybrid clustering algorithms combining K-Means with DBSCAN and HDBSCAN to leverage density-based detection of arbitrary-shaped clusters while maintaining computational efficiency","Achieved 4x runtime reduction through GPU parallelization (CUDA) and multi-threading optimization of the clustering pipeline on large seismic datasets","Implemented elbow method for automated determination of optimal cluster count, eliminating manual parameter tuning and improving result reproducibility","Developed AI agent using Gemini-2.5-flash to automate leave management system, deployed across the team"],techStack:["Python","C++","Azure Live Voice API","Unsupervised Learning","LangChain","Gemini"],colors:{primary:"cyan",secondary:"purple",gradient:"from-cyan-400 via-blue-400 to-purple-400",dotGradient:"from-cyan-400 to-purple-500",badgeGradient:"from-cyan-500 to-purple-500",borderColor:"border-cyan-500/20",hoverBorderColor:"hover:border-cyan-400/40",shadowColor:"hover:shadow-cyan-500/20",workTypeBg:"bg-cyan-400/10",workTypeText:"text-cyan-400",workTypeBorder:"border-cyan-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:2,dateRange:"March 2024 - August 2025",title:"Software Engineer II",company:"Green Pants Studio",companyLink:"https://www.greenpantsstudio.com/",workType:"Remote",employmentType:"Full-time",description:"A technology consulting agency providing engineering talent to external clients.",achievements:["Engineered and launched a scalable livestream platform handling 10K+ concurrent viewers, resulting in a 40% increase in seller engagement","Led as Product Manager and engineer integrating Freightquote API, automating U.S. truckload logistics; reduced manual effort by 70%, errors by 50%, and improved real-time shipment tracking","Implemented CI/CD pipelines to streamline deployments, reducing errors by 60% and accelerating release cycles.","Built a CSV-based bulk product upload system that streamlined catalog onboarding, saving sellers 90% of time compared to manual entry","Developed a custom CRM to enable sellers to easily invite buyers into groups, enhancing engagement by 30%.","Defined and implemented integration tests to ensure API integrity and maintain the reliability of the system."],techStack:["TypeScript","Python","Next.js","NestJS","AWS","PostgreSQL","Microservices"],colors:{primary:"emerald",secondary:"cyan",gradient:"from-emerald-400 via-cyan-400 to-blue-400",dotGradient:"from-emerald-400 to-cyan-500",badgeGradient:"from-emerald-500 to-cyan-500",borderColor:"border-emerald-500/20",hoverBorderColor:"hover:border-emerald-400/40",shadowColor:"hover:shadow-emerald-500/20",workTypeBg:"bg-emerald-400/10",workTypeText:"text-emerald-400",workTypeBorder:"border-emerald-400/20",employmentTypeBg:"bg-cyan-400/10",employmentTypeText:"text-cyan-400",employmentTypeBorder:"border-cyan-400/20"},position:"right"},{id:3,dateRange:"November 2022 - March 2024",title:"Founding Software Engineer",company:"Sendout",companyLink:"https://sendout.ai/",workType:"Remote",employmentType:"Full-time",description:"Led core engineering initiatives in automation and security, significantly improving system efficiency and resilience.",achievements:["Reverse-engineered LinkedIn's private Voyager API for automation, cutting manual effort and costs by 80%.","Implemented a workflow sequence builder using React Flow to orchestrate outreach campaigns.","Built identity-spoofing mechanisms to raise account security from 20% to 80%.","Built LinkedIn data scrapers for automated collection from searches, groups, events and messages.","Developed customizable workflow sequence builder to automate outreach events."],techStack:["TypeScript","Kafka","FastAPI","NestJS","MongoDB","Playwright"],colors:{primary:"blue",secondary:"purple",gradient:"from-blue-400 via-purple-400 to-pink-400",dotGradient:"from-blue-400 to-purple-500",badgeGradient:"from-blue-500 to-purple-500",borderColor:"border-blue-500/20",hoverBorderColor:"hover:border-blue-400/40",shadowColor:"hover:shadow-blue-500/20",workTypeBg:"bg-blue-400/10",workTypeText:"text-blue-400",workTypeBorder:"border-blue-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:4,dateRange:"July 2022 - October 2022",title:"Back End Engineer",company:"Azimuth",companyLink:"https://azimuth.fm/",workType:"Remote",employmentType:"Contract",description:"Enhanced system performance and optimized backend processes for radio song filtering and dashboard operations.",achievements:["Migrated Python scripts to JavaScript, enhancing the overall development ecosystem","Developed edge functions with Deno to efficiently filter songs played on the radio","Reduced memory consumption in microcontrollers and optimized dashboard processing time from 140s to 5s"],techStack:["JavaScript","Deno","Python","Serverless"],colors:{primary:"purple",secondary:"pink",gradient:"from-purple-400 via-pink-400 to-red-400",dotGradient:"from-purple-400 to-pink-500",badgeGradient:"from-purple-500 to-pink-500",borderColor:"border-purple-500/20",hoverBorderColor:"hover:border-purple-400/40",shadowColor:"hover:shadow-purple-500/20",workTypeBg:"bg-purple-400/10",workTypeText:"text-purple-400",workTypeBorder:"border-purple-400/20",employmentTypeBg:"bg-pink-400/10",employmentTypeText:"text-pink-400",employmentTypeBorder:"border-pink-400/20"},position:"right"},{id:5,dateRange:"November 2021 - May 2022",title:"Software Engineer",company:"Recruit",companyLink:"https://recruit.so/",workType:"On-site",employmentType:"Full-time",description:"Contributed to multiple YC startups including Osmind (YC S20) and Replo (YC S21), focusing on code quality and UI development.",achievements:["At Osmind (YC S20): wrote unit and E2E tests to achieve 80%+ coverage, boosting reliability and confidence in deployments","Migrated core codebase from JavaScript to TypeScript, improving maintainability and reducing production issues by 40%","At Replo (YC S21): created and refactored reusable UI components shared across the team"],techStack:["React.js","TypeScript","Jest","Node.js","Prisma","Docker","Tailwind"],colors:{primary:"pink",secondary:"red",gradient:"from-pink-400 via-red-400 to-orange-400",dotGradient:"from-pink-400 to-red-500",badgeGradient:"from-pink-500 to-red-500",borderColor:"border-pink-500/20",hoverBorderColor:"hover:border-pink-400/40",shadowColor:"hover:shadow-pink-500/20",workTypeBg:"bg-pink-400/10",workTypeText:"text-pink-400",workTypeBorder:"border-pink-400/20",employmentTypeBg:"bg-orange-400/10",employmentTypeText:"text-orange-300",employmentTypeBorder:"border-orange-400/20"},position:"left"}],$={bg:"#ede9fe",text:"#5b21b6"},B={bg:"#fef3c7",text:"#92400e"},M={bg:"#fce7f3",text:"#9d174d"},A={bg:"#ffedd5",text:"#9a3412"},j={bg:"#dbeafe",text:"#1e40af"},E={bg:"#ffedd5",text:"#9a3412"},I={bg:"#ede9fe",text:"#5b21b6"},L={bg:"#ccfbf1",text:"#115e59"},D={bg:"#dcfce7",text:"#166534"},H={bg:"#dcfce7",text:"#166534"},P={bg:"#f3f4f6",text:"#1f2937"},G={bg:"#fef3c7",text:"#92400e"},R={bg:"#ffedd5",text:"#9a3412"},F={bg:"#fee2e2",text:"#991b1b"},J={bg:"#e0e7ff",text:"#3730a3"},N={bg:"#dbeafe",text:"#1e40af"},U={bg:"#cffafe",text:"#155e75"},z={bg:"#dcfce7",text:"#166534"},V={bg:"#ccfbf1",text:"#115e59"},K={bg:"#fae8ff",text:"#86198f"},W={bg:"#dbeafe",text:"#1e40af"},O={TypeScript:$,Python:B,"Next.js":{bg:"#dbeafe",text:"#1e40af"},NestJS:M,AWS:A,PostgreSQL:j,Microservices:E,Kafka:I,FastAPI:L,MongoDB:D,Playwright:H,Deno:P,JavaScript:G,Serverless:R,"React.js":{bg:"#cffafe",text:"#155e75"},Jest:F,"Node.js":{bg:"#dcfce7",text:"#166534"},Prisma:J,Docker:N,Tailwind:U,"C++":{bg:"#dbeafe",text:"#1e40af"},CUDA:z,LangChain:V,"Azure OpenAI":{bg:"#e0f2fe",text:"#075985"},"Azure Live Voice API":{bg:"#e0f2fe",text:"#075985"},"K-Means":{bg:"#ede9fe",text:"#5b21b6"},LLM:K,"Unsupervised Learning":{bg:"#ede9fe",text:"#5b21b6"},Gemini:W},v=["from-emerald-400 to-cyan-400","from-cyan-400 to-blue-400","from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-red-400","from-red-400 to-orange-400"];function Q(t,a){const r=t.position==="left",i=r?"md:flex-row":"md:flex-row-reverse",e=r?"md:mr-8":"md:ml-8",o=a===f.length-1,l=t.achievements.map((s,p)=>`
+  `}const f=[{id:1,dateRange:"August 2025 - Current",title:"Software Engineering Lead",company:"Techjays",companyLink:"https://techjays.com/",workType:"Remote",employmentType:"Full-time",description:"A leading AI and automation company based in Menlo Park, CA, specializing in custom software, data analytics, and cloud solutions for global businesses.",achievements:[`Engineered "JaysBot," a real-time voice assistant utilizing Azure OpenAI's Live Voice API and custom-indexed knowledge base, enabling low-latency, context-aware vocal interactions through direct voice-to-voice processing`,"Implemented multiple clustering algorithms (K-Means, DBSCAN, HDBSCAN, BIRCH) in C++ for large-scale seismic data analysis, evaluating performance trade-offs across algorithmic approaches","Developed hybrid clustering algorithms combining K-Means with DBSCAN and HDBSCAN to leverage density-based detection of arbitrary-shaped clusters while maintaining computational efficiency","Achieved 4x runtime reduction through GPU parallelization (CUDA) and multi-threading optimization of the clustering pipeline on large seismic datasets","Implemented elbow method for automated determination of optimal cluster count, eliminating manual parameter tuning and improving result reproducibility","Developed AI agent using Gemini-2.5-flash to automate leave management system, deployed across the team"],techStack:["Python","C++","Azure Live Voice API","Unsupervised Learning","LangChain","Gemini"],colors:{primary:"cyan",secondary:"purple",gradient:"from-cyan-400 via-blue-400 to-purple-400",dotGradient:"from-cyan-400 to-purple-500",badgeGradient:"from-cyan-500 to-purple-500",borderColor:"border-cyan-500/20",hoverBorderColor:"hover:border-cyan-400/40",shadowColor:"hover:shadow-cyan-500/20",workTypeBg:"bg-cyan-400/10",workTypeText:"text-cyan-400",workTypeBorder:"border-cyan-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:2,dateRange:"March 2024 - August 2025",title:"Software Engineer II",company:"Green Pants Studio",companyLink:"https://www.greenpantsstudio.com/",workType:"Remote",employmentType:"Full-time",description:"A technology consulting agency providing engineering talent to external clients.",achievements:["Engineered and launched a scalable livestream platform handling 10K+ concurrent viewers, resulting in a 40% increase in seller engagement","Led as Product Manager and engineer integrating Freightquote API, automating U.S. truckload logistics; reduced manual effort by 70%, errors by 50%, and improved real-time shipment tracking","Implemented CI/CD pipelines to streamline deployments, reducing errors by 60% and accelerating release cycles.","Built a CSV-based bulk product upload system that streamlined catalog onboarding, saving sellers 90% of time compared to manual entry","Developed a custom CRM to enable sellers to easily invite buyers into groups, enhancing engagement by 30%.","Defined and implemented integration tests to ensure API integrity and maintain the reliability of the system."],techStack:["TypeScript","Python","Next.js","NestJS","AWS","PostgreSQL","Microservices"],colors:{primary:"emerald",secondary:"cyan",gradient:"from-emerald-400 via-cyan-400 to-blue-400",dotGradient:"from-emerald-400 to-cyan-500",badgeGradient:"from-emerald-500 to-cyan-500",borderColor:"border-emerald-500/20",hoverBorderColor:"hover:border-emerald-400/40",shadowColor:"hover:shadow-emerald-500/20",workTypeBg:"bg-emerald-400/10",workTypeText:"text-emerald-400",workTypeBorder:"border-emerald-400/20",employmentTypeBg:"bg-cyan-400/10",employmentTypeText:"text-cyan-400",employmentTypeBorder:"border-cyan-400/20"},position:"right"},{id:3,dateRange:"November 2022 - March 2024",title:"Founding Software Engineer",company:"Sendout",companyLink:"https://sendout.ai/",workType:"Remote",employmentType:"Full-time",description:"Led core engineering initiatives in automation and security, significantly improving system efficiency and resilience.",achievements:["Reverse-engineered LinkedIn's private Voyager API for automation, cutting manual effort and costs by 80%.","Implemented a workflow sequence builder using React Flow to orchestrate outreach campaigns.","Built identity-spoofing mechanisms to raise account security from 20% to 80%.","Built LinkedIn data scrapers for automated collection from searches, groups, events and messages.","Developed customizable workflow sequence builder to automate outreach events."],techStack:["TypeScript","Kafka","FastAPI","NestJS","MongoDB","Playwright"],colors:{primary:"blue",secondary:"purple",gradient:"from-blue-400 via-purple-400 to-pink-400",dotGradient:"from-blue-400 to-purple-500",badgeGradient:"from-blue-500 to-purple-500",borderColor:"border-blue-500/20",hoverBorderColor:"hover:border-blue-400/40",shadowColor:"hover:shadow-blue-500/20",workTypeBg:"bg-blue-400/10",workTypeText:"text-blue-400",workTypeBorder:"border-blue-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:4,dateRange:"July 2022 - October 2022",title:"Back End Engineer",company:"Azimuth",companyLink:"https://azimuth.fm/",workType:"Remote",employmentType:"Contract",description:"Enhanced system performance and optimized backend processes for radio song filtering and dashboard operations.",achievements:["Migrated Python scripts to JavaScript, enhancing the overall development ecosystem","Developed edge functions with Deno to efficiently filter songs played on the radio","Reduced memory consumption in microcontrollers and optimized dashboard processing time from 140s to 5s"],techStack:["JavaScript","Deno","Python","Serverless"],colors:{primary:"purple",secondary:"pink",gradient:"from-purple-400 via-pink-400 to-red-400",dotGradient:"from-purple-400 to-pink-500",badgeGradient:"from-purple-500 to-pink-500",borderColor:"border-purple-500/20",hoverBorderColor:"hover:border-purple-400/40",shadowColor:"hover:shadow-purple-500/20",workTypeBg:"bg-purple-400/10",workTypeText:"text-purple-400",workTypeBorder:"border-purple-400/20",employmentTypeBg:"bg-pink-400/10",employmentTypeText:"text-pink-400",employmentTypeBorder:"border-pink-400/20"},position:"right"},{id:5,dateRange:"November 2021 - May 2022",title:"Software Engineer",company:"Recruit",companyLink:"https://recruit.so/",workType:"On-site",employmentType:"Full-time",description:"Contributed to multiple YC startups including Osmind (YC S20) and Replo (YC S21), focusing on code quality and UI development.",achievements:["At Osmind (YC S20): wrote unit and E2E tests to achieve 80%+ coverage, boosting reliability and confidence in deployments","Migrated core codebase from JavaScript to TypeScript, improving maintainability and reducing production issues by 40%","At Replo (YC S21): created and refactored reusable UI components shared across the team"],techStack:["React.js","TypeScript","Jest","Node.js","Prisma","Docker","Tailwind"],colors:{primary:"pink",secondary:"red",gradient:"from-pink-400 via-red-400 to-orange-400",dotGradient:"from-pink-400 to-red-500",badgeGradient:"from-pink-500 to-red-500",borderColor:"border-pink-500/20",hoverBorderColor:"hover:border-pink-400/40",shadowColor:"hover:shadow-pink-500/20",workTypeBg:"bg-pink-400/10",workTypeText:"text-pink-400",workTypeBorder:"border-pink-400/20",employmentTypeBg:"bg-orange-400/10",employmentTypeText:"text-orange-300",employmentTypeBorder:"border-orange-400/20"},position:"left"}],$={bg:"#ede9fe",text:"#5b21b6"},B={bg:"#fef3c7",text:"#92400e"},M={bg:"#fce7f3",text:"#9d174d"},A={bg:"#ffedd5",text:"#9a3412"},j={bg:"#dbeafe",text:"#1e40af"},E={bg:"#ffedd5",text:"#9a3412"},I={bg:"#ede9fe",text:"#5b21b6"},L={bg:"#ccfbf1",text:"#115e59"},D={bg:"#dcfce7",text:"#166534"},H={bg:"#dcfce7",text:"#166534"},P={bg:"#f3f4f6",text:"#1f2937"},G={bg:"#fef3c7",text:"#92400e"},R={bg:"#ffedd5",text:"#9a3412"},F={bg:"#fee2e2",text:"#991b1b"},N={bg:"#e0e7ff",text:"#3730a3"},J={bg:"#dbeafe",text:"#1e40af"},U={bg:"#cffafe",text:"#155e75"},z={bg:"#dcfce7",text:"#166534"},V={bg:"#ccfbf1",text:"#115e59"},K={bg:"#fae8ff",text:"#86198f"},W={bg:"#dbeafe",text:"#1e40af"},O={TypeScript:$,Python:B,"Next.js":{bg:"#dbeafe",text:"#1e40af"},NestJS:M,AWS:A,PostgreSQL:j,Microservices:E,Kafka:I,FastAPI:L,MongoDB:D,Playwright:H,Deno:P,JavaScript:G,Serverless:R,"React.js":{bg:"#cffafe",text:"#155e75"},Jest:F,"Node.js":{bg:"#dcfce7",text:"#166534"},Prisma:N,Docker:J,Tailwind:U,"C++":{bg:"#dbeafe",text:"#1e40af"},CUDA:z,LangChain:V,"Azure OpenAI":{bg:"#e0f2fe",text:"#075985"},"Azure Live Voice API":{bg:"#e0f2fe",text:"#075985"},"K-Means":{bg:"#ede9fe",text:"#5b21b6"},LLM:K,"Unsupervised Learning":{bg:"#ede9fe",text:"#5b21b6"},Gemini:W},v=["from-emerald-400 to-cyan-400","from-cyan-400 to-blue-400","from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-red-400","from-red-400 to-orange-400"];function Q(r,a){const e=r.position==="left",i=e?"md:flex-row":"md:flex-row-reverse",t=e?"md:mr-8":"md:ml-8",o=a===f.length-1,l=r.achievements.map((s,p)=>`
     <div class="flex items-baseline group/item">
       <div class="w-2 h-2 bg-gradient-to-r ${v[p%v.length]} rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
       <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base">${s}</span>
     </div>
-  `).join(""),n=t.techStack.map(s=>{const p=O[s]||{bg:"#f3f4f6",text:"#1f2937"};return`<span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: ${p.bg}; color: ${p.text};">${s}</span>`}).join("");return`
+  `).join(""),n=r.techStack.map(s=>{const p=O[s]||{bg:"#f3f4f6",text:"#1f2937"};return`<span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: ${p.bg}; color: ${p.text};">${s}</span>`}).join("");return`
     <div class="${o?"":"mb-6"} ${o?"":"relative"} flex flex-col ${i} items-center">
       <!-- Timeline Dot -->
-      <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${t.colors.dotGradient} rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"></div>
+      <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${r.colors.dotGradient} rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"></div>
 
       <!-- Content Card -->
-      <div class="w-full md:w-5/12 ml-0 ${e} group">
-        <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl ${t.colors.borderColor} ${t.colors.hoverBorderColor} transition-all duration-500 transform hover:-translate-y-2 ${t.colors.shadowColor}">
+      <div class="w-full md:w-5/12 ml-0 ${t} group">
+        <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl ${r.colors.borderColor} ${r.colors.hoverBorderColor} transition-all duration-500 transform hover:-translate-y-2 ${r.colors.shadowColor}">
           <!-- Glow Effect -->
-          <div class="absolute -inset-1 bg-gradient-to-r ${t.colors.gradient} rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
+          <div class="absolute -inset-1 bg-gradient-to-r ${r.colors.gradient} rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
 
           <div class="relative">
             <!-- Date Badge -->
-            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r ${t.colors.badgeGradient} text-white rounded-full text-sm font-bold mb-4 shadow-lg">
+            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r ${r.colors.badgeGradient} text-white rounded-full text-sm font-bold mb-4 shadow-lg">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              ${t.dateRange}
+              ${r.dateRange}
             </div>
 
-            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-${t.colors.primary}-400 via-${t.colors.primary}-300 to-${t.colors.secondary}-400 bg-clip-text text-transparent">
-              ${t.title}
+            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-${r.colors.primary}-400 via-${r.colors.primary}-300 to-${r.colors.secondary}-400 bg-clip-text text-transparent">
+              ${r.title}
             </h3>
 
             <div class="flex flex-wrap items-center gap-2 mb-4">
-              <a href="${t.companyLink}" target="_blank" rel="noopener noreferrer" class="text-gray-300 font-semibold text-lg hover:text-emerald-300 transition-colors duration-300" title="Visit ${t.company}">
-                ${t.company}
+              <a href="${r.companyLink}" target="_blank" rel="noopener noreferrer" class="text-gray-300 font-semibold text-lg hover:text-emerald-300 transition-colors duration-300" title="Visit ${r.company}">
+                ${r.company}
               </a>
-              <span class="whitespace-nowrap text-xs px-1.5 py-0.5 rounded-full ${t.colors.workTypeBg} ${t.colors.workTypeText} ${t.colors.workTypeBorder} border">${t.workType}</span>
-              <span class="whitespace-nowrap text-xs px-1.5 py-0.5 rounded-full ${t.colors.employmentTypeBg} ${t.colors.employmentTypeText} ${t.colors.employmentTypeBorder} border">${t.employmentType}</span>
+              <span class="whitespace-nowrap text-xs px-1.5 py-0.5 rounded-full ${r.colors.workTypeBg} ${r.colors.workTypeText} ${r.colors.workTypeBorder} border">${r.workType}</span>
+              <span class="whitespace-nowrap text-xs px-1.5 py-0.5 rounded-full ${r.colors.employmentTypeBg} ${r.colors.employmentTypeText} ${r.colors.employmentTypeBorder} border">${r.employmentType}</span>
             </div>
 
-            <p class="text-gray-400 mb-6 leading-relaxed">${t.description}</p>
+            <p class="text-gray-400 mb-6 leading-relaxed">${r.description}</p>
 
             <!-- Achievement Pills -->
             <div class="space-y-3">
@@ -723,51 +725,51 @@ ${a.map(i).join("")}
           <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-cyan-400 to-purple-400 rounded-full hidden md:block"></div>
 
           <div id="experience-container" class="space-y-16">
-            ${f.map((a,r)=>Q(a,r)).join("")}
+            ${f.map((a,e)=>Q(a,e)).join("")}
           </div>
         </div>
       </div>
     </section>
-  `}const Y={name:"Shahjalal University of Science and Technology",location:"Sylhet, Bangladesh",degree:"B.Sc. in Computer Science & Engineering",years:"2018 - 2022",cgpa:"3.86/4.00",achievements:["CGPA: 3.86/4.00","Ranked 4th in the graduating cohort, reflecting sustained academic excellence","Deep expertise in software development, algorithms, data structures, and system design, demonstrated through rigorous coursework and hands-on projects"]},_={title:"BlockURS: A Blockchain-based Unified Reputation System",type:"Bachelor of Science Thesis",date:"February 2023",supervisor:{name:"Dr. Farida Chowdhury",title:"Professor, Dept. of CSE, BRAC University"},collaborator:"Kiriti Mukherjee",description:"Designed and developed a novel blockchain-based reputation system that unifies reputation scores across multiple domains into a single, trustworthy metric. The system addresses critical limitations in traditional reputation systems including centralization, data tampering, and lack of cross-platform portability.",contributions:[{title:"System Architecture",description:"Permissioned blockchain with smart contracts, middleware infrastructure, and provisioning scheme for secure data communication"},{title:"Reputation Algorithms",description:"Financial & E-commerce domain engines with unified score aggregation using logarithmic scaling and sigmoid functions"},{title:"Security & Privacy",description:"STRIDE threat modeling, cryptographic protocols, HTTPS communications, and user-controlled privacy settings"}],technologies:["Blockchain","Smart Contracts","Cryptography","Distributed Systems","Protocol Design"]},q=[{icon:"💻",name:"Advanced Algorithms",description:"Data structures & algorithmic complexity",color:"blue"},{icon:"🔐",name:"System Security",description:"Cryptography & network security",color:"purple"},{icon:"🤖",name:"AI & ML",description:"Machine learning fundamentals",color:"pink"},{icon:"🌐",name:"Web Systems",description:"Modern web architectures",color:"blue"}],X={university:Y,thesis:_,courses:q},ee=[{id:1,name:"Boibitan",icon:"📚",description:"Modern e-commerce platform for books with secure payments, wishlist management, and seller dashboards.",features:["Secure payment integration","Seller dashboard & analytics","Wishlist & review system"],tags:["E-commerce","Web API","Vercel"],github:"https://github.com/magic-kiri/Boibitaan-Web-API-Project",live:"https://boibitaan-web-api-project.vercel.app/",color:"pink"},{id:2,name:"OEMS",icon:"📝",description:"Next.js-based online exam management system with auto-grading, real-time monitoring, and analytics.",features:["Secure authentication system","Real-time exam monitoring","Analytics dashboard"],tags:["Next.js","TypeScript","Real-time"],github:"https://github.com/magic-kiri/OEMS",live:null,color:"purple"},{id:3,name:"GeoCal",icon:"📐",description:"JavaFx web application for interactive 2D geometry with precise calculations and RESTful APIs.",features:["Interactive 2D shape manipulation","Precise geometric calculations","Export and sharing capabilities"],tags:["JavaFx","REST API","Geometry"],github:"https://github.com/magic-kiri/MyGeoCal/",live:null,color:"blue"}];function te(t){const a={pink:{bg:"from-gray-800/50 via-gray-800/30 to-pink-950/20",border:"hover:border-pink-500/30",text:"text-pink-300",hoverText:"group-hover:text-pink-200",dot:"bg-pink-400",tag:"bg-pink-500/10 text-pink-300",borderT:"border-pink-500/20",link:"text-pink-400 hover:text-pink-300"},purple:{bg:"from-gray-800/50 via-gray-800/30 to-purple-950/20",border:"hover:border-purple-500/30",text:"text-purple-300",hoverText:"group-hover:text-purple-200",dot:"bg-purple-400",tag:"bg-purple-500/10 text-purple-300",borderT:"border-purple-500/20",link:"text-purple-400 hover:text-purple-300"},blue:{bg:"from-gray-800/50 via-gray-800/30 to-blue-950/20",border:"hover:border-blue-500/30",text:"text-blue-300",hoverText:"group-hover:text-blue-200",dot:"bg-blue-400",tag:"bg-blue-500/10 text-blue-300",borderT:"border-blue-500/20",link:"text-blue-400 hover:text-blue-300"}},r=a[t.color]||a.blue,i=`
-    <a href="${t.github}" target="_blank" class="${r.link} transition-colors" title="View ${t.name} on GitHub">
+  `}const Y={name:"Shahjalal University of Science and Technology",location:"Sylhet, Bangladesh",degree:"B.Sc. in Computer Science & Engineering",years:"2018 - 2022",cgpa:"3.86/4.00",achievements:["CGPA: 3.86/4.00","Ranked 4th in the graduating cohort, reflecting sustained academic excellence","Deep expertise in software development, algorithms, data structures, and system design, demonstrated through rigorous coursework and hands-on projects"]},_={title:"BlockURS: A Blockchain-based Unified Reputation System",type:"Bachelor of Science Thesis",date:"February 2023",supervisor:{name:"Dr. Farida Chowdhury",title:"Professor, Dept. of CSE, BRAC University"},collaborator:"Kiriti Mukherjee",description:"Designed and developed a novel blockchain-based reputation system that unifies reputation scores across multiple domains into a single, trustworthy metric. The system addresses critical limitations in traditional reputation systems including centralization, data tampering, and lack of cross-platform portability.",contributions:[{title:"System Architecture",description:"Permissioned blockchain with smart contracts, middleware infrastructure, and provisioning scheme for secure data communication"},{title:"Reputation Algorithms",description:"Financial & E-commerce domain engines with unified score aggregation using logarithmic scaling and sigmoid functions"},{title:"Security & Privacy",description:"STRIDE threat modeling, cryptographic protocols, HTTPS communications, and user-controlled privacy settings"}],technologies:["Blockchain","Smart Contracts","Cryptography","Distributed Systems","Protocol Design"]},q=[{icon:"💻",name:"Advanced Algorithms",description:"Data structures & algorithmic complexity",color:"blue"},{icon:"🔐",name:"System Security",description:"Cryptography & network security",color:"purple"},{icon:"🤖",name:"AI & ML",description:"Machine learning fundamentals",color:"pink"},{icon:"🌐",name:"Web Systems",description:"Modern web architectures",color:"blue"}],X={university:Y,thesis:_,courses:q},ee=[{id:1,name:"Boibitan",icon:"📚",description:"Modern e-commerce platform for books with secure payments, wishlist management, and seller dashboards.",features:["Secure payment integration","Seller dashboard & analytics","Wishlist & review system"],tags:["E-commerce","Web API","Vercel"],github:"https://github.com/magic-kiri/Boibitaan-Web-API-Project",live:"https://boibitaan-web-api-project.vercel.app/",color:"pink"},{id:2,name:"OEMS",icon:"📝",description:"Next.js-based online exam management system with auto-grading, real-time monitoring, and analytics.",features:["Secure authentication system","Real-time exam monitoring","Analytics dashboard"],tags:["Next.js","TypeScript","Real-time"],github:"https://github.com/magic-kiri/OEMS",live:null,color:"purple"},{id:3,name:"GeoCal",icon:"📐",description:"JavaFx web application for interactive 2D geometry with precise calculations and RESTful APIs.",features:["Interactive 2D shape manipulation","Precise geometric calculations","Export and sharing capabilities"],tags:["JavaFx","REST API","Geometry"],github:"https://github.com/magic-kiri/MyGeoCal/",live:null,color:"blue"}];function te(r){const a={pink:{bg:"from-gray-800/50 via-gray-800/30 to-pink-950/20",border:"hover:border-pink-500/30",text:"text-pink-300",hoverText:"group-hover:text-pink-200",dot:"bg-pink-400",tag:"bg-pink-500/10 text-pink-300",borderT:"border-pink-500/20",link:"text-pink-400 hover:text-pink-300"},purple:{bg:"from-gray-800/50 via-gray-800/30 to-purple-950/20",border:"hover:border-purple-500/30",text:"text-purple-300",hoverText:"group-hover:text-purple-200",dot:"bg-purple-400",tag:"bg-purple-500/10 text-purple-300",borderT:"border-purple-500/20",link:"text-purple-400 hover:text-purple-300"},blue:{bg:"from-gray-800/50 via-gray-800/30 to-blue-950/20",border:"hover:border-blue-500/30",text:"text-blue-300",hoverText:"group-hover:text-blue-200",dot:"bg-blue-400",tag:"bg-blue-500/10 text-blue-300",borderT:"border-blue-500/20",link:"text-blue-400 hover:text-blue-300"}},e=a[r.color]||a.blue,i=`
+    <a href="${r.github}" target="_blank" class="${e.link} transition-colors" title="View ${r.name} on GitHub">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.239 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
       </svg>
     </a>
-    ${t.live?`
-    <a href="${t.live}" target="_blank" class="${r.link} transition-colors" title="Visit ${t.name}">
+    ${r.live?`
+    <a href="${r.live}" target="_blank" class="${e.link} transition-colors" title="Visit ${r.name}">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
       </svg>
     </a>
     `:""}
   `;return`
-    <div class="group bg-gradient-to-br ${r.bg} rounded-xl p-6 border border-gray-700/50 ${r.border} transition-all duration-300">
+    <div class="group bg-gradient-to-br ${e.bg} rounded-xl p-6 border border-gray-700/50 ${e.border} transition-all duration-300">
       <div class="flex items-center justify-between mb-4">
-        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">${t.icon}</div>
+        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">${r.icon}</div>
         <div class="flex gap-2">${i}</div>
       </div>
-      <h5 class="font-medium ${r.text} mb-2 ${r.hoverText} transition-colors">${t.name}</h5>
-      <p class="text-sm text-gray-400 mb-4">${t.description}</p>
+      <h5 class="font-medium ${e.text} mb-2 ${e.hoverText} transition-colors">${r.name}</h5>
+      <p class="text-sm text-gray-400 mb-4">${r.description}</p>
       <div class="space-y-3 mb-4">
-        ${t.features.map(e=>`
+        ${r.features.map(t=>`
           <div class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-            <div class="w-1.5 h-1.5 ${r.dot} rounded-full"></div>
-            <span>${e}</span>
+            <div class="w-1.5 h-1.5 ${e.dot} rounded-full"></div>
+            <span>${t}</span>
           </div>
         `).join("")}
       </div>
-      <div class="flex flex-wrap gap-2 pt-3 border-t ${r.borderT}">
-        ${t.tags.map(e=>`<span class="px-2 py-1 ${r.tag} rounded-md text-xs">${e}</span>`).join("")}
+      <div class="flex flex-wrap gap-2 pt-3 border-t ${e.borderT}">
+        ${r.tags.map(t=>`<span class="px-2 py-1 ${e.tag} rounded-md text-xs">${t}</span>`).join("")}
       </div>
     </div>
-  `}function re(){const{university:t,courses:a,thesis:r}=X,i=a.map(o=>`
+  `}function re(){const{university:r,courses:a,thesis:e}=X,i=a.map(o=>`
       <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 ${o.color==="blue"?"hover:border-blue-500/30 text-blue-300":o.color==="purple"?"hover:border-purple-500/30 text-purple-300":"hover:border-pink-500/30 text-pink-300"} transition-all duration-300 group/course">
         <div class="text-2xl mb-2">${o.icon}</div>
         <h5 class="font-medium mb-1">${o.name}</h5>
         <p class="text-sm text-gray-400">${o.description}</p>
       </div>
-    `).join(""),e=ee.map(o=>te(o)).join("");return`
+    `).join(""),t=ee.map(o=>te(o)).join("");return`
     <!-- Education Section -->
     <section id="education" class="relative section-bg-pattern section-padding overflow-hidden">
       <!-- Background Pattern -->
@@ -806,15 +808,15 @@ ${a.map(i).join("")}
                 </div>
                 <div class="text-center md:text-left">
                   <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                    ${t.name}
+                    ${r.name}
                   </h3>
-                  <p class="text-xl text-gray-300 mb-4">${t.location}</p>
+                  <p class="text-xl text-gray-300 mb-4">${r.location}</p>
                   <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <div class="px-4 py-2 bg-blue-500/20 rounded-xl border border-blue-500/30">
-                      <span class="text-blue-300 font-medium">${t.years}</span>
+                      <span class="text-blue-300 font-medium">${r.years}</span>
                     </div>
                     <div class="px-4 py-2 bg-purple-500/20 rounded-xl border border-purple-500/30">
-                      <span class="text-purple-300 font-medium">CGPA: ${t.cgpa}</span>
+                      <span class="text-purple-300 font-medium">CGPA: ${r.cgpa}</span>
                     </div>
                     <div class="px-4 py-2 bg-pink-500/20 rounded-xl border border-pink-500/30">
                       <span class="text-pink-300 font-medium">BSc in CS</span>
@@ -835,12 +837,12 @@ ${a.map(i).join("")}
                           <span class="text-2xl">🎓</span>
                         </div>
                         <div>
-                          <h5 class="font-semibold text-blue-300">${t.degree}</h5>
+                          <h5 class="font-semibold text-blue-300">${r.degree}</h5>
                           <p class="text-sm text-gray-400">Graduated with distinction</p>
                         </div>
                       </div>
                       <div class="space-y-4">
-                        ${t.achievements.map((o,l)=>{const n=["from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-blue-400"];return`
+                        ${r.achievements.map((o,l)=>{const n=["from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-blue-400"];return`
                             <div class="flex items-start group/item">
                               <div class="w-2 h-2 mt-2 bg-gradient-to-r ${n[l%n.length]} rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
                               <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">${o}</span>
@@ -876,33 +878,33 @@ ${a.map(i).join("")}
                         </div>
                       </div>
                       <div class="flex-1">
-                        <h5 class="text-xl md:text-2xl font-bold text-cyan-300 mb-2">${r.title}</h5>
+                        <h5 class="text-xl md:text-2xl font-bold text-cyan-300 mb-2">${e.title}</h5>
                         <div class="flex flex-wrap gap-3 text-sm">
-                          <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-lg border border-cyan-500/30">${r.type}</span>
-                          <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg border border-blue-500/30">${r.date}</span>
+                          <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-lg border border-cyan-500/30">${e.type}</span>
+                          <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg border border-blue-500/30">${e.date}</span>
                         </div>
                       </div>
                     </div>
 
                     <!-- Description -->
-                    <p class="text-gray-300 mb-6 leading-relaxed">${r.description}</p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">${e.description}</p>
 
                     <!-- Supervisor & Collaborator -->
                     <div class="flex flex-wrap gap-x-6 gap-y-2 mb-6 text-sm">
                       <div class="flex items-center gap-2">
                         <span class="text-gray-400">Supervisor:</span>
-                        <span class="text-purple-300 font-medium">${r.supervisor.name}</span>
-                        <span class="text-gray-500">(${r.supervisor.title})</span>
+                        <span class="text-purple-300 font-medium">${e.supervisor.name}</span>
+                        <span class="text-gray-500">(${e.supervisor.title})</span>
                       </div>
                       <div class="flex items-center gap-2">
                         <span class="text-gray-400">Co-author:</span>
-                        <span class="text-blue-300 font-medium">${r.collaborator}</span>
+                        <span class="text-blue-300 font-medium">${e.collaborator}</span>
                       </div>
                     </div>
 
                     <!-- Key Contributions Grid -->
                     <div class="grid md:grid-cols-3 gap-4 mb-6">
-                      ${r.contributions.map((o,l)=>{const n=[{bg:"from-cyan-500/10 to-cyan-500/5",border:"border-cyan-500/20",text:"text-cyan-300",dot:"bg-cyan-400"},{bg:"from-blue-500/10 to-blue-500/5",border:"border-blue-500/20",text:"text-blue-300",dot:"bg-blue-400"},{bg:"from-purple-500/10 to-purple-500/5",border:"border-purple-500/20",text:"text-purple-300",dot:"bg-purple-400"}],s=n[l%n.length];return`
+                      ${e.contributions.map((o,l)=>{const n=[{bg:"from-cyan-500/10 to-cyan-500/5",border:"border-cyan-500/20",text:"text-cyan-300",dot:"bg-cyan-400"},{bg:"from-blue-500/10 to-blue-500/5",border:"border-blue-500/20",text:"text-blue-300",dot:"bg-blue-400"},{bg:"from-purple-500/10 to-purple-500/5",border:"border-purple-500/20",text:"text-purple-300",dot:"bg-purple-400"}],s=n[l%n.length];return`
                           <div class="bg-gradient-to-br ${s.bg} rounded-xl p-4 border ${s.border}">
                             <div class="flex items-center gap-2 mb-2">
                               <div class="w-2 h-2 ${s.dot} rounded-full"></div>
@@ -915,7 +917,7 @@ ${a.map(i).join("")}
 
                     <!-- Technology Tags -->
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-cyan-500/20">
-                      ${r.technologies.map(o=>`
+                      ${e.technologies.map(o=>`
                         <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-300 rounded-lg text-sm border border-cyan-500/20">${o}</span>
                       `).join("")}
                     </div>
@@ -928,7 +930,7 @@ ${a.map(i).join("")}
                   Notable Projects
                 </h4>
                 <div class="grid md:grid-cols-3 gap-6">
-                  ${e}
+                  ${t}
                 </div>
               </div>
             </div>
@@ -936,7 +938,99 @@ ${a.map(i).join("")}
         </div>
       </div>
     </section>
-  `}const oe={github:"https://github.com/magic-kiri",linkedin:"https://linkedin.com/in/magic-kiri",upwork:"https://www.upwork.com/freelancers/~01c7a18d6a5053d4b3"},ae={email:"kimuapon@gmail.com",phone:"+8801556542573",location:"Dhaka, Bangladesh"},c={social:oe,contact:ae};function ie(){return`
+  `}const oe=[{id:1,name:"Professional Cloud Architect",issuer:"Google Cloud",issueDate:"October 2025",description:"Professional Cloud Architects enable organizations to leverage Google Cloud technologies. With a thorough understanding of cloud architecture and Google Cloud, they design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives.",level:"Advanced",skills:["Cloud Architecture","Google Cloud Platform","Cloud Security","Networking","Scalability","Databases","GKE","IAM"],credentialUrl:"https://www.credly.com/badges/8ce7a003-86f6-4d38-b58d-6f5c6b31b159/public_url",badgeImage:"https://images.credly.com/size/680x680/images/71c579e0-51fd-4247-b493-d2fa8167157a/image.png"}],ae={certifications:oe};function ie(){const{certifications:r}=ae;return`
+    <!-- Certifications Section -->
+    <section id="certifications" class="relative section-bg-pattern section-padding overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-400 to-green-500 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+      </div>
+
+      <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">Certifications</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Professional credentials validating expertise in cloud technologies and architecture.
+          </p>
+        </div>
+
+        <!-- Certifications Card -->
+        <div class="mx-auto">
+          <div class="group relative">
+            <!-- Glow Effect -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-gradient-to-br from-gray-800/90 to-slate-800/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-500">
+              ${r.map(e=>{const i=e.skills.map(t=>`<span class="px-3 py-1 bg-blue-500/10 text-blue-300 rounded-lg text-sm border border-blue-500/20">${t}</span>`).join("");return`
+        <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+          <!-- Badge Image -->
+          <div class="flex-shrink-0 flex justify-center md:justify-start">
+            <div class="relative">
+              <div class="w-40 h-40 md:w-48 md:h-48 overflow-hidden bg-transparent">
+                <img
+                  src="${e.badgeImage}"
+                  alt="${e.name} Badge"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+            <!-- Details -->
+            <div class="flex-1">
+              <!-- Header -->
+              <div class="mb-4">
+                <h3 class="text-xl md:text-2xl font-bold text-blue-300 mb-2 group-hover:text-blue-200 transition-colors">
+                  ${e.name}
+                </h3>
+                <div class="flex flex-wrap gap-3 text-sm">
+                  <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg border border-blue-500/30">
+                    ${e.issuer}
+                  </span>
+                  <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-lg border border-cyan-500/30">
+                    ${e.issueDate}
+                  </span>
+                  <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-lg border border-green-500/30">
+                    ${e.level}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-gray-300 mb-6 leading-relaxed">${e.description}</p>
+
+              <!-- Skills -->
+              <div class="mb-6">
+                <h4 class="text-sm font-medium text-gray-400 mb-3">Skills Validated</h4>
+                <div class="flex flex-wrap gap-2">
+                  ${i}
+                </div>
+              </div>
+
+              <!-- Verify Button -->
+              <a
+                href="${e.credentialUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 group/btn"
+              >
+                <span>Verify Credential</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </div>
+        </div>
+      `}).join("")}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `}const ne={github:"https://github.com/magic-kiri",linkedin:"https://linkedin.com/in/magic-kiri",upwork:"https://www.upwork.com/freelancers/~01c7a18d6a5053d4b3"},le={email:"kimuapon@gmail.com",phone:"+8801556542573",location:"Dhaka, Bangladesh"},c={social:ne,contact:le};function se(){return`
     <!-- Contact Section -->
     <section id="contact" class="relative section-bg-pattern section-padding overflow-hidden">
       <!-- Background Elements -->
@@ -1056,7 +1150,7 @@ ${a.map(i).join("")}
         </div>
       </div>
     </section>
-  `}function ne(){const t=document.getElementById("contact-form");function a(){const r=document.getElementById("toast-notification");r&&(r.classList.remove("translate-x-full","opacity-0"),r.classList.add("translate-x-0","opacity-100"),setTimeout(()=>{r.classList.remove("translate-x-0","opacity-100"),r.classList.add("translate-x-full","opacity-0")},2e3))}t?.addEventListener("submit",r=>{r.preventDefault(),a()})}function le(){return`
+  `}function de(){const r=document.getElementById("contact-form");function a(){const e=document.getElementById("toast-notification");e&&(e.classList.remove("translate-x-full","opacity-0"),e.classList.add("translate-x-0","opacity-100"),setTimeout(()=>{e.classList.remove("translate-x-0","opacity-100"),e.classList.add("translate-x-full","opacity-0")},2e3))}r?.addEventListener("submit",e=>{e.preventDefault(),a()})}function ce(){return`
     <!-- Footer -->
     <footer class="relative section-bg-pattern py-12 overflow-hidden">
       <!-- Background Elements -->
@@ -1076,12 +1170,11 @@ ${a.map(i).join("")}
           </div>
           <div class="text-center md:text-right">
             <p class="text-gray-400 mb-2">&copy; ${new Date().getFullYear()} Kiriti Mukherjee. All rights reserved.</p>
-            <p class="text-gray-500 text-sm">Made with love and lots of coffee</p>
           </div>
         </div>
       </div>
     </footer>
-  `}function se(){const t=document.getElementById("app");t.innerHTML=`
+  `}function pe(){const r=document.getElementById("app");r.innerHTML=`
     ${x()}
     ${y()}
     <div class="section-separator"></div>
@@ -1096,6 +1189,8 @@ ${a.map(i).join("")}
     ${re()}
     <div class="section-separator"></div>
     ${ie()}
+    <div class="section-separator"></div>
+    ${se()}
     <div class="section-separator-full"></div>
-    ${le()}
-  `}function de(){h(),w(),T(),ne()}document.addEventListener("DOMContentLoaded",()=>{se(),de()});
+    ${ce()}
+  `}function ue(){h(),w(),T(),de()}document.addEventListener("DOMContentLoaded",()=>{pe(),ue()});
