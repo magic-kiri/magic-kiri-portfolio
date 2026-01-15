@@ -18,7 +18,7 @@ export function renderHero() {
         <div class="absolute top-1/2 right-1/3 w-2 h-2 bg-indigo-400 rounded-full animate-bounce opacity-60" style="animation-delay: 3s"></div>
       </div>
 
-      <div class="container mx-auto relative z-10">
+      <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
         <div class="flex flex-col lg:flex-row items-center min-h-[600px]">
           <div class="mt-2 lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left">
             <!-- Greeting Badge -->
@@ -41,23 +41,23 @@ export function renderHero() {
                 <span id="type-display" class="inline-block"></span>
               </h2>
               <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
-                <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-base font-medium flex items-center gap-2">
+                <span class="px-4 py-2 rounded-full text-base font-medium flex items-center gap-2" style="background-color: rgba(88, 28, 135, 0.3); color: #d8b4fe;">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-5 h-5" alt="TypeScript" title="TypeScript - Statically typed JavaScript that scales" />
                   TypeScript
                 </span>
-                <span class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full text-base font-medium flex items-center gap-2">
+                <span class="px-4 py-2 rounded-full text-base font-medium flex items-center gap-2" style="background-color: rgba(113, 63, 18, 0.3); color: #fde047;">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5" alt="Python" title="Python - Versatile language for AI, ML, and automation" />
                   Python
                 </span>
-                <span class="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-base font-medium flex items-center gap-2">
+                <span class="px-4 py-2 rounded-full text-base font-medium flex items-center gap-2" style="background-color: rgba(20, 83, 45, 0.3); color: #86efac;">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-5 h-5" alt="Node.js" title="Node.js - JavaScript runtime built on Chrome's V8 engine" />
                   Node.js
                 </span>
-                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-base font-medium flex items-center gap-2">
+                <span class="px-4 py-2 rounded-full text-base font-medium flex items-center gap-2" style="background-color: rgba(30, 58, 138, 0.3); color: #93c5fd;">
                   <img src="https://cdn.simpleicons.org/nextdotjs/white" class="w-5 h-5" alt="NextJS" title="NextJS - The React framework for production" />
                   Next.Js
                 </span>
-                <span class="px-4 py-2 bg-neutral-900 dark:bg-gray-800/50 text-gray-800 dark:text-gray-300 rounded-full text-base font-medium flex items-center gap-2">
+                <span class="px-4 py-2 rounded-full text-base font-medium flex items-center gap-2" style="background-color: rgba(31, 41, 55, 0.5); color: #d1d5db;">
                   <img src="${baseUrl}aws.svg" class="w-5 h-5" alt="AWS" title="Amazon Web Services - Cloud computing platform" />
                   AWS
                 </span>
@@ -82,7 +82,7 @@ export function renderHero() {
                 </span>
                 <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="#experience" class="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500 transition-all duration-300 flex items-center justify-center group" title="View my professional experience">
+              <a href="#experience" class="px-8 py-4 border-2 border-blue-500/60 text-white font-semibold rounded-xl hover:bg-blue-500/10 hover:border-blue-400 transition-all duration-300 flex items-center justify-center group" title="View my professional experience">
                 View My Work
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -122,13 +122,13 @@ export function renderHero() {
               </div>
 
               <!-- Floating Tech Icons -->
-              <div class="absolute top-8 -left-8 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce">
+              <div class="absolute top-8 -left-8 w-16 h-16 bg-gray-900/80 backdrop-blur-sm border border-white/10 rounded-full shadow-lg flex items-center justify-center animate-bounce">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-8 h-8" title="React - A JavaScript library for building user interfaces" />
               </div>
-              <div class="absolute top-1/2 -right-8 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 1s">
+              <div class="absolute top-1/2 -right-8 w-16 h-16 bg-gray-900/80 backdrop-blur-sm border border-white/10 rounded-full shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 1s">
                 <img src="${baseUrl}aws.svg" alt="AWS" class="w-8 h-8" title="AWS Cloud - Leading cloud computing platform" />
               </div>
-              <div class="absolute bottom-8 -left-4 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 2s">
+              <div class="absolute bottom-8 -left-4 w-16 h-16 bg-gray-900/80 backdrop-blur-sm border border-white/10 rounded-full shadow-lg flex items-center justify-center animate-bounce" style="animation-delay: 2s">
                 <img src="${baseUrl}typescript.svg" alt="TS" class="w-8 h-8" title="TypeScript - JavaScript that scales" />
               </div>
             </div>
@@ -147,7 +147,7 @@ export function renderHero() {
 }
 
 export function initTypingEffect() {
-  const titles = ['Full Stack Engineer', 'Software Engineer'];
+  const titles = ["Full Stack Engineer", "Software Engineer"];
   let titleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -155,22 +155,23 @@ export function initTypingEffect() {
   const erasingDelay = 50;
   const newTextDelay = 2000;
   let cursorVisible = true;
-  const cursor = '|';
+  const cursor = "|";
 
   function updateCursor() {
-    const typeDisplay = document.getElementById('type-display');
+    const typeDisplay = document.getElementById("type-display");
     if (!typeDisplay) return;
     cursorVisible = !cursorVisible;
     if (cursorVisible) {
-      typeDisplay.textContent = typeDisplay.textContent.replace(cursor, '') + cursor;
+      typeDisplay.textContent =
+        typeDisplay.textContent.replace(cursor, "") + cursor;
     } else {
-      typeDisplay.textContent = typeDisplay.textContent.replace(cursor, '');
+      typeDisplay.textContent = typeDisplay.textContent.replace(cursor, "");
     }
   }
 
   function typeEffect() {
     const currentTitle = titles[titleIndex];
-    const typeDisplay = document.getElementById('type-display');
+    const typeDisplay = document.getElementById("type-display");
     if (!typeDisplay) return;
 
     if (isDeleting) {

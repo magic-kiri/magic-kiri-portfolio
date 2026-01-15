@@ -288,7 +288,7 @@ export function renderTimezone() {
         ></div>
       </div>
 
-      <div class="container mx-auto px-4 relative z-10">
+      <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
         <div class="max-w-6xl mx-auto">
           <!-- Enhanced Header -->
           <div class="text-center mb-16">

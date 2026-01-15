@@ -10,7 +10,7 @@ export function renderContact() {
         <div class="absolute bottom-1/4 left-0 w-48 h-48 bg-gradient-to-r from-rose-400 to-red-500 rounded-full filter blur-2xl animate-pulse animation-delay-2000"></div>
       </div>
 
-      <div class="container mx-auto relative z-10">
+      <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
           <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Get In Touch</span>
         </h2>
@@ -59,8 +59,8 @@ export function renderContact() {
                     </a>
                   </div>
                   <div>
-                    <h4 class="text-lg font-medium text-gray-900 dark:text-white">Email</h4>
-                    <a href="mailto:${meta.contact.email}" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" title="Email me">
+                    <h4 class="text-lg font-medium text-white">Email</h4>
+                    <a href="mailto:${meta.contact.email}" class="text-gray-300 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" title="Email me">
                       ${meta.contact.email}
                     </a>
                   </div>
@@ -75,8 +75,8 @@ export function renderContact() {
                     </a>
                   </div>
                   <div>
-                    <h4 class="text-lg font-medium text-gray-900 dark:text-white">Phone</h4>
-                    <a href="tel:${meta.contact.phone}" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" title="Call me on phone">
+                    <h4 class="text-lg font-medium text-white">Phone</h4>
+                    <a href="tel:${meta.contact.phone}" class="text-gray-300 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" title="Call me on phone">
                       +880 (1556) 542-573
                     </a>
                   </div>
@@ -90,8 +90,8 @@ export function renderContact() {
                     </svg>
                   </div>
                   <div>
-                    <h4 class="text-lg font-medium text-gray-900 dark:text-white">Location</h4>
-                    <p class="text-gray-600 dark:text-gray-400">${meta.contact.location}</p>
+                    <h4 class="text-lg font-medium text-white">Location</h4>
+                    <p class="text-gray-300 dark:text-gray-200">${meta.contact.location}</p>
                   </div>
                 </div>
               </div>

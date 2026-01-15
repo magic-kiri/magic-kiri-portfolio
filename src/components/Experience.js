@@ -24,8 +24,8 @@ function renderExperienceCard(exp, index) {
   `).join('');
 
   const techStackHTML = exp.techStack.map((tech) => {
-    const colors = techStackColors[tech] || { from: 'gray-500', to: 'gray-600', border: 'gray-400', text: 'gray-300' };
-    return `<span class="px-3 py-1 bg-gradient-to-r from-${colors.from}/20 to-${colors.to}/20 border border-${colors.border}/30 text-${colors.text} rounded-full text-sm font-medium">${tech}</span>`;
+    const colors = techStackColors[tech] || { bg: '#f3f4f6', text: '#1f2937' };
+    return `<span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: ${colors.bg}; color: ${colors.text};">${tech}</span>`;
   }).join('');
 
   return `
@@ -48,7 +48,7 @@ function renderExperienceCard(exp, index) {
               ${exp.dateRange}
             </div>
 
-            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-${exp.colors.primary}-400 to-${exp.colors.secondary}-400 bg-clip-text text-transparent">
+            <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-${exp.colors.primary}-400 via-${exp.colors.primary}-300 to-${exp.colors.secondary}-400 bg-clip-text text-transparent">
               ${exp.title}
             </h3>
 
@@ -102,7 +102,7 @@ export function renderExperience() {
         <div class="absolute top-1/2 right-1/3 w-2 h-2 bg-pink-400 rounded-full animate-bounce opacity-40" style="animation-delay: 3s"></div>
       </div>
 
-      <div class="container mx-auto relative z-10">
+      <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
         <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">
           <span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">Work Experience</span>
         </h2>

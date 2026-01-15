@@ -10,7 +10,7 @@ export function renderFooter() {
         <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
       </div>
 
-      <div class="container mx-auto relative z-10">
+      <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-6 md:mb-0 text-center md:text-left">
             <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
