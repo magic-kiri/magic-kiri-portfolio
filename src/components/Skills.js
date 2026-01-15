@@ -1,7 +1,10 @@
-import skillsData from '../data/skills.json';
+import skillsData from "../data/skills.json";
 
 export function renderSkills() {
-  const totalSkills = skillsData.reduce((total, category) => total + category.skills.length, 0);
+  const totalSkills = skillsData.reduce(
+    (total, category) => total + category.skills.length,
+    0
+  );
 
   const statsHTML = `
     <div class="flex flex-wrap justify-center gap-6 mb-12">
@@ -20,22 +23,33 @@ export function renderSkills() {
     </div>
   `;
 
-  const categoriesHTML = skillsData.map((category) => {
-    const proficiencyWidth = (category.proficiency / 5) * 100;
+  const categoriesHTML = skillsData
+    .map((category) => {
+      const proficiencyWidth = (category.proficiency / 5) * 100;
 
-    return `
+      return `
       <div class="skill-category group">
         <div class="relative">
-          <div class="absolute -inset-1 bg-gradient-to-r ${category.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-          <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${category.borderColor} ${category.hoverBorderColor} transition-all duration-300">
+          <div class="absolute -inset-1 bg-gradient-to-r ${
+            category.gradient
+          } rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+          <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${
+            category.borderColor
+          } ${category.hoverBorderColor} transition-all duration-300">
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 ${category.iconBg} rounded-xl flex items-center justify-center category-icon">
+                <div class="w-12 h-12 ${
+                  category.iconBg
+                } rounded-xl flex items-center justify-center category-icon">
                   <span class="text-2xl">${category.icon}</span>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-white group-hover:${category.textColor} transition-colors">${category.name}</h3>
-                  <div class="text-sm text-gray-400">${category.skills.length} technologies</div>
+                  <h3 class="text-xl font-bold text-white group-hover:${
+                    category.textColor
+                  } transition-colors">${category.name}</h3>
+                  <div class="text-sm text-gray-400">${
+                    category.skills.length
+                  } technologies</div>
                 </div>
               </div>
             </div>
@@ -46,23 +60,30 @@ export function renderSkills() {
                 <span class="text-gray-400">${category.proficiency}/5</span>
               </div>
               <div class="proficiency-bar">
-                <div class="proficiency-fill bg-gradient-to-r ${category.gradient}" style="width: ${proficiencyWidth}%"></div>
+                <div class="proficiency-fill bg-gradient-to-r ${
+                  category.gradient
+                }" style="width: ${proficiencyWidth}%"></div>
               </div>
             </div>
 
             <div class="skill-scroll flex flex-wrap gap-2 max-h-32 overflow-y-auto pr-2">
-              ${category.skills.map((skill) => `
+              ${category.skills
+                .map(
+                  (skill) => `
                 <div class="skill-badge flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-1.5 border border-gray-700/50" title="${skill.description}">
                   <img src="${skill.icon}" alt="${skill.name}" class="w-4 h-4" />
                   <span class="text-sm text-gray-300">${skill.name}</span>
                 </div>
-              `).join('')}
+              `
+                )
+                .join("")}
             </div>
           </div>
         </div>
       </div>
     `;
-  }).join('');
+    })
+    .join("");
 
   return `
     <!-- Skills Section -->
@@ -96,7 +117,7 @@ export function renderSkills() {
         </div>
 
         <!-- Skills Container -->
-        <div id="skills-container" class="skills-container lg:px-8">
+        <div id="skills-container" class="skills-container">
           ${statsHTML}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             ${categoriesHTML}

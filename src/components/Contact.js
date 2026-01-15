@@ -1,4 +1,4 @@
-import meta from '../data/meta.json';
+import meta from "../data/meta.json";
 
 export function renderContact() {
   return `
@@ -35,7 +35,7 @@ export function renderContact() {
                   <label for="message" class="block mb-2 font-semibold text-gray-200 dark:text-gray-300">Message</label>
                   <textarea id="message" rows="6" class="w-full px-4 py-3 bg-white/5 dark:bg-gray-800/5 border border-white/10 dark:border-gray-700/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-white backdrop-blur-xl resize-none" placeholder="Your message..."></textarea>
                 </div>
-                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-default hover:cursor-pointer">
                   Send Message
                 </button>
               </form>
@@ -125,22 +125,22 @@ export function renderContact() {
 }
 
 export function initContactForm() {
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById("contact-form");
 
   function showToast() {
-    const toast = document.getElementById('toast-notification');
+    const toast = document.getElementById("toast-notification");
     if (!toast) return;
 
-    toast.classList.remove('translate-x-full', 'opacity-0');
-    toast.classList.add('translate-x-0', 'opacity-100');
+    toast.classList.remove("translate-x-full", "opacity-0");
+    toast.classList.add("translate-x-0", "opacity-100");
 
     setTimeout(() => {
-      toast.classList.remove('translate-x-0', 'opacity-100');
-      toast.classList.add('translate-x-full', 'opacity-0');
+      toast.classList.remove("translate-x-0", "opacity-100");
+      toast.classList.add("translate-x-full", "opacity-0");
     }, 2000);
   }
 
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener("submit", (e) => {
     e.preventDefault();
     showToast();
   });

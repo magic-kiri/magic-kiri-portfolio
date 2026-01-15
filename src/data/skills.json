@@ -57,7 +57,7 @@
         "description": "Next.js - React framework for production"
       },
       {
-        "name": "HTML5",
+        "name": "HTML",
         "icon": "https://img.icons8.com/color/36/000000/html-5.png",
         "description": "HTML5 - Standard markup language for web pages"
       },
@@ -84,7 +84,7 @@
     "proficiency": 5,
     "skills": [
       {
-        "name": "Node.js",
+        "name": "Node",
         "icon": "https://cdn.simpleicons.org/nodedotjs",
         "description": "Node.js - JavaScript runtime built on Chrome's V8 engine"
       },
@@ -92,6 +92,11 @@
         "name": "Express",
         "icon": "https://cdn.simpleicons.org/express/white",
         "description": "Express - Fast, unopinionated web framework for Node.js"
+      },
+      {
+        "name": "Deno",
+        "icon": "https://img.icons8.com/color/36/000000/deno.png",
+        "description": "Deno - Secure runtime for JavaScript and TypeScript"
       },
       {
         "name": "NestJS",
@@ -102,11 +107,6 @@
         "name": "FastAPI",
         "icon": "https://cdn.simpleicons.org/fastapi",
         "description": "FastAPI - Modern, fast web framework for Python"
-      },
-      {
-        "name": "Deno",
-        "icon": "https://img.icons8.com/color/36/000000/deno.png",
-        "description": "Deno - Secure runtime for JavaScript and TypeScript"
       },
       {
         "name": "Kafka",

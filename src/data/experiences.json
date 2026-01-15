@@ -16,22 +16,29 @@
       "Implemented elbow method for automated determination of optimal cluster count, eliminating manual parameter tuning and improving result reproducibility",
       "Developed AI agent using Gemini-2.5-flash to automate leave management system, deployed across the team"
     ],
-    "techStack": ["Python", "C++", "Azure Live Voice API", "Unsupervised Learning", "LangChain", "Gemini"],
+    "techStack": [
+      "Python",
+      "C++",
+      "Azure Live Voice API",
+      "Unsupervised Learning",
+      "LangChain",
+      "Gemini"
+    ],
     "colors": {
-      "primary": "indigo",
-      "secondary": "violet",
-      "gradient": "from-indigo-400 via-violet-400 to-purple-400",
-      "dotGradient": "from-indigo-400 to-violet-500",
-      "badgeGradient": "from-indigo-500 to-violet-500",
-      "borderColor": "border-indigo-500/20",
-      "hoverBorderColor": "hover:border-indigo-400/40",
-      "shadowColor": "hover:shadow-indigo-500/20",
-      "workTypeBg": "bg-indigo-400/10",
-      "workTypeText": "text-indigo-400",
-      "workTypeBorder": "border-indigo-400/20",
-      "employmentTypeBg": "bg-violet-400/10",
-      "employmentTypeText": "text-violet-400",
-      "employmentTypeBorder": "border-violet-400/20"
+      "primary": "cyan",
+      "secondary": "purple",
+      "gradient": "from-cyan-400 via-blue-400 to-purple-400",
+      "dotGradient": "from-cyan-400 to-purple-500",
+      "badgeGradient": "from-cyan-500 to-purple-500",
+      "borderColor": "border-cyan-500/20",
+      "hoverBorderColor": "hover:border-cyan-400/40",
+      "shadowColor": "hover:shadow-cyan-500/20",
+      "workTypeBg": "bg-cyan-400/10",
+      "workTypeText": "text-cyan-400",
+      "workTypeBorder": "border-cyan-400/20",
+      "employmentTypeBg": "bg-purple-400/10",
+      "employmentTypeText": "text-purple-400",
+      "employmentTypeBorder": "border-purple-400/20"
     },
     "position": "left"
   },
@@ -52,7 +59,15 @@
       "Developed a custom CRM to enable sellers to easily invite buyers into groups, enhancing engagement by 30%.",
       "Defined and implemented integration tests to ensure API integrity and maintain the reliability of the system."
     ],
-    "techStack": ["TypeScript", "Python", "Next.js", "NestJS", "AWS", "PostgreSQL", "Microservices"],
+    "techStack": [
+      "TypeScript",
+      "Python",
+      "Next.js",
+      "NestJS",
+      "AWS",
+      "PostgreSQL",
+      "Microservices"
+    ],
     "colors": {
       "primary": "emerald",
       "secondary": "cyan",
@@ -87,7 +102,14 @@
       "Built LinkedIn data scrapers for automated collection from searches, groups, events and messages.",
       "Developed customizable workflow sequence builder to automate outreach events."
     ],
-    "techStack": ["TypeScript", "Kafka", "FastAPI", "NestJS", "MongoDB", "Playwright"],
+    "techStack": [
+      "TypeScript",
+      "Kafka",
+      "FastAPI",
+      "NestJS",
+      "MongoDB",
+      "Playwright"
+    ],
     "colors": {
       "primary": "blue",
       "secondary": "purple",
@@ -120,7 +142,7 @@
       "Developed edge functions with Deno to efficiently filter songs played on the radio",
       "Reduced memory consumption in microcontrollers and optimized dashboard processing time from 140s to 5s"
     ],
-    "techStack": ["Deno", "JavaScript", "Python", "Serverless"],
+    "techStack": ["JavaScript", "Deno", "Python", "Serverless"],
     "colors": {
       "primary": "purple",
       "secondary": "pink",
@@ -153,7 +175,15 @@
       "Migrated core codebase from JavaScript to TypeScript, improving maintainability and reducing production issues by 40%",
       "At Replo (YC S21): created and refactored reusable UI components shared across the team"
     ],
-    "techStack": ["React.js", "TypeScript", "Jest", "Node.js", "Prisma", "Docker", "Tailwind"],
+    "techStack": [
+      "React.js",
+      "TypeScript",
+      "Jest",
+      "Node.js",
+      "Prisma",
+      "Docker",
+      "Tailwind"
+    ],
     "colors": {
       "primary": "pink",
       "secondary": "red",
