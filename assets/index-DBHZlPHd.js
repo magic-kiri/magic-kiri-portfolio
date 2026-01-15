@@ -1,4 +1,4 @@
-(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const a of e)if(a.type==="childList")for(const n of a.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const a={};return e.integrity&&(a.integrity=e.integrity),e.referrerPolicy&&(a.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?a.credentials="include":e.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function i(e){if(e.ep)return;e.ep=!0;const a=o(e);fetch(e.href,a)}})();function h(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const l of o.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&i(l)}).observe(document,{childList:!0,subtree:!0});function r(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(e){if(e.ep)return;e.ep=!0;const o=r(e);fetch(e.href,o)}})();function x(){return`
     <!-- Navigation -->
     <nav class="fixed lg:top-0 left-0 right-0 z-50 lg:z-50 bg-gray-900/95 dark:bg-black/95 backdrop-blur-lg shadow-lg border-b border-purple-900">
       <div class="container mx-auto px-4 sm:px-8 md:px-10 lg:px-16 py-4 flex justify-between items-center">
@@ -38,7 +38,7 @@
         <a href="#contact" class="text-white hover:text-rose-500 transition-colors duration-300">Contact</a>
       </div>
     </div>
-  `}function x(){const t=document.getElementById("mobile-menu"),r=document.getElementById("mobile-menu-button"),o=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}r?.addEventListener("click",e),o?.addEventListener("click",e),i.forEach(a=>{a.addEventListener("click",e)}),document.addEventListener("click",a=>{!t.contains(a.target)&&!r.contains(a.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){return`
+  `}function h(){const t=document.getElementById("mobile-menu"),a=document.getElementById("mobile-menu-button"),r=document.getElementById("close-menu-button"),i=document.querySelectorAll("#mobile-menu a");function e(){t.classList.toggle("translate-x-full")}a?.addEventListener("click",e),r?.addEventListener("click",e),i.forEach(o=>{o.addEventListener("click",e)}),document.addEventListener("click",o=>{!t.contains(o.target)&&!a.contains(o.target)&&!t.classList.contains("translate-x-full")&&e()})}function y(){return`
     <!-- Hero Section -->
     <section id="home" class="relative section-bg-pattern section-padding bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-black/50 dark:from-black/50 dark:via-gray-900/50 dark:to-gray-800/50 overflow-hidden">
       <!-- Background Pattern -->
@@ -181,7 +181,7 @@
         </div>
       </div>
     </section>
-  `}function w(){const t=["Full Stack Engineer","Software Engineer"];let r=0,o=0,i=!1;const e=100,a=50,n=2e3;let l=!0;const s="|";function p(){const d=document.getElementById("type-display");d&&(l=!l,l?d.textContent=d.textContent.replace(s,"")+s:d.textContent=d.textContent.replace(s,""))}function g(){const d=t[r],u=document.getElementById("type-display");if(!u)return;i?(u.textContent=d.substring(0,o-1),o--):(u.textContent=d.substring(0,o+1),o++),l&&(u.textContent+=s);let b=i?a:e;!i&&o===d.length?(b=n,i=!0):i&&o===0&&(i=!1,r=(r+1)%t.length),setTimeout(g,b)}setInterval(p,500),g()}function k(){return`
+  `}function w(){const t=["Full Stack Engineer","Software Engineer"];let a=0,r=0,i=!1;const e=100,o=50,l=2e3;let n=!0;const s="|";function p(){const d=document.getElementById("type-display");d&&(n=!n,n?d.textContent=d.textContent.replace(s,"")+s:d.textContent=d.textContent.replace(s,""))}function g(){const d=t[a],u=document.getElementById("type-display");if(!u)return;i?(u.textContent=d.substring(0,r-1),r--):(u.textContent=d.substring(0,r+1),r++),n&&(u.textContent+=s);let b=i?o:e;!i&&r===d.length?(b=l,i=!0):i&&r===0&&(i=!1,a=(a+1)%t.length),setTimeout(g,b)}setInterval(p,500),g()}function k(){return`
     <!-- About Section -->
     <section id="about" class="relative section-bg-pattern section-padding overflow-hidden">
       <!-- Background Elements -->
@@ -233,7 +233,7 @@
         </div>
       </div>
     </section>
-  `}function T(){const t=[{key:"uk",comment:"UK Time Zone",glowGradient:"from-blue-500 to-cyan-500",border:"border-blue-500/30 hover:border-blue-400/50",clockBorder:"border-blue-400",clockFaceGradient:"from-blue-500/20 to-cyan-500/20",hourHandTop:"top-1/2",hourHand:"bg-blue-400",minuteHand:"bg-cyan-400",minuteHandTop:"top-1/2",minuteHandDelay:"2s",centerDot:"bg-blue-500",flagSrc:"https://flagcdn.com/gb.svg",flagAlt:"UK",flagTitle:"United Kingdom",country:"United Kingdom",countryHover:"group-hover:text-blue-400",timeId:"london-time",timeText:"text-blue-400",locationLabel:"GMT+0 • London",badge:"bg-blue-500/20 text-blue-300",badgeText:"Business Hours: 9AM-6PM"},{key:"bd",comment:"Bangladesh Time Zone",glowGradient:"from-purple-500 to-indigo-500",border:"border-purple-500/30 hover:border-purple-400/50",clockBorder:"border-purple-400",clockFaceGradient:"from-purple-500/20 to-indigo-500/20",hourHandTop:"top-1/2",hourHand:"bg-purple-400",hourHandDelay:"1s",minuteHand:"bg-indigo-400",minuteHandTop:"top-1/2",minuteHandDelay:"3s",centerDot:"bg-purple-500",flagSrc:"https://flagcdn.com/bd.svg",flagAlt:"Bangladesh",flagTitle:"Bangladesh - GMT+6 Time Zone",country:"Bangladesh",countryHover:"group-hover:text-purple-400",timeId:"dhaka-time",timeText:"text-purple-400",locationLabel:"GMT+6 • Dhaka",badge:"bg-purple-500/20 text-purple-300",badgeText:"🏠 Home Base"},{key:"us",comment:"USA Time Zone",glowGradient:"from-cyan-500 to-blue-500",border:"border-cyan-500/30 hover:border-cyan-400/50",clockBorder:"border-cyan-400",clockFaceGradient:"from-cyan-500/20 to-blue-500/20",hourHandTop:"top-1/2",hourHand:"bg-cyan-400",hourHandDelay:"2s",minuteHand:"bg-blue-400",minuteHandTop:"top-1/2",minuteHandDelay:"4s",centerDot:"bg-cyan-500",flagSrc:"https://flagcdn.com/us.svg",flagAlt:"USA",flagTitle:"United States - GMT-5 Time Zone",country:"United States",countryHover:"group-hover:text-cyan-400",timeId:"newyork-time",timeText:"text-cyan-400",locationLabel:"GMT-5 • New York",badge:"bg-cyan-500/20 text-cyan-300",badgeText:"Business Hours: 9AM-6PM"}],r=[{key:"slack",wrapperHoverBorder:"hover:border-blue-400/50",iconSrc:"/slack.svg",iconAlt:"Slack",iconTitle:"Slack/Teams - Real-time communication platform",label:"Slack/Teams",labelHover:"group-hover:text-blue-400",subtitle:"Real-time chat"},{key:"video",wrapperHoverBorder:"hover:border-purple-400/50",iconSrc:"/google-meet.svg",iconAlt:"Google Meet",iconTitle:"Google Meet - Video conferencing platform",label:"Video Calls",labelHover:"group-hover:text-purple-400",subtitle:"Zoom/Meet"},{key:"email",wrapperHoverBorder:"hover:border-cyan-400/50",iconSrc:"/gmail.svg",iconAlt:"Gmail",iconTitle:"Gmail - Email communication",label:"Email",labelHover:"group-hover:text-cyan-400",subtitle:"Async updates"},{key:"tools",wrapperHoverBorder:"hover:border-green-400/50",iconSrc:"/jira.svg",iconAlt:"Jira",iconTitle:"Jira - Project management and issue tracking",label:"Project Tools",labelHover:"group-hover:text-green-400",subtitle:"Jira/Trello"}],o=e=>`
+  `}function S(){const t=[{key:"uk",comment:"UK Time Zone",glowGradient:"from-blue-500 to-cyan-500",border:"border-blue-500/30 hover:border-blue-400/50",clockBorder:"border-blue-400",clockFaceGradient:"from-blue-500/20 to-cyan-500/20",hourHandTop:"top-1/2",hourHand:"bg-blue-400",minuteHand:"bg-cyan-400",minuteHandTop:"top-1/2",minuteHandDelay:"2s",centerDot:"bg-blue-500",flagSrc:"https://flagcdn.com/gb.svg",flagAlt:"UK",flagTitle:"United Kingdom",country:"United Kingdom",countryHover:"group-hover:text-blue-400",timeId:"london-time",timeText:"text-blue-400",locationLabel:"GMT+0 • London",badge:"bg-blue-500/20 text-blue-300",badgeText:"Business Hours: 9AM-6PM"},{key:"bd",comment:"Bangladesh Time Zone",glowGradient:"from-purple-500 to-indigo-500",border:"border-purple-500/30 hover:border-purple-400/50",clockBorder:"border-purple-400",clockFaceGradient:"from-purple-500/20 to-indigo-500/20",hourHandTop:"top-1/2",hourHand:"bg-purple-400",hourHandDelay:"1s",minuteHand:"bg-indigo-400",minuteHandTop:"top-1/2",minuteHandDelay:"3s",centerDot:"bg-purple-500",flagSrc:"https://flagcdn.com/bd.svg",flagAlt:"Bangladesh",flagTitle:"Bangladesh - GMT+6 Time Zone",country:"Bangladesh",countryHover:"group-hover:text-purple-400",timeId:"dhaka-time",timeText:"text-purple-400",locationLabel:"GMT+6 • Dhaka",badge:"bg-purple-500/20 text-purple-300",badgeText:"🏠 Home Base"},{key:"us",comment:"USA Time Zone",glowGradient:"from-cyan-500 to-blue-500",border:"border-cyan-500/30 hover:border-cyan-400/50",clockBorder:"border-cyan-400",clockFaceGradient:"from-cyan-500/20 to-blue-500/20",hourHandTop:"top-1/2",hourHand:"bg-cyan-400",hourHandDelay:"2s",minuteHand:"bg-blue-400",minuteHandTop:"top-1/2",minuteHandDelay:"4s",centerDot:"bg-cyan-500",flagSrc:"https://flagcdn.com/us.svg",flagAlt:"USA",flagTitle:"United States - GMT-5 Time Zone",country:"United States",countryHover:"group-hover:text-cyan-400",timeId:"newyork-time",timeText:"text-cyan-400",locationLabel:"GMT-5 • New York",badge:"bg-cyan-500/20 text-cyan-300",badgeText:"Business Hours: 9AM-6PM"}],a=[{key:"slack",wrapperHoverBorder:"hover:border-blue-400/50",iconSrc:"/slack.svg",iconAlt:"Slack",iconTitle:"Slack/Teams - Real-time communication platform",label:"Slack/Teams",labelHover:"group-hover:text-blue-400",subtitle:"Real-time chat"},{key:"video",wrapperHoverBorder:"hover:border-purple-400/50",iconSrc:"/google-meet.svg",iconAlt:"Google Meet",iconTitle:"Google Meet - Video conferencing platform",label:"Video Calls",labelHover:"group-hover:text-purple-400",subtitle:"Zoom/Meet"},{key:"email",wrapperHoverBorder:"hover:border-cyan-400/50",iconSrc:"/gmail.svg",iconAlt:"Gmail",iconTitle:"Gmail - Email communication",label:"Email",labelHover:"group-hover:text-cyan-400",subtitle:"Async updates"},{key:"tools",wrapperHoverBorder:"hover:border-green-400/50",iconSrc:"/jira.svg",iconAlt:"Jira",iconTitle:"Jira - Project management and issue tracking",label:"Project Tools",labelHover:"group-hover:text-green-400",subtitle:"Jira/Trello"}],r=e=>`
               <!-- ${e.comment} -->
               <div class="group relative">
                 <div
@@ -463,14 +463,14 @@
 
             <!-- Enhanced Time Zone Cards with Live Clocks -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-${t.map(o).join("")}
+${t.map(r).join("")}
             </div>
 
             <!-- Enhanced Communication Methods -->
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
             >
-${r.map(i).join("")}
+${a.map(i).join("")}
             </div>
 
             <!-- Enhanced Current Status -->
@@ -546,7 +546,7 @@ ${r.map(i).join("")}
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-3xl animate-pulse animation-delay-4000"
       ></div>
     </section>
-  `}function S(){function t(){const r=new Date,o=new Date(r.toLocaleString("en-US",{timeZone:"Asia/Dhaka"})),i=document.getElementById("dhaka-time");i&&(i.textContent=o.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const e=new Date(r.toLocaleString("en-US",{timeZone:"Europe/London"})),a=document.getElementById("london-time");a&&(a.textContent=e.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const n=new Date(r.toLocaleString("en-US",{timeZone:"America/New_York"})),l=document.getElementById("newyork-time");l&&(l.textContent=n.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}))}t(),setInterval(t,1e3)}const m=[{name:"Programming Languages",icon:"💻",iconBg:"bg-blue-500/20",textColor:"text-blue-400",borderColor:"border-blue-500/30",hoverBorderColor:"hover:border-blue-400/50",gradient:"from-blue-500 to-blue-600",proficiency:5,skills:[{name:"TypeScript",icon:"https://img.icons8.com/color/36/000000/typescript.png",description:"TypeScript - Statically typed JavaScript that scales"},{name:"JavaScript",icon:"https://img.icons8.com/color/36/000000/javascript.png",description:"JavaScript - The language of the web"},{name:"Python",icon:"https://img.icons8.com/color/36/000000/python.png",description:"Python - Versatile programming language"},{name:"Go",icon:"https://img.icons8.com/color/36/000000/golang.png",description:"Go - Performance-oriented programming language"},{name:"C++",icon:"https://img.icons8.com/color/36/000000/c-plus-plus-logo.png",description:"C++ - High-performance programming language"}]},{name:"Frontend Technologies",icon:"🎨",iconBg:"bg-purple-500/20",textColor:"text-purple-400",borderColor:"border-purple-500/30",hoverBorderColor:"hover:border-purple-400/50",gradient:"from-purple-500 to-purple-600",proficiency:4,skills:[{name:"React",icon:"https://cdn.simpleicons.org/react",description:"React - JavaScript library for building user interfaces"},{name:"Next.js",icon:"https://cdn.simpleicons.org/nextdotjs/white",description:"Next.js - React framework for production"},{name:"HTML",icon:"https://img.icons8.com/color/36/000000/html-5.png",description:"HTML5 - Standard markup language for web pages"},{name:"CSS3",icon:"https://img.icons8.com/color/36/000000/css3.png",description:"CSS3 - Style sheet language for web design"},{name:"Tailwind CSS",icon:"https://cdn.simpleicons.org/tailwindcss",description:"Tailwind CSS - Utility-first CSS framework"}]},{name:"Backend Technologies",icon:"⚙️",iconBg:"bg-green-500/20",textColor:"text-green-400",borderColor:"border-green-500/30",hoverBorderColor:"hover:border-green-400/50",gradient:"from-green-500 to-green-600",proficiency:5,skills:[{name:"Node",icon:"https://cdn.simpleicons.org/nodedotjs",description:"Node.js - JavaScript runtime built on Chrome's V8 engine"},{name:"Express",icon:"https://cdn.simpleicons.org/express/white",description:"Express - Fast, unopinionated web framework for Node.js"},{name:"Deno",icon:"https://img.icons8.com/color/36/000000/deno.png",description:"Deno - Secure runtime for JavaScript and TypeScript"},{name:"NestJS",icon:"https://img.icons8.com/color/36/000000/nestjs.png",description:"NestJS - Progressive Node.js framework"},{name:"FastAPI",icon:"https://cdn.simpleicons.org/fastapi",description:"FastAPI - Modern, fast web framework for Python"},{name:"Kafka",icon:"https://cdn.simpleicons.org/apachekafka/white",description:"Apache Kafka - Distributed streaming platform"}]},{name:"Database & ORM",icon:"🗄️",iconBg:"bg-cyan-500/20",textColor:"text-cyan-400",borderColor:"border-cyan-500/30",hoverBorderColor:"hover:border-cyan-400/50",gradient:"from-cyan-500 to-cyan-600",proficiency:5,skills:[{name:"PostgreSQL",icon:"https://img.icons8.com/color/36/000000/postgreesql.png",description:"PostgreSQL - Advanced open source relational database"},{name:"MongoDB",icon:"https://cdn.simpleicons.org/mongodb/darkgreen",description:"MongoDB - NoSQL document database"},{name:"Redis",icon:"https://img.icons8.com/color/36/000000/redis.png",description:"Redis - In-memory data structure store"},{name:"Prisma",icon:"https://img.icons8.com/color/36/000000/prisma-orm.png",description:"Prisma - Next-generation ORM for Node.js and TypeScript"},{name:"TypeORM",icon:"https://cdn.simpleicons.org/typeorm",description:"TypeORM - Object-relational mapping for TypeScript and JavaScript"}]},{name:"Cloud & DevOps",icon:"☁️",iconBg:"bg-orange-500/20",textColor:"text-orange-400",borderColor:"border-orange-500/30",hoverBorderColor:"hover:border-orange-400/50",gradient:"from-orange-500 to-orange-600",proficiency:4,skills:[{name:"AWS",icon:"/aws.svg",description:"AWS - Leading cloud computing platform"},{name:"Docker",icon:"https://cdn.simpleicons.org/docker",description:"Docker - Platform for developing, shipping, and running applications"},{name:"Lambda",icon:"/aws-lambda.svg",description:"AWS Lambda - Serverless compute service"},{name:"S3",icon:"/s3.svg",description:"Amazon S3 - Scalable storage in the cloud"},{name:"ECS",icon:"/ec2.svg",description:"Amazon ECS - Orchestration service for containers"},{name:"Vercel",icon:"https://cdn.simpleicons.org/vercel/white",description:"Vercel - Platform for frontend and backend development"}]},{name:"Tools & Others",icon:"🛠️",iconBg:"bg-indigo-500/20",textColor:"text-indigo-400",borderColor:"border-indigo-500/30",hoverBorderColor:"hover:border-indigo-400/50",gradient:"from-indigo-500 to-indigo-600",proficiency:5,skills:[{name:"Git",icon:"https://img.icons8.com/color/36/000000/git.png",description:"Git - Distributed version control system"},{name:"GitHub",icon:"https://img.icons8.com/ios-glyphs/36/FFFFFF/github.png",description:"GitHub - Web-based hosting service for version control"},{name:"Playwright",icon:"/playwright.svg",description:"Playwright - Reliable end-to-end testing for modern web apps"},{name:"Jest",icon:"https://cdn.simpleicons.org/jest",description:"Jest - Delightful JavaScript Testing Framework"},{name:"GraphQL",icon:"https://cdn.simpleicons.org/graphql",description:"GraphQL - Query language for APIs"},{name:"BullMQ",icon:"https://img.icons8.com/color/36/000000/bull.png",description:"BullMQ - Premium Queue package for Node.js"}]}];function C(){m.reduce((o,i)=>o+i.skills.length,0);const t=`
+  `}function T(){function t(){const a=new Date,r=new Date(a.toLocaleString("en-US",{timeZone:"Asia/Dhaka"})),i=document.getElementById("dhaka-time");i&&(i.textContent=r.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const e=new Date(a.toLocaleString("en-US",{timeZone:"Europe/London"})),o=document.getElementById("london-time");o&&(o.textContent=e.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}));const l=new Date(a.toLocaleString("en-US",{timeZone:"America/New_York"})),n=document.getElementById("newyork-time");n&&(n.textContent=l.toLocaleTimeString("en-US",{hour12:!1,hour:"2-digit",minute:"2-digit"}))}t(),setInterval(t,1e3)}const m=[{name:"Programming Languages",icon:"💻",iconBg:"bg-blue-500/20",textColor:"text-blue-400",borderColor:"border-blue-500/30",hoverBorderColor:"hover:border-blue-400/50",gradient:"from-blue-500 to-blue-600",proficiency:5,skills:[{name:"TypeScript",icon:"https://img.icons8.com/color/36/000000/typescript.png",description:"TypeScript - Statically typed JavaScript that scales"},{name:"JavaScript",icon:"https://img.icons8.com/color/36/000000/javascript.png",description:"JavaScript - The language of the web"},{name:"Python",icon:"https://img.icons8.com/color/36/000000/python.png",description:"Python - Versatile programming language"},{name:"Go",icon:"https://img.icons8.com/color/36/000000/golang.png",description:"Go - Performance-oriented programming language"},{name:"C++",icon:"https://img.icons8.com/color/36/000000/c-plus-plus-logo.png",description:"C++ - High-performance programming language"}]},{name:"Frontend Technologies",icon:"🎨",iconBg:"bg-purple-500/20",textColor:"text-purple-400",borderColor:"border-purple-500/30",hoverBorderColor:"hover:border-purple-400/50",gradient:"from-purple-500 to-purple-600",proficiency:4,skills:[{name:"React",icon:"https://cdn.simpleicons.org/react",description:"React - JavaScript library for building user interfaces"},{name:"Next.js",icon:"https://cdn.simpleicons.org/nextdotjs/white",description:"Next.js - React framework for production"},{name:"HTML",icon:"https://img.icons8.com/color/36/000000/html-5.png",description:"HTML5 - Standard markup language for web pages"},{name:"CSS3",icon:"https://img.icons8.com/color/36/000000/css3.png",description:"CSS3 - Style sheet language for web design"},{name:"Tailwind CSS",icon:"https://cdn.simpleicons.org/tailwindcss",description:"Tailwind CSS - Utility-first CSS framework"}]},{name:"Backend Technologies",icon:"⚙️",iconBg:"bg-green-500/20",textColor:"text-green-400",borderColor:"border-green-500/30",hoverBorderColor:"hover:border-green-400/50",gradient:"from-green-500 to-green-600",proficiency:5,skills:[{name:"Node",icon:"https://cdn.simpleicons.org/nodedotjs",description:"Node.js - JavaScript runtime built on Chrome's V8 engine"},{name:"Express",icon:"https://cdn.simpleicons.org/express/white",description:"Express - Fast, unopinionated web framework for Node.js"},{name:"Deno",icon:"https://img.icons8.com/color/36/000000/deno.png",description:"Deno - Secure runtime for JavaScript and TypeScript"},{name:"NestJS",icon:"https://img.icons8.com/color/36/000000/nestjs.png",description:"NestJS - Progressive Node.js framework"},{name:"FastAPI",icon:"https://cdn.simpleicons.org/fastapi",description:"FastAPI - Modern, fast web framework for Python"},{name:"Kafka",icon:"https://cdn.simpleicons.org/apachekafka/white",description:"Apache Kafka - Distributed streaming platform"}]},{name:"Database & ORM",icon:"🗄️",iconBg:"bg-cyan-500/20",textColor:"text-cyan-400",borderColor:"border-cyan-500/30",hoverBorderColor:"hover:border-cyan-400/50",gradient:"from-cyan-500 to-cyan-600",proficiency:5,skills:[{name:"PostgreSQL",icon:"https://img.icons8.com/color/36/000000/postgreesql.png",description:"PostgreSQL - Advanced open source relational database"},{name:"MongoDB",icon:"https://cdn.simpleicons.org/mongodb/darkgreen",description:"MongoDB - NoSQL document database"},{name:"Redis",icon:"https://img.icons8.com/color/36/000000/redis.png",description:"Redis - In-memory data structure store"},{name:"Prisma",icon:"https://img.icons8.com/color/36/000000/prisma-orm.png",description:"Prisma - Next-generation ORM for Node.js and TypeScript"},{name:"TypeORM",icon:"https://cdn.simpleicons.org/typeorm",description:"TypeORM - Object-relational mapping for TypeScript and JavaScript"}]},{name:"Cloud & DevOps",icon:"☁️",iconBg:"bg-orange-500/20",textColor:"text-orange-400",borderColor:"border-orange-500/30",hoverBorderColor:"hover:border-orange-400/50",gradient:"from-orange-500 to-orange-600",proficiency:4,skills:[{name:"AWS",icon:"/aws.svg",description:"AWS - Leading cloud computing platform"},{name:"Docker",icon:"https://cdn.simpleicons.org/docker",description:"Docker - Platform for developing, shipping, and running applications"},{name:"Lambda",icon:"/aws-lambda.svg",description:"AWS Lambda - Serverless compute service"},{name:"S3",icon:"/s3.svg",description:"Amazon S3 - Scalable storage in the cloud"},{name:"ECS",icon:"/ec2.svg",description:"Amazon ECS - Orchestration service for containers"},{name:"Vercel",icon:"https://cdn.simpleicons.org/vercel/white",description:"Vercel - Platform for frontend and backend development"}]},{name:"Tools & Others",icon:"🛠️",iconBg:"bg-indigo-500/20",textColor:"text-indigo-400",borderColor:"border-indigo-500/30",hoverBorderColor:"hover:border-indigo-400/50",gradient:"from-indigo-500 to-indigo-600",proficiency:5,skills:[{name:"Git",icon:"https://img.icons8.com/color/36/000000/git.png",description:"Git - Distributed version control system"},{name:"GitHub",icon:"https://img.icons8.com/ios-glyphs/36/FFFFFF/github.png",description:"GitHub - Web-based hosting service for version control"},{name:"Playwright",icon:"/playwright.svg",description:"Playwright - Reliable end-to-end testing for modern web apps"},{name:"Jest",icon:"https://cdn.simpleicons.org/jest",description:"Jest - Delightful JavaScript Testing Framework"},{name:"GraphQL",icon:"https://cdn.simpleicons.org/graphql",description:"GraphQL - Query language for APIs"},{name:"BullMQ",icon:"https://img.icons8.com/color/36/000000/bull.png",description:"BullMQ - Premium Queue package for Node.js"}]}];function C(){m.reduce((r,i)=>r+i.skills.length,0);const t=`
     <div class="flex flex-wrap justify-center gap-6 mb-12">
       <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-4 border border-white/10">
         <div class="text-3xl font-bold text-white mb-1 flex justify-center">30+</div>
@@ -561,35 +561,35 @@ ${r.map(i).join("")}
         <div class="text-sm text-gray-400">Years Experience</div>
       </div>
     </div>
-  `,r=m.map(o=>{const i=o.proficiency/5*100;return`
+  `,a=m.map(r=>{const i=r.proficiency/5*100;return`
       <div class="skill-category group">
         <div class="relative">
-          <div class="absolute -inset-1 bg-gradient-to-r ${o.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
-          <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${o.borderColor} ${o.hoverBorderColor} transition-all duration-300">
+          <div class="absolute -inset-1 bg-gradient-to-r ${r.gradient} rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
+          <div class="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border ${r.borderColor} ${r.hoverBorderColor} transition-all duration-300">
             <div class="flex items-center justify-between mb-4">
               <div class="flex items-center gap-3">
-                <div class="w-12 h-12 ${o.iconBg} rounded-xl flex items-center justify-center category-icon">
-                  <span class="text-2xl">${o.icon}</span>
+                <div class="w-12 h-12 ${r.iconBg} rounded-xl flex items-center justify-center category-icon">
+                  <span class="text-2xl">${r.icon}</span>
                 </div>
                 <div>
-                  <h3 class="text-xl font-bold text-white group-hover:${o.textColor} transition-colors">${o.name}</h3>
-                  <div class="text-sm text-gray-400">${o.skills.length} technologies</div>
+                  <h3 class="text-xl font-bold text-white group-hover:${r.textColor} transition-colors">${r.name}</h3>
+                  <div class="text-sm text-gray-400">${r.skills.length} technologies</div>
                 </div>
               </div>
             </div>
 
             <div class="mb-4">
               <div class="flex justify-between text-xs mb-1">
-                <span class="${o.textColor}">Proficiency</span>
-                <span class="text-gray-400">${o.proficiency}/5</span>
+                <span class="${r.textColor}">Proficiency</span>
+                <span class="text-gray-400">${r.proficiency}/5</span>
               </div>
               <div class="proficiency-bar">
-                <div class="proficiency-fill bg-gradient-to-r ${o.gradient}" style="width: ${i}%"></div>
+                <div class="proficiency-fill bg-gradient-to-r ${r.gradient}" style="width: ${i}%"></div>
               </div>
             </div>
 
             <div class="skill-scroll flex flex-wrap gap-2 max-h-32 overflow-y-auto pr-2">
-              ${o.skills.map(e=>`
+              ${r.skills.map(e=>`
                 <div class="skill-badge flex items-center gap-2 bg-gray-800/50 rounded-lg px-3 py-1.5 border border-gray-700/50" title="${e.description}">
                   <img src="${e.icon}" alt="${e.name}" class="w-4 h-4" />
                   <span class="text-sm text-gray-300">${e.name}</span>
@@ -634,18 +634,18 @@ ${r.map(i).join("")}
         <div id="skills-container" class="skills-container">
           ${t}
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            ${r}
+            ${a}
           </div>
         </div>
       </div>
     </section>
-  `}const f=[{id:1,dateRange:"August 2025 - Current",title:"Software Engineering Lead",company:"Techjays",companyLink:"https://techjays.com/",workType:"Remote",employmentType:"Full-time",description:"A leading AI and automation company based in Menlo Park, CA, specializing in custom software, data analytics, and cloud solutions for global businesses.",achievements:[`Engineered "JaysBot," a real-time voice assistant utilizing Azure OpenAI's Live Voice API and custom-indexed knowledge base, enabling low-latency, context-aware vocal interactions through direct voice-to-voice processing`,"Implemented multiple clustering algorithms (K-Means, DBSCAN, HDBSCAN, BIRCH) in C++ for large-scale seismic data analysis, evaluating performance trade-offs across algorithmic approaches","Developed hybrid clustering algorithms combining K-Means with DBSCAN and HDBSCAN to leverage density-based detection of arbitrary-shaped clusters while maintaining computational efficiency","Achieved 4x runtime reduction through GPU parallelization (CUDA) and multi-threading optimization of the clustering pipeline on large seismic datasets","Implemented elbow method for automated determination of optimal cluster count, eliminating manual parameter tuning and improving result reproducibility","Developed AI agent using Gemini-2.5-flash to automate leave management system, deployed across the team"],techStack:["Python","C++","Azure Live Voice API","Unsupervised Learning","LangChain","Gemini"],colors:{primary:"cyan",secondary:"purple",gradient:"from-cyan-400 via-blue-400 to-purple-400",dotGradient:"from-cyan-400 to-purple-500",badgeGradient:"from-cyan-500 to-purple-500",borderColor:"border-cyan-500/20",hoverBorderColor:"hover:border-cyan-400/40",shadowColor:"hover:shadow-cyan-500/20",workTypeBg:"bg-cyan-400/10",workTypeText:"text-cyan-400",workTypeBorder:"border-cyan-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:2,dateRange:"March 2024 - August 2025",title:"Software Engineer II",company:"Green Pants Studio",companyLink:"https://www.greenpantsstudio.com/",workType:"Remote",employmentType:"Full-time",description:"A technology consulting agency providing engineering talent to external clients.",achievements:["Engineered and launched a scalable livestream platform handling 10K+ concurrent viewers, resulting in a 40% increase in seller engagement","Led as Product Manager and engineer integrating Freightquote API, automating U.S. truckload logistics; reduced manual effort by 70%, errors by 50%, and improved real-time shipment tracking","Implemented CI/CD pipelines to streamline deployments, reducing errors by 60% and accelerating release cycles.","Built a CSV-based bulk product upload system that streamlined catalog onboarding, saving sellers 90% of time compared to manual entry","Developed a custom CRM to enable sellers to easily invite buyers into groups, enhancing engagement by 30%.","Defined and implemented integration tests to ensure API integrity and maintain the reliability of the system."],techStack:["TypeScript","Python","Next.js","NestJS","AWS","PostgreSQL","Microservices"],colors:{primary:"emerald",secondary:"cyan",gradient:"from-emerald-400 via-cyan-400 to-blue-400",dotGradient:"from-emerald-400 to-cyan-500",badgeGradient:"from-emerald-500 to-cyan-500",borderColor:"border-emerald-500/20",hoverBorderColor:"hover:border-emerald-400/40",shadowColor:"hover:shadow-emerald-500/20",workTypeBg:"bg-emerald-400/10",workTypeText:"text-emerald-400",workTypeBorder:"border-emerald-400/20",employmentTypeBg:"bg-cyan-400/10",employmentTypeText:"text-cyan-400",employmentTypeBorder:"border-cyan-400/20"},position:"right"},{id:3,dateRange:"November 2022 - March 2024",title:"Founding Software Engineer",company:"Sendout",companyLink:"https://sendout.ai/",workType:"Remote",employmentType:"Full-time",description:"Led core engineering initiatives in automation and security, significantly improving system efficiency and resilience.",achievements:["Reverse-engineered LinkedIn's private Voyager API for automation, cutting manual effort and costs by 80%.","Implemented a workflow sequence builder using React Flow to orchestrate outreach campaigns.","Built identity-spoofing mechanisms to raise account security from 20% to 80%.","Built LinkedIn data scrapers for automated collection from searches, groups, events and messages.","Developed customizable workflow sequence builder to automate outreach events."],techStack:["TypeScript","Kafka","FastAPI","NestJS","MongoDB","Playwright"],colors:{primary:"blue",secondary:"purple",gradient:"from-blue-400 via-purple-400 to-pink-400",dotGradient:"from-blue-400 to-purple-500",badgeGradient:"from-blue-500 to-purple-500",borderColor:"border-blue-500/20",hoverBorderColor:"hover:border-blue-400/40",shadowColor:"hover:shadow-blue-500/20",workTypeBg:"bg-blue-400/10",workTypeText:"text-blue-400",workTypeBorder:"border-blue-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:4,dateRange:"July 2022 - October 2022",title:"Back End Engineer",company:"Azimuth",companyLink:"https://azimuth.fm/",workType:"Remote",employmentType:"Contract",description:"Enhanced system performance and optimized backend processes for radio song filtering and dashboard operations.",achievements:["Migrated Python scripts to JavaScript, enhancing the overall development ecosystem","Developed edge functions with Deno to efficiently filter songs played on the radio","Reduced memory consumption in microcontrollers and optimized dashboard processing time from 140s to 5s"],techStack:["JavaScript","Deno","Python","Serverless"],colors:{primary:"purple",secondary:"pink",gradient:"from-purple-400 via-pink-400 to-red-400",dotGradient:"from-purple-400 to-pink-500",badgeGradient:"from-purple-500 to-pink-500",borderColor:"border-purple-500/20",hoverBorderColor:"hover:border-purple-400/40",shadowColor:"hover:shadow-purple-500/20",workTypeBg:"bg-purple-400/10",workTypeText:"text-purple-400",workTypeBorder:"border-purple-400/20",employmentTypeBg:"bg-pink-400/10",employmentTypeText:"text-pink-400",employmentTypeBorder:"border-pink-400/20"},position:"right"},{id:5,dateRange:"November 2021 - May 2022",title:"Software Engineer",company:"Recruit",companyLink:"https://recruit.so/",workType:"On-site",employmentType:"Full-time",description:"Contributed to multiple YC startups including Osmind (YC S20) and Replo (YC S21), focusing on code quality and UI development.",achievements:["At Osmind (YC S20): wrote unit and E2E tests to achieve 80%+ coverage, boosting reliability and confidence in deployments","Migrated core codebase from JavaScript to TypeScript, improving maintainability and reducing production issues by 40%","At Replo (YC S21): created and refactored reusable UI components shared across the team"],techStack:["React.js","TypeScript","Jest","Node.js","Prisma","Docker","Tailwind"],colors:{primary:"pink",secondary:"red",gradient:"from-pink-400 via-red-400 to-orange-400",dotGradient:"from-pink-400 to-red-500",badgeGradient:"from-pink-500 to-red-500",borderColor:"border-pink-500/20",hoverBorderColor:"hover:border-pink-400/40",shadowColor:"hover:shadow-pink-500/20",workTypeBg:"bg-pink-400/10",workTypeText:"text-pink-400",workTypeBorder:"border-pink-400/20",employmentTypeBg:"bg-orange-400/10",employmentTypeText:"text-orange-300",employmentTypeBorder:"border-orange-400/20"},position:"left"}],$={bg:"#ede9fe",text:"#5b21b6"},B={bg:"#fef3c7",text:"#92400e"},M={bg:"#fce7f3",text:"#9d174d"},A={bg:"#ffedd5",text:"#9a3412"},j={bg:"#dbeafe",text:"#1e40af"},E={bg:"#ffedd5",text:"#9a3412"},I={bg:"#ede9fe",text:"#5b21b6"},L={bg:"#ccfbf1",text:"#115e59"},D={bg:"#dcfce7",text:"#166534"},H={bg:"#dcfce7",text:"#166534"},P={bg:"#f3f4f6",text:"#1f2937"},G={bg:"#fef3c7",text:"#92400e"},R={bg:"#ffedd5",text:"#9a3412"},F={bg:"#fee2e2",text:"#991b1b"},J={bg:"#e0e7ff",text:"#3730a3"},N={bg:"#dbeafe",text:"#1e40af"},z={bg:"#cffafe",text:"#155e75"},U={bg:"#dcfce7",text:"#166534"},V={bg:"#ccfbf1",text:"#115e59"},W={bg:"#fae8ff",text:"#86198f"},K={bg:"#dbeafe",text:"#1e40af"},O={TypeScript:$,Python:B,"Next.js":{bg:"#dbeafe",text:"#1e40af"},NestJS:M,AWS:A,PostgreSQL:j,Microservices:E,Kafka:I,FastAPI:L,MongoDB:D,Playwright:H,Deno:P,JavaScript:G,Serverless:R,"React.js":{bg:"#cffafe",text:"#155e75"},Jest:F,"Node.js":{bg:"#dcfce7",text:"#166534"},Prisma:J,Docker:N,Tailwind:z,"C++":{bg:"#dbeafe",text:"#1e40af"},CUDA:U,LangChain:V,"Azure OpenAI":{bg:"#e0f2fe",text:"#075985"},"Azure Live Voice API":{bg:"#e0f2fe",text:"#075985"},"K-Means":{bg:"#ede9fe",text:"#5b21b6"},LLM:W,"Unsupervised Learning":{bg:"#ede9fe",text:"#5b21b6"},Gemini:K},v=["from-emerald-400 to-cyan-400","from-cyan-400 to-blue-400","from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-red-400","from-red-400 to-orange-400"];function Q(t,r){const o=t.position==="left",i=o?"md:flex-row":"md:flex-row-reverse",e=o?"md:mr-8":"md:ml-8",a=r===f.length-1,n=t.achievements.map((s,p)=>`
+  `}const f=[{id:1,dateRange:"August 2025 - Current",title:"Software Engineering Lead",company:"Techjays",companyLink:"https://techjays.com/",workType:"Remote",employmentType:"Full-time",description:"A leading AI and automation company based in Menlo Park, CA, specializing in custom software, data analytics, and cloud solutions for global businesses.",achievements:[`Engineered "JaysBot," a real-time voice assistant utilizing Azure OpenAI's Live Voice API and custom-indexed knowledge base, enabling low-latency, context-aware vocal interactions through direct voice-to-voice processing`,"Implemented multiple clustering algorithms (K-Means, DBSCAN, HDBSCAN, BIRCH) in C++ for large-scale seismic data analysis, evaluating performance trade-offs across algorithmic approaches","Developed hybrid clustering algorithms combining K-Means with DBSCAN and HDBSCAN to leverage density-based detection of arbitrary-shaped clusters while maintaining computational efficiency","Achieved 4x runtime reduction through GPU parallelization (CUDA) and multi-threading optimization of the clustering pipeline on large seismic datasets","Implemented elbow method for automated determination of optimal cluster count, eliminating manual parameter tuning and improving result reproducibility","Developed AI agent using Gemini-2.5-flash to automate leave management system, deployed across the team"],techStack:["Python","C++","Azure Live Voice API","Unsupervised Learning","LangChain","Gemini"],colors:{primary:"cyan",secondary:"purple",gradient:"from-cyan-400 via-blue-400 to-purple-400",dotGradient:"from-cyan-400 to-purple-500",badgeGradient:"from-cyan-500 to-purple-500",borderColor:"border-cyan-500/20",hoverBorderColor:"hover:border-cyan-400/40",shadowColor:"hover:shadow-cyan-500/20",workTypeBg:"bg-cyan-400/10",workTypeText:"text-cyan-400",workTypeBorder:"border-cyan-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:2,dateRange:"March 2024 - August 2025",title:"Software Engineer II",company:"Green Pants Studio",companyLink:"https://www.greenpantsstudio.com/",workType:"Remote",employmentType:"Full-time",description:"A technology consulting agency providing engineering talent to external clients.",achievements:["Engineered and launched a scalable livestream platform handling 10K+ concurrent viewers, resulting in a 40% increase in seller engagement","Led as Product Manager and engineer integrating Freightquote API, automating U.S. truckload logistics; reduced manual effort by 70%, errors by 50%, and improved real-time shipment tracking","Implemented CI/CD pipelines to streamline deployments, reducing errors by 60% and accelerating release cycles.","Built a CSV-based bulk product upload system that streamlined catalog onboarding, saving sellers 90% of time compared to manual entry","Developed a custom CRM to enable sellers to easily invite buyers into groups, enhancing engagement by 30%.","Defined and implemented integration tests to ensure API integrity and maintain the reliability of the system."],techStack:["TypeScript","Python","Next.js","NestJS","AWS","PostgreSQL","Microservices"],colors:{primary:"emerald",secondary:"cyan",gradient:"from-emerald-400 via-cyan-400 to-blue-400",dotGradient:"from-emerald-400 to-cyan-500",badgeGradient:"from-emerald-500 to-cyan-500",borderColor:"border-emerald-500/20",hoverBorderColor:"hover:border-emerald-400/40",shadowColor:"hover:shadow-emerald-500/20",workTypeBg:"bg-emerald-400/10",workTypeText:"text-emerald-400",workTypeBorder:"border-emerald-400/20",employmentTypeBg:"bg-cyan-400/10",employmentTypeText:"text-cyan-400",employmentTypeBorder:"border-cyan-400/20"},position:"right"},{id:3,dateRange:"November 2022 - March 2024",title:"Founding Software Engineer",company:"Sendout",companyLink:"https://sendout.ai/",workType:"Remote",employmentType:"Full-time",description:"Led core engineering initiatives in automation and security, significantly improving system efficiency and resilience.",achievements:["Reverse-engineered LinkedIn's private Voyager API for automation, cutting manual effort and costs by 80%.","Implemented a workflow sequence builder using React Flow to orchestrate outreach campaigns.","Built identity-spoofing mechanisms to raise account security from 20% to 80%.","Built LinkedIn data scrapers for automated collection from searches, groups, events and messages.","Developed customizable workflow sequence builder to automate outreach events."],techStack:["TypeScript","Kafka","FastAPI","NestJS","MongoDB","Playwright"],colors:{primary:"blue",secondary:"purple",gradient:"from-blue-400 via-purple-400 to-pink-400",dotGradient:"from-blue-400 to-purple-500",badgeGradient:"from-blue-500 to-purple-500",borderColor:"border-blue-500/20",hoverBorderColor:"hover:border-blue-400/40",shadowColor:"hover:shadow-blue-500/20",workTypeBg:"bg-blue-400/10",workTypeText:"text-blue-400",workTypeBorder:"border-blue-400/20",employmentTypeBg:"bg-purple-400/10",employmentTypeText:"text-purple-400",employmentTypeBorder:"border-purple-400/20"},position:"left"},{id:4,dateRange:"July 2022 - October 2022",title:"Back End Engineer",company:"Azimuth",companyLink:"https://azimuth.fm/",workType:"Remote",employmentType:"Contract",description:"Enhanced system performance and optimized backend processes for radio song filtering and dashboard operations.",achievements:["Migrated Python scripts to JavaScript, enhancing the overall development ecosystem","Developed edge functions with Deno to efficiently filter songs played on the radio","Reduced memory consumption in microcontrollers and optimized dashboard processing time from 140s to 5s"],techStack:["JavaScript","Deno","Python","Serverless"],colors:{primary:"purple",secondary:"pink",gradient:"from-purple-400 via-pink-400 to-red-400",dotGradient:"from-purple-400 to-pink-500",badgeGradient:"from-purple-500 to-pink-500",borderColor:"border-purple-500/20",hoverBorderColor:"hover:border-purple-400/40",shadowColor:"hover:shadow-purple-500/20",workTypeBg:"bg-purple-400/10",workTypeText:"text-purple-400",workTypeBorder:"border-purple-400/20",employmentTypeBg:"bg-pink-400/10",employmentTypeText:"text-pink-400",employmentTypeBorder:"border-pink-400/20"},position:"right"},{id:5,dateRange:"November 2021 - May 2022",title:"Software Engineer",company:"Recruit",companyLink:"https://recruit.so/",workType:"On-site",employmentType:"Full-time",description:"Contributed to multiple YC startups including Osmind (YC S20) and Replo (YC S21), focusing on code quality and UI development.",achievements:["At Osmind (YC S20): wrote unit and E2E tests to achieve 80%+ coverage, boosting reliability and confidence in deployments","Migrated core codebase from JavaScript to TypeScript, improving maintainability and reducing production issues by 40%","At Replo (YC S21): created and refactored reusable UI components shared across the team"],techStack:["React.js","TypeScript","Jest","Node.js","Prisma","Docker","Tailwind"],colors:{primary:"pink",secondary:"red",gradient:"from-pink-400 via-red-400 to-orange-400",dotGradient:"from-pink-400 to-red-500",badgeGradient:"from-pink-500 to-red-500",borderColor:"border-pink-500/20",hoverBorderColor:"hover:border-pink-400/40",shadowColor:"hover:shadow-pink-500/20",workTypeBg:"bg-pink-400/10",workTypeText:"text-pink-400",workTypeBorder:"border-pink-400/20",employmentTypeBg:"bg-orange-400/10",employmentTypeText:"text-orange-300",employmentTypeBorder:"border-orange-400/20"},position:"left"}],$={bg:"#ede9fe",text:"#5b21b6"},B={bg:"#fef3c7",text:"#92400e"},M={bg:"#fce7f3",text:"#9d174d"},A={bg:"#ffedd5",text:"#9a3412"},j={bg:"#dbeafe",text:"#1e40af"},E={bg:"#ffedd5",text:"#9a3412"},I={bg:"#ede9fe",text:"#5b21b6"},L={bg:"#ccfbf1",text:"#115e59"},D={bg:"#dcfce7",text:"#166534"},H={bg:"#dcfce7",text:"#166534"},P={bg:"#f3f4f6",text:"#1f2937"},G={bg:"#fef3c7",text:"#92400e"},R={bg:"#ffedd5",text:"#9a3412"},F={bg:"#fee2e2",text:"#991b1b"},J={bg:"#e0e7ff",text:"#3730a3"},N={bg:"#dbeafe",text:"#1e40af"},U={bg:"#cffafe",text:"#155e75"},z={bg:"#dcfce7",text:"#166534"},V={bg:"#ccfbf1",text:"#115e59"},K={bg:"#fae8ff",text:"#86198f"},W={bg:"#dbeafe",text:"#1e40af"},O={TypeScript:$,Python:B,"Next.js":{bg:"#dbeafe",text:"#1e40af"},NestJS:M,AWS:A,PostgreSQL:j,Microservices:E,Kafka:I,FastAPI:L,MongoDB:D,Playwright:H,Deno:P,JavaScript:G,Serverless:R,"React.js":{bg:"#cffafe",text:"#155e75"},Jest:F,"Node.js":{bg:"#dcfce7",text:"#166534"},Prisma:J,Docker:N,Tailwind:U,"C++":{bg:"#dbeafe",text:"#1e40af"},CUDA:z,LangChain:V,"Azure OpenAI":{bg:"#e0f2fe",text:"#075985"},"Azure Live Voice API":{bg:"#e0f2fe",text:"#075985"},"K-Means":{bg:"#ede9fe",text:"#5b21b6"},LLM:K,"Unsupervised Learning":{bg:"#ede9fe",text:"#5b21b6"},Gemini:W},v=["from-emerald-400 to-cyan-400","from-cyan-400 to-blue-400","from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-red-400","from-red-400 to-orange-400"];function Q(t,a){const r=t.position==="left",i=r?"md:flex-row":"md:flex-row-reverse",e=r?"md:mr-8":"md:ml-8",o=a===f.length-1,l=t.achievements.map((s,p)=>`
     <div class="flex items-baseline group/item">
       <div class="w-2 h-2 bg-gradient-to-r ${v[p%v.length]} rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
       <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300 text-xs md:text-base">${s}</span>
     </div>
-  `).join(""),l=t.techStack.map(s=>{const p=O[s]||{bg:"#f3f4f6",text:"#1f2937"};return`<span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: ${p.bg}; color: ${p.text};">${s}</span>`}).join("");return`
-    <div class="${a?"":"mb-6"} ${a?"":"relative"} flex flex-col ${i} items-center">
+  `).join(""),n=t.techStack.map(s=>{const p=O[s]||{bg:"#f3f4f6",text:"#1f2937"};return`<span class="px-3 py-1 rounded-full text-sm font-medium" style="background-color: ${p.bg}; color: ${p.text};">${s}</span>`}).join("");return`
+    <div class="${o?"":"mb-6"} ${o?"":"relative"} flex flex-col ${i} items-center">
       <!-- Timeline Dot -->
       <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r ${t.colors.dotGradient} rounded-full border-4 border-gray-900 shadow-lg z-10 hidden md:block"></div>
 
@@ -680,12 +680,12 @@ ${r.map(i).join("")}
 
             <!-- Achievement Pills -->
             <div class="space-y-3">
-              ${n}
+              ${l}
             </div>
 
             <!-- Tech Stack -->
             <div class="flex flex-wrap gap-2 mt-6">
-              ${l}
+              ${n}
             </div>
           </div>
         </div>
@@ -723,51 +723,51 @@ ${r.map(i).join("")}
           <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 via-cyan-400 to-purple-400 rounded-full hidden md:block"></div>
 
           <div id="experience-container" class="space-y-16">
-            ${f.map((r,o)=>Q(r,o)).join("")}
+            ${f.map((a,r)=>Q(a,r)).join("")}
           </div>
         </div>
       </div>
     </section>
-  `}const Y={name:"Shahjalal University of Science and Technology",location:"Sylhet, Bangladesh",degree:"B.Sc. in Computer Science & Engineering",years:"2018 - 2022",cgpa:"3.86/4.00",achievements:["CGPA: 3.86/4.00","Ranked 4th in the graduating cohort, reflecting sustained academic excellence","Deep expertise in software development, algorithms, data structures, and system design, demonstrated through rigorous coursework and hands-on projects"]},_=[{icon:"💻",name:"Advanced Algorithms",description:"Data structures & algorithmic complexity",color:"blue"},{icon:"🔐",name:"System Security",description:"Cryptography & network security",color:"purple"},{icon:"🤖",name:"AI & ML",description:"Machine learning fundamentals",color:"pink"},{icon:"🌐",name:"Web Systems",description:"Modern web architectures",color:"blue"}],q={university:Y,courses:_},X=[{id:1,name:"Boibitan",icon:"📚",description:"Modern e-commerce platform for books with secure payments, wishlist management, and seller dashboards.",features:["Secure payment integration","Seller dashboard & analytics","Wishlist & review system"],tags:["E-commerce","Web API","Vercel"],github:"https://github.com/magic-kiri/Boibitaan-Web-API-Project",live:"https://boibitaan-web-api-project.vercel.app/",color:"pink"},{id:2,name:"OEMS",icon:"📝",description:"Next.js-based online exam management system with auto-grading, real-time monitoring, and analytics.",features:["Secure authentication system","Real-time exam monitoring","Analytics dashboard"],tags:["Next.js","TypeScript","Real-time"],github:"https://github.com/magic-kiri/OEMS",live:null,color:"purple"},{id:3,name:"GeoCal",icon:"📐",description:"JavaFx web application for interactive 2D geometry with precise calculations and RESTful APIs.",features:["Interactive 2D shape manipulation","Precise geometric calculations","Export and sharing capabilities"],tags:["JavaFx","REST API","Geometry"],github:"https://github.com/magic-kiri/MyGeoCal/",live:null,color:"blue"}];function ee(t){const r={pink:{bg:"from-gray-800/50 via-gray-800/30 to-pink-950/20",border:"hover:border-pink-500/30",text:"text-pink-300",hoverText:"group-hover:text-pink-200",dot:"bg-pink-400",tag:"bg-pink-500/10 text-pink-300",borderT:"border-pink-500/20",link:"text-pink-400 hover:text-pink-300"},purple:{bg:"from-gray-800/50 via-gray-800/30 to-purple-950/20",border:"hover:border-purple-500/30",text:"text-purple-300",hoverText:"group-hover:text-purple-200",dot:"bg-purple-400",tag:"bg-purple-500/10 text-purple-300",borderT:"border-purple-500/20",link:"text-purple-400 hover:text-purple-300"},blue:{bg:"from-gray-800/50 via-gray-800/30 to-blue-950/20",border:"hover:border-blue-500/30",text:"text-blue-300",hoverText:"group-hover:text-blue-200",dot:"bg-blue-400",tag:"bg-blue-500/10 text-blue-300",borderT:"border-blue-500/20",link:"text-blue-400 hover:text-blue-300"}},o=r[t.color]||r.blue,i=`
-    <a href="${t.github}" target="_blank" class="${o.link} transition-colors" title="View ${t.name} on GitHub">
+  `}const Y={name:"Shahjalal University of Science and Technology",location:"Sylhet, Bangladesh",degree:"B.Sc. in Computer Science & Engineering",years:"2018 - 2022",cgpa:"3.86/4.00",achievements:["CGPA: 3.86/4.00","Ranked 4th in the graduating cohort, reflecting sustained academic excellence","Deep expertise in software development, algorithms, data structures, and system design, demonstrated through rigorous coursework and hands-on projects"]},_={title:"BlockURS: A Blockchain-based Unified Reputation System",type:"Bachelor of Science Thesis",date:"February 2023",supervisor:{name:"Dr. Farida Chowdhury",title:"Professor, Dept. of CSE, BRAC University"},collaborator:"Kiriti Mukherjee",description:"Designed and developed a novel blockchain-based reputation system that unifies reputation scores across multiple domains into a single, trustworthy metric. The system addresses critical limitations in traditional reputation systems including centralization, data tampering, and lack of cross-platform portability.",contributions:[{title:"System Architecture",description:"Permissioned blockchain with smart contracts, middleware infrastructure, and provisioning scheme for secure data communication"},{title:"Reputation Algorithms",description:"Financial & E-commerce domain engines with unified score aggregation using logarithmic scaling and sigmoid functions"},{title:"Security & Privacy",description:"STRIDE threat modeling, cryptographic protocols, HTTPS communications, and user-controlled privacy settings"}],technologies:["Blockchain","Smart Contracts","Cryptography","Distributed Systems","Protocol Design"]},q=[{icon:"💻",name:"Advanced Algorithms",description:"Data structures & algorithmic complexity",color:"blue"},{icon:"🔐",name:"System Security",description:"Cryptography & network security",color:"purple"},{icon:"🤖",name:"AI & ML",description:"Machine learning fundamentals",color:"pink"},{icon:"🌐",name:"Web Systems",description:"Modern web architectures",color:"blue"}],X={university:Y,thesis:_,courses:q},ee=[{id:1,name:"Boibitan",icon:"📚",description:"Modern e-commerce platform for books with secure payments, wishlist management, and seller dashboards.",features:["Secure payment integration","Seller dashboard & analytics","Wishlist & review system"],tags:["E-commerce","Web API","Vercel"],github:"https://github.com/magic-kiri/Boibitaan-Web-API-Project",live:"https://boibitaan-web-api-project.vercel.app/",color:"pink"},{id:2,name:"OEMS",icon:"📝",description:"Next.js-based online exam management system with auto-grading, real-time monitoring, and analytics.",features:["Secure authentication system","Real-time exam monitoring","Analytics dashboard"],tags:["Next.js","TypeScript","Real-time"],github:"https://github.com/magic-kiri/OEMS",live:null,color:"purple"},{id:3,name:"GeoCal",icon:"📐",description:"JavaFx web application for interactive 2D geometry with precise calculations and RESTful APIs.",features:["Interactive 2D shape manipulation","Precise geometric calculations","Export and sharing capabilities"],tags:["JavaFx","REST API","Geometry"],github:"https://github.com/magic-kiri/MyGeoCal/",live:null,color:"blue"}];function te(t){const a={pink:{bg:"from-gray-800/50 via-gray-800/30 to-pink-950/20",border:"hover:border-pink-500/30",text:"text-pink-300",hoverText:"group-hover:text-pink-200",dot:"bg-pink-400",tag:"bg-pink-500/10 text-pink-300",borderT:"border-pink-500/20",link:"text-pink-400 hover:text-pink-300"},purple:{bg:"from-gray-800/50 via-gray-800/30 to-purple-950/20",border:"hover:border-purple-500/30",text:"text-purple-300",hoverText:"group-hover:text-purple-200",dot:"bg-purple-400",tag:"bg-purple-500/10 text-purple-300",borderT:"border-purple-500/20",link:"text-purple-400 hover:text-purple-300"},blue:{bg:"from-gray-800/50 via-gray-800/30 to-blue-950/20",border:"hover:border-blue-500/30",text:"text-blue-300",hoverText:"group-hover:text-blue-200",dot:"bg-blue-400",tag:"bg-blue-500/10 text-blue-300",borderT:"border-blue-500/20",link:"text-blue-400 hover:text-blue-300"}},r=a[t.color]||a.blue,i=`
+    <a href="${t.github}" target="_blank" class="${r.link} transition-colors" title="View ${t.name} on GitHub">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.239 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
       </svg>
     </a>
     ${t.live?`
-    <a href="${t.live}" target="_blank" class="${o.link} transition-colors" title="Visit ${t.name}">
+    <a href="${t.live}" target="_blank" class="${r.link} transition-colors" title="Visit ${t.name}">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
       </svg>
     </a>
     `:""}
   `;return`
-    <div class="group bg-gradient-to-br ${o.bg} rounded-xl p-6 border border-gray-700/50 ${o.border} transition-all duration-300">
+    <div class="group bg-gradient-to-br ${r.bg} rounded-xl p-6 border border-gray-700/50 ${r.border} transition-all duration-300">
       <div class="flex items-center justify-between mb-4">
         <div class="text-3xl group-hover:scale-110 transition-transform duration-300">${t.icon}</div>
         <div class="flex gap-2">${i}</div>
       </div>
-      <h5 class="font-medium ${o.text} mb-2 ${o.hoverText} transition-colors">${t.name}</h5>
+      <h5 class="font-medium ${r.text} mb-2 ${r.hoverText} transition-colors">${t.name}</h5>
       <p class="text-sm text-gray-400 mb-4">${t.description}</p>
       <div class="space-y-3 mb-4">
         ${t.features.map(e=>`
           <div class="flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-            <div class="w-1.5 h-1.5 ${o.dot} rounded-full"></div>
+            <div class="w-1.5 h-1.5 ${r.dot} rounded-full"></div>
             <span>${e}</span>
           </div>
         `).join("")}
       </div>
-      <div class="flex flex-wrap gap-2 pt-3 border-t ${o.borderT}">
-        ${t.tags.map(e=>`<span class="px-2 py-1 ${o.tag} rounded-md text-xs">${e}</span>`).join("")}
+      <div class="flex flex-wrap gap-2 pt-3 border-t ${r.borderT}">
+        ${t.tags.map(e=>`<span class="px-2 py-1 ${r.tag} rounded-md text-xs">${e}</span>`).join("")}
       </div>
     </div>
-  `}function te(){const{university:t,courses:r}=q,o=r.map(e=>`
-      <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 ${e.color==="blue"?"hover:border-blue-500/30 text-blue-300":e.color==="purple"?"hover:border-purple-500/30 text-purple-300":"hover:border-pink-500/30 text-pink-300"} transition-all duration-300 group/course">
-        <div class="text-2xl mb-2">${e.icon}</div>
-        <h5 class="font-medium mb-1">${e.name}</h5>
-        <p class="text-sm text-gray-400">${e.description}</p>
+  `}function re(){const{university:t,courses:a,thesis:r}=X,i=a.map(o=>`
+      <div class="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50 ${o.color==="blue"?"hover:border-blue-500/30 text-blue-300":o.color==="purple"?"hover:border-purple-500/30 text-purple-300":"hover:border-pink-500/30 text-pink-300"} transition-all duration-300 group/course">
+        <div class="text-2xl mb-2">${o.icon}</div>
+        <h5 class="font-medium mb-1">${o.name}</h5>
+        <p class="text-sm text-gray-400">${o.description}</p>
       </div>
-    `).join(""),i=X.map(e=>ee(e)).join("");return`
+    `).join(""),e=ee.map(o=>te(o)).join("");return`
     <!-- Education Section -->
     <section id="education" class="relative section-bg-pattern section-padding overflow-hidden">
       <!-- Background Pattern -->
@@ -840,10 +840,10 @@ ${r.map(i).join("")}
                         </div>
                       </div>
                       <div class="space-y-4">
-                        ${t.achievements.map((e,a)=>{const n=["from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-blue-400"];return`
+                        ${t.achievements.map((o,l)=>{const n=["from-blue-400 to-purple-400","from-purple-400 to-pink-400","from-pink-400 to-blue-400"];return`
                             <div class="flex items-start group/item">
-                              <div class="w-2 h-2 mt-2 bg-gradient-to-r ${n[a%n.length]} rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
-                              <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">${e}</span>
+                              <div class="w-2 h-2 mt-2 bg-gradient-to-r ${n[l%n.length]} rounded-full mr-3 group-hover/item:scale-150 transition-transform duration-300"></div>
+                              <span class="text-gray-300 group-hover/item:text-white transition-colors duration-300">${o}</span>
                             </div>
                           `}).join("")}
                       </div>
@@ -855,9 +855,71 @@ ${r.map(i).join("")}
                 <div class="space-y-6">
                   <h4 class="text-xl font-semibold text-purple-400 mb-4">Specialized Courses</h4>
                   <div class="grid grid-cols-2 gap-4">
-                    ${o}
+                    ${i}
                   </div>
                 </div>
+              </div>
+
+              <!-- Undergraduate Thesis -->
+              <div class="mt-12">
+                <h4 class="text-xl font-semibold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+                  Undergraduate Thesis
+                </h4>
+
+                <div class="group bg-gradient-to-br from-gray-800/50 via-gray-800/30 to-cyan-950/20 rounded-xl p-6 md:p-8 border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-300">
+
+                    <!-- Header with icon and title -->
+                    <div class="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+                      <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                          <span class="text-3xl">⛓️</span>
+                        </div>
+                      </div>
+                      <div class="flex-1">
+                        <h5 class="text-xl md:text-2xl font-bold text-cyan-300 mb-2">${r.title}</h5>
+                        <div class="flex flex-wrap gap-3 text-sm">
+                          <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-lg border border-cyan-500/30">${r.type}</span>
+                          <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-lg border border-blue-500/30">${r.date}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-300 mb-6 leading-relaxed">${r.description}</p>
+
+                    <!-- Supervisor & Collaborator -->
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 mb-6 text-sm">
+                      <div class="flex items-center gap-2">
+                        <span class="text-gray-400">Supervisor:</span>
+                        <span class="text-purple-300 font-medium">${r.supervisor.name}</span>
+                        <span class="text-gray-500">(${r.supervisor.title})</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-gray-400">Co-author:</span>
+                        <span class="text-blue-300 font-medium">${r.collaborator}</span>
+                      </div>
+                    </div>
+
+                    <!-- Key Contributions Grid -->
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                      ${r.contributions.map((o,l)=>{const n=[{bg:"from-cyan-500/10 to-cyan-500/5",border:"border-cyan-500/20",text:"text-cyan-300",dot:"bg-cyan-400"},{bg:"from-blue-500/10 to-blue-500/5",border:"border-blue-500/20",text:"text-blue-300",dot:"bg-blue-400"},{bg:"from-purple-500/10 to-purple-500/5",border:"border-purple-500/20",text:"text-purple-300",dot:"bg-purple-400"}],s=n[l%n.length];return`
+                          <div class="bg-gradient-to-br ${s.bg} rounded-xl p-4 border ${s.border}">
+                            <div class="flex items-center gap-2 mb-2">
+                              <div class="w-2 h-2 ${s.dot} rounded-full"></div>
+                              <h6 class="font-semibold ${s.text}">${o.title}</h6>
+                            </div>
+                            <p class="text-sm text-gray-400">${o.description}</p>
+                          </div>
+                        `}).join("")}
+                    </div>
+
+                    <!-- Technology Tags -->
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-cyan-500/20">
+                      ${r.technologies.map(o=>`
+                        <span class="px-3 py-1 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-300 rounded-lg text-sm border border-cyan-500/20">${o}</span>
+                      `).join("")}
+                    </div>
+                  </div>
               </div>
 
               <!-- Research & Projects -->
@@ -866,7 +928,7 @@ ${r.map(i).join("")}
                   Notable Projects
                 </h4>
                 <div class="grid md:grid-cols-3 gap-6">
-                  ${i}
+                  ${e}
                 </div>
               </div>
             </div>
@@ -874,7 +936,7 @@ ${r.map(i).join("")}
         </div>
       </div>
     </section>
-  `}const oe={github:"https://github.com/magic-kiri",linkedin:"https://linkedin.com/in/magic-kiri",upwork:"https://www.upwork.com/freelancers/~01c7a18d6a5053d4b3"},re={email:"kimuapon@gmail.com",phone:"+8801556542573",location:"Dhaka, Bangladesh"},c={social:oe,contact:re};function ae(){return`
+  `}const oe={github:"https://github.com/magic-kiri",linkedin:"https://linkedin.com/in/magic-kiri",upwork:"https://www.upwork.com/freelancers/~01c7a18d6a5053d4b3"},ae={email:"kimuapon@gmail.com",phone:"+8801556542573",location:"Dhaka, Bangladesh"},c={social:oe,contact:ae};function ie(){return`
     <!-- Contact Section -->
     <section id="contact" class="relative section-bg-pattern section-padding overflow-hidden">
       <!-- Background Elements -->
@@ -994,7 +1056,7 @@ ${r.map(i).join("")}
         </div>
       </div>
     </section>
-  `}function ie(){const t=document.getElementById("contact-form");function r(){const o=document.getElementById("toast-notification");o&&(o.classList.remove("translate-x-full","opacity-0"),o.classList.add("translate-x-0","opacity-100"),setTimeout(()=>{o.classList.remove("translate-x-0","opacity-100"),o.classList.add("translate-x-full","opacity-0")},2e3))}t?.addEventListener("submit",o=>{o.preventDefault(),r()})}function ne(){return`
+  `}function ne(){const t=document.getElementById("contact-form");function a(){const r=document.getElementById("toast-notification");r&&(r.classList.remove("translate-x-full","opacity-0"),r.classList.add("translate-x-0","opacity-100"),setTimeout(()=>{r.classList.remove("translate-x-0","opacity-100"),r.classList.add("translate-x-full","opacity-0")},2e3))}t?.addEventListener("submit",r=>{r.preventDefault(),a()})}function le(){return`
     <!-- Footer -->
     <footer class="relative section-bg-pattern py-12 overflow-hidden">
       <!-- Background Elements -->
@@ -1019,21 +1081,21 @@ ${r.map(i).join("")}
         </div>
       </div>
     </footer>
-  `}function le(){const t=document.getElementById("app");t.innerHTML=`
-    ${h()}
+  `}function se(){const t=document.getElementById("app");t.innerHTML=`
+    ${x()}
     ${y()}
     <div class="section-separator"></div>
     ${k()}
     <div class="section-separator"></div>
-    ${T()}
+    ${S()}
     <div class="section-separator"></div>
     ${C()}
     <div class="section-separator"></div>
     ${Z()}
     <div class="section-separator"></div>
-    ${te()}
+    ${re()}
     <div class="section-separator"></div>
-    ${ae()}
+    ${ie()}
     <div class="section-separator-full"></div>
-    ${ne()}
-  `}function se(){x(),w(),S(),ie()}document.addEventListener("DOMContentLoaded",()=>{le(),se()});
+    ${le()}
+  `}function de(){h(),w(),T(),ne()}document.addEventListener("DOMContentLoaded",()=>{se(),de()});
